@@ -14,45 +14,45 @@ using UnityEngine;
 
 namespace cfg.UI
 {
-public partial class TbUIWnd : IVOFun
-{
-    private readonly System.Collections.Generic.Dictionary<string, UI.UIWnd> _dataMap;
-    private readonly System.Collections.Generic.List<UI.UIWnd> _dataList;
-    
-    public TbUIWnd()
+    public partial class TbUIWnd : IVOFun
     {
-        _dataMap = new System.Collections.Generic.Dictionary<string, UI.UIWnd>();
-        _dataList = new System.Collections.Generic.List<UI.UIWnd>();
-    }
+        private readonly System.Collections.Generic.Dictionary<string, UI.UIWnd> _dataMap;
+        private readonly System.Collections.Generic.List<UI.UIWnd> _dataList;
 
-    public System.Collections.Generic.Dictionary<string, UI.UIWnd> DataMap => _dataMap;
-    public System.Collections.Generic.List<UI.UIWnd> DataList => _dataList;
-
-    public UI.UIWnd GetOrDefault(string key) => _dataMap.TryGetValue(key, out var v) ? v : null;
-    public UI.UIWnd Get(string key) => _dataMap[key];
-    public UI.UIWnd this[string key] => _dataMap[key];
-
-
-    public void _LoadData()
-    {
-        
-        JSONNode _buf = JSON.Parse(GetJson("ui_tbuiwnd"));
-        foreach(JSONNode _ele in _buf.Children)
+        public TbUIWnd()
         {
-            UI.UIWnd _v;
-            { if(!_ele.IsObject) { throw new SerializationException(); }  _v = UI.UIWnd.DeserializeUIWnd(_ele);  }
-            _dataList.Add(_v);
-            _dataMap.Add(_v.Name, _v);
-            _v.ResolveRef();
+            _dataMap = new System.Collections.Generic.Dictionary<string, UI.UIWnd>();
+            _dataList = new System.Collections.Generic.List<UI.UIWnd>();
+        }
+
+        public System.Collections.Generic.Dictionary<string, UI.UIWnd> DataMap => _dataMap;
+        public System.Collections.Generic.List<UI.UIWnd> DataList => _dataList;
+
+        public UI.UIWnd GetOrDefault(string key) => _dataMap.TryGetValue(key, out var v) ? v : null;
+        public UI.UIWnd Get(string key) => _dataMap[key];
+        public UI.UIWnd this[string key] => _dataMap[key];
+
+
+        public void _LoadData()
+        {
+
+            JSONNode _buf = JSON.Parse(GetJson("ui_tbuiwnd"));
+            foreach (JSONNode _ele in _buf.Children)
+            {
+                UI.UIWnd _v;
+                { if (!_ele.IsObject) { throw new SerializationException(); } _v = UI.UIWnd.DeserializeUIWnd(_ele); }
+                _dataList.Add(_v);
+                _dataMap.Add(_v.Name, _v);
+                _v.ResolveRef();
+            }
+        }
+
+        private string GetJson(string fileName)
+        {
+            var textAsset = AssetSystem.LoadAsset<TextAsset>($"TableData/{fileName}.json");
+            return textAsset.text;
         }
     }
-
-    private string GetJson(string fileName)
-    {
-        var textAsset = AssetSystem.LoadAsset<TextAsset>($"TableData/{fileName}.json");
-        return textAsset.text;
-    }
-}
 
 }
 

@@ -13,6 +13,12 @@
       "source": "embedded",
       "dependencies": {}
     },
+    "com.cysharp.unitask": {
+      "version": "file:UniTask",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.tuyoogame.yooasset": {
       "version": "file:YooAsset",
       "depth": 0,

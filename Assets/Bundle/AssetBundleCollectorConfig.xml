@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root Version="v2.1">
+  <Common ShowPackageView="True" ShowEditorAlias="False" UniqueBundleName="True" />
+  <Package PackageName="ResourcePackage" PackageDesc="普通资源包" AutoAddressable="False" LocationToLower="False" IncludeAssetGUID="False" IgnoreRuleName="NormalIgnoreRule">
+    <Group GroupActiveRule="EnableGroup" GroupName="Audios" GroupDesc="音效" AssetTags="">
+      <Collector CollectPath="Assets/Bundle/Audio" CollectGUID="051ace3821f4b384298d0cbdda1c1b99" CollectType="MainAssetCollector" AddressRule="AddressByFileName" PackRule="PackDirectory" FilterRule="CollectAll" UserData="" AssetTags="" />
+    </Group>
+    <Group GroupActiveRule="EnableGroup" GroupName="Effects" GroupDesc="特效" AssetTags="">
+      <Collector CollectPath="Assets/Bundle/Effects" CollectGUID="6c42dfb432466aa4395beda9a965dfeb" CollectType="MainAssetCollector" AddressRule="AddressByFileName" PackRule="PackDirectory" FilterRule="CollectAll" UserData="" AssetTags="" />
+    </Group>
+    <Group GroupActiveRule="EnableGroup" GroupName="Materials" GroupDesc="材质" AssetTags="">
+      <Collector CollectPath="Assets/Bundle/Materials" CollectGUID="569dd0bb8f46dc845892c7b7962b8267" CollectType="MainAssetCollector" AddressRule="AddressByFileName" PackRule="PackDirectory" FilterRule="CollectAll" UserData="" AssetTags="" />
+    </Group>
+    <Group GroupActiveRule="EnableGroup" GroupName="Prefab" GroupDesc="预制体" AssetTags="">
+      <Collector CollectPath="Assets/Bundle/Prefab" CollectGUID="eaa4b7f6451f9e24b89ab247fff37dbc" CollectType="MainAssetCollector" AddressRule="AddressByFileName" PackRule="PackDirectory" FilterRule="CollectAll" UserData="" AssetTags="" />
+    </Group>
+    <Group GroupActiveRule="EnableGroup" GroupName="Scenes" GroupDesc="场景" AssetTags="">
+      <Collector CollectPath="Assets/Bundle/Scenes" CollectGUID="c6d5cb0d89cc7df4f88e8bb5447f72d8" CollectType="MainAssetCollector" AddressRule="AddressByFileName" PackRule="PackDirectory" FilterRule="CollectAll" UserData="" AssetTags="" />
+    </Group>
+    <Group GroupActiveRule="EnableGroup" GroupName="Shaders" GroupDesc="着色器" AssetTags="">
+      <Collector CollectPath="Assets/Bundle/Shaders" CollectGUID="83e88afde91f3124481532e40f7b9b50" CollectType="MainAssetCollector" AddressRule="AddressByFileName" PackRule="PackDirectory" FilterRule="CollectAll" UserData="" AssetTags="" />
+    </Group>
+    <Group GroupActiveRule="EnableGroup" GroupName="Texture" GroupDesc="贴图" AssetTags="">
+      <Collector CollectPath="Assets/Bundle/Texture" CollectGUID="993bcc6222b36f14c82a275d5f7dd552" CollectType="MainAssetCollector" AddressRule="AddressByFileName" PackRule="PackDirectory" FilterRule="CollectAll" UserData="" AssetTags="" />
+    </Group>
+    <Group GroupActiveRule="EnableGroup" GroupName="Atlas" GroupDesc="图集" AssetTags="">
+      <Collector CollectPath="Assets/Bundle/Atlas" CollectGUID="87c229f73b2fe7749bbc24e4fecc13a6" CollectType="MainAssetCollector" AddressRule="AddressByFileName" PackRule="PackDirectory" FilterRule="CollectAll" UserData="" AssetTags="" />
+    </Group>
+    <Group GroupActiveRule="EnableGroup" GroupName="TableData" GroupDesc="配置表数据" AssetTags="">
+      <Collector CollectPath="Assets/Bundle/TableData" CollectGUID="79e92a0d00edfb94aab9c8ed9d75118f" CollectType="MainAssetCollector" AddressRule="AddressByFileName" PackRule="PackDirectory" FilterRule="CollectAll" UserData="" AssetTags="" />
+    </Group>
+    <Group GroupActiveRule="EnableGroup" GroupName="Animation" GroupDesc="动画" AssetTags="">
+      <Collector CollectPath="Assets/Bundle/Animation" CollectGUID="e830b5fe381958b44943f90c87cd316c" CollectType="MainAssetCollector" AddressRule="AddressByFileName" PackRule="PackDirectory" FilterRule="CollectAll" UserData="" AssetTags="" />
+    </Group>
+    <Group GroupActiveRule="EnableGroup" GroupName="SOData" GroupDesc="ScriptObject数据" AssetTags="">
+      <Collector CollectPath="Assets/Bundle/SOData" CollectGUID="25a3c0b0c0ac60f40bd10966507401e9" CollectType="MainAssetCollector" AddressRule="AddressByFileName" PackRule="PackDirectory" FilterRule="CollectAll" UserData="" AssetTags="" />
+    </Group>
+  </Package>
+  <Package PackageName="DllPackage" PackageDesc="dll资源包" AutoAddressable="False" LocationToLower="False" IncludeAssetGUID="False" IgnoreRuleName="RawFileIgnoreRule">
+    <Group GroupActiveRule="EnableGroup" GroupName="AOTDll" GroupDesc="AOT程序集" AssetTags="">
+      <Collector CollectPath="Assets/Bundle/AOTDll" CollectGUID="99675685dcc11bd41b6c11db6d328980" CollectType="MainAssetCollector" AddressRule="AddressByFileName" PackRule="PackRawFile" FilterRule="CollectAll" UserData="" AssetTags="" />
+    </Group>
+    <Group GroupActiveRule="EnableGroup" GroupName="HotUpdateDll" GroupDesc="热更程序集" AssetTags="">
+      <Collector CollectPath="Assets/Bundle/HotUpdateDll" CollectGUID="73a48d32aad4cf74ab163e530a59df27" CollectType="MainAssetCollector" AddressRule="AddressByFileName" PackRule="PackRawFile" FilterRule="CollectAll" UserData="" AssetTags="" />
+    </Group>
+  </Package>
+</root>
