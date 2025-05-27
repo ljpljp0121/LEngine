@@ -1,0 +1,10 @@
+<module name="UI">
+    <bean name="UIWnd">
+        <var name="Name" type="string" alias="名称" />
+        <var name="Path" type="string"/>
+        <var name="Layer" type="int"/>
+        <var name="DestroyOnHide" type="bool"/>
+    </bean>
+
+    <table name="TbUIWnd" index="Name" mode="map"  value="UIWnd"  input="UIWnd.xlsx"/>
+</module>

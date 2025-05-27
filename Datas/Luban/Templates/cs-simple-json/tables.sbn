@@ -1,0 +1,30 @@
+using Luban;
+using SimpleJSON;
+
+{{namespace_with_grace_begin __namespace}}
+
+public interface IVOFun
+{
+    void _LoadData();
+}
+
+public partial class {{__name}}
+{
+    {{~for table in __tables ~}}
+{{~if table.comment != '' ~}}
+    /// <summary>
+    /// {{escape_comment table.comment}}
+    /// </summary>
+{{~end~}}
+    public {{table.full_name}} {{format_property_name __code_style table.name}} {get; }
+    {{~end~}}
+
+    public {{__name}}(){}
+    
+    private void ResolveRef()
+    {
+        
+    }
+}
+
+{{namespace_with_grace_end __namespace}}

@@ -1,0 +1,38 @@
+[
+  {
+    "Name": "StartPanel",
+    "Path": "MainUI/StartPanel",
+    "Layer": 1,
+    "DestroyOnHide": true
+  },
+  {
+    "Name": "SelectCanvas",
+    "Path": "MainUI/SelectCanvas",
+    "Layer": 1,
+    "DestroyOnHide": true
+  },
+  {
+    "Name": "TestPanel1",
+    "Path": "MainUI/TestPanel1",
+    "Layer": 1,
+    "DestroyOnHide": true
+  },
+  {
+    "Name": "TestPanel2",
+    "Path": "MainUI/TestPanel2",
+    "Layer": 1,
+    "DestroyOnHide": true
+  },
+  {
+    "Name": "TestPanel3",
+    "Path": "MainUI/TestPanel3",
+    "Layer": 3,
+    "DestroyOnHide": true
+  },
+  {
+    "Name": "TestPanel4",
+    "Path": "MainUI/TestPanel4",
+    "Layer": 3,
+    "DestroyOnHide": true
+  }
+]
