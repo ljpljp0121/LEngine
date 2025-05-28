@@ -1,0 +1,17 @@
+{
+    "name": "Client_Logic",
+    "rootNamespace": "",
+    "references": [
+        "GUID:a03771a89dab64542876ef27e85936cf",
+        "GUID:2a81c6962524d424a8ef5072bd3b0fa0"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

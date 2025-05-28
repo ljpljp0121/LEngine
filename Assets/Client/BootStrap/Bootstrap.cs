@@ -3,26 +3,8 @@ using System.Threading.Tasks;
 using UnityEngine;
 using YooAsset;
 
-/// <summary>
-/// 存档系统类型
-/// </summary>
-public enum SaveSystemType
-{
-    Binary,
-    Json
-}
-
 public class Bootstrap : MonoBehaviour
 {
-    public SaveSystemType SaveSystemType = SaveSystemType.Binary;
-
-    [Title("Assets Setting")]
-    public EPlayMode PlayMode = EPlayMode.EditorSimulateMode;
-    public string ResourcePackageName = "ResourcePackage";
-    public string DllPackageName = "DllPackage";
-    public string Version = "v1.0.0";
-
-
     public static Bootstrap Instance { get; set; }
 
     private void Awake()
@@ -33,7 +15,7 @@ public class Bootstrap : MonoBehaviour
             return;
         }
 
-        Debug.Log($"资源系统运行模式：{PlayMode}");
+        Debug.Log($"资源系统运行模式：{Settings.BootConfig.PlayMode}");
         Instance = this;
         DontDestroyOnLoad(gameObject);
         BootTaskUtil.Run(async () =>
@@ -45,9 +27,9 @@ public class Bootstrap : MonoBehaviour
     private async Task ReadyAsset()
     {
         YooAssets.Initialize();
-        await StartLoadUtils.InitDll(DllPackageName, PlayMode);
-        await StartLoadUtils.InitResource(ResourcePackageName, PlayMode);
-        var package = YooAssets.TryGetPackage(ResourcePackageName);
+        await StartLoadUtils.InitDll(Settings.BootConfig.DllPackageName, Settings.BootConfig.PlayMode);
+        await StartLoadUtils.InitResource(Settings.BootConfig.ResourcePackageName, Settings.BootConfig.PlayMode);
+        var package = YooAssets.TryGetPackage(Settings.BootConfig.ResourcePackageName);
         YooAssets.SetDefaultPackage(package);
     }
 }

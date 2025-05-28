@@ -12,21 +12,6 @@ public class StartLoadUtils
 {
     private const int MAX_RETRY_TIME = 3;
 
-    public static List<string> AOTMetaAssemblyFiles { get; } = new List<string>()
-    {
-        "mscorlib.dll",
-        "System.dll",
-        "System.Core.dll",
-    };
-
-    public static List<string> HotUpdateAssets { get; } = new List<string>() //顺序很重要,越下层的越先加载
-    {
-        "Client_Base.dll",
-        "Client_Logic.dll",
-        "Client_GamePlay.dll",
-        "Client_UI.dll",
-    };
-
     public static Dictionary<string, byte[]> assetDataDic = new Dictionary<string, byte[]>();
 
     public static async Task InitDll(string packageName, EPlayMode playMode)
@@ -205,8 +190,8 @@ public class StartLoadUtils
     {
         Debug.Log($"加载热更DLL Package{packageName}");
         var package = YooAssets.GetPackage(packageName);
-        await LoadDllAssets(package, AOTMetaAssemblyFiles, "AOTDll", true);
-        await LoadDllAssets(package, HotUpdateAssets, "HotUpdateDll");
+        await LoadDllAssets(package, Settings.BootConfig.AOTMetaAssemblyFiles, "AOTDll", true);
+        await LoadDllAssets(package, Settings.BootConfig.HotUpdateAssets, "HotUpdateDll");
         LoadHotUpdateAssemblies();
     }
 
@@ -260,9 +245,9 @@ public class StartLoadUtils
 
     private static void LoadHotUpdateAssemblies()
     {
-        for (var i = 0; i < HotUpdateAssets.Count; i++)
+        for (var i = 0; i < Settings.BootConfig.HotUpdateAssets.Count; i++)
         {
-            var asset = HotUpdateAssets[i];
+            var asset = Settings.BootConfig.HotUpdateAssets[i];
             if (assetDataDic.TryGetValue(asset, out byte[] dllData))
             {
                 try
@@ -285,29 +270,8 @@ public class StartLoadUtils
     {
         string bucketName = "unity-2540297235";
         string endpoint = "oss-cn-hangzhou.aliyuncs.com";
-        string version = Bootstrap.Instance.Version;
-        string hostServerIP = $"https://{bucketName}.{endpoint}/LPublic/{version}/{packageName}";
+        string hostServerIP = $"https://{bucketName}.{endpoint}/{Settings.BootConfig.Version}/{Settings.BootConfig.Version}/{packageName}";
 
         return hostServerIP;
-
-        // #if UNITY_EDITOR
-        //         if (UnityEditor.EditorUserBuildSettings.activeBuildTarget == UnityEditor.BuildTarget.Android)
-        //             return $"{hostServerIP}";
-        //         else if (UnityEditor.EditorUserBuildSettings.activeBuildTarget == UnityEditor.BuildTarget.iOS)
-        //             return $"{hostServerIP}";
-        //         else if (UnityEditor.EditorUserBuildSettings.activeBuildTarget == UnityEditor.BuildTarget.WebGL)
-        //             return $"{hostServerIP}";
-        //         else
-        //             return $"{hostServerIP}";
-        // #else
-        //         if (Application.platform == RuntimePlatform.Android)
-        //             return $"{hostServerIP}";
-        //         else if (Application.platform == RuntimePlatform.IPhonePlayer)
-        //             return $"{hostServerIP}";
-        //         else if (Application.platform == RuntimePlatform.WebGLPlayer)
-        //             return $"{hostServerIP}";
-        //         else
-        //             return $"{hostServerIP}";
-        // #endif
     }
 }
