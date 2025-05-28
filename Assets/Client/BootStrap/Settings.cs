@@ -30,17 +30,26 @@ public class Settings : MonoBehaviour
     {
         get
         {
+#if UNITY_EDITOR
             if (Instance == null)
             {
-                Debug.LogError("Settings instance is not initialized. Please ensure Settings is present in the scene.");
-                return null;
+                string[] guids = UnityEditor.AssetDatabase.FindAssets("t:BootConfig");
+                if (guids.Length >= 1)
+                {
+                    string path = UnityEditor.AssetDatabase.GUIDToAssetPath(guids[0]);
+                    return UnityEditor.AssetDatabase.LoadAssetAtPath<BootConfig>(path);
+                }
             }
 
-            Instance.bootConfig = Resources.Load<BootConfig>("LEngineConfig");
+#endif
             if (Instance.bootConfig == null)
             {
-                Instance.bootConfig = ScriptableObject.CreateInstance<BootConfig>();
-                Debug.Log("not found boot config, create a new config");
+                Instance.bootConfig = Resources.Load<BootConfig>("LEngineConfig");
+                if (Instance.bootConfig == null)
+                {
+                    Instance.bootConfig = ScriptableObject.CreateInstance<BootConfig>();
+                    Debug.Log("not found boot config, create a new config");
+                }
             }
             return Instance.bootConfig;
         }

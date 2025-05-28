@@ -128,13 +128,13 @@ MonoBehaviour:
         FilterRuleName: CollectAll
         AssetTags: 
         UserData: 
-    - GroupName: TableData
-      GroupDesc: "\u914D\u7F6E\u8868\u6570\u636E"
+    - GroupName: Config
+      GroupDesc: "\u914D\u7F6E\u6570\u636E"
       AssetTags: 
       ActiveRuleName: EnableGroup
       Collectors:
-      - CollectPath: Assets/Bundle/TableData
-        CollectorGUID: 79e92a0d00edfb94aab9c8ed9d75118f
+      - CollectPath: Assets/Bundle/Config
+        CollectorGUID: dc2690cf751fbcb49873465a54fadeff
         CollectorType: 0
         AddressRuleName: AddressByFileName
         PackRuleName: PackDirectory
@@ -154,19 +154,6 @@ MonoBehaviour:
         FilterRuleName: CollectAll
         AssetTags: 
         UserData: 
-    - GroupName: SOData
-      GroupDesc: "ScriptObject\u6570\u636E"
-      AssetTags: 
-      ActiveRuleName: EnableGroup
-      Collectors:
-      - CollectPath: Assets/Bundle/SOData
-        CollectorGUID: 25a3c0b0c0ac60f40bd10966507401e9
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
   - PackageName: DllPackage
     PackageDesc: "dll\u8D44\u6E90\u5305"
     EnableAddressable: 0
@@ -175,26 +162,13 @@ MonoBehaviour:
     AutoCollectShaders: 0
     IgnoreRuleName: RawFileIgnoreRule
     Groups:
-    - GroupName: AOTDll
-      GroupDesc: "AOT\u7A0B\u5E8F\u96C6"
+    - GroupName: Dll
+      GroupDesc: "Dll\u5305"
       AssetTags: 
       ActiveRuleName: EnableGroup
       Collectors:
-      - CollectPath: Assets/Bundle/AOTDll
-        CollectorGUID: 99675685dcc11bd41b6c11db6d328980
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackRawFile
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
-    - GroupName: HotUpdateDll
-      GroupDesc: "\u70ED\u66F4\u7A0B\u5E8F\u96C6"
-      AssetTags: 
-      ActiveRuleName: EnableGroup
-      Collectors:
-      - CollectPath: Assets/Bundle/HotUpdateDll
-        CollectorGUID: 73a48d32aad4cf74ab163e530a59df27
+      - CollectPath: Assets/Bundle/Dll
+        CollectorGUID: 46fb9ebb65b625b42953467a06f223a7
         CollectorType: 0
         AddressRuleName: AddressByFileName
         PackRuleName: PackRawFile

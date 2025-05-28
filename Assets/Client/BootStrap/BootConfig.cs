@@ -47,4 +47,6 @@ public class BootConfig : ScriptableObject
         "Client_Gameplay.dll",
         "Client_UI.dll",
     };
+
+    public string AssemblyAssetPath = "Assets/Bundle/Dll";
 }

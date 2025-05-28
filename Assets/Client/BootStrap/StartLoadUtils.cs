@@ -190,20 +190,20 @@ public class StartLoadUtils
     {
         Debug.Log($"加载热更DLL Package{packageName}");
         var package = YooAssets.GetPackage(packageName);
-        await LoadDllAssets(package, Settings.BootConfig.AOTMetaAssemblyFiles, "AOTDll", true);
-        await LoadDllAssets(package, Settings.BootConfig.HotUpdateAssets, "HotUpdateDll");
+        await LoadDllAssets(package, Settings.BootConfig.AOTMetaAssemblyFiles, true);
+        await LoadDllAssets(package, Settings.BootConfig.HotUpdateAssets);
         LoadHotUpdateAssemblies();
     }
 
     /// <summary>
     /// 加载DLL资源
     /// </summary>
-    private static async Task LoadDllAssets(ResourcePackage package, List<string> assets, string pathName,
+    private static async Task LoadDllAssets(ResourcePackage package, List<string> assets,
         bool isAOTMetadata = false)
     {
         foreach (var asset in assets)
         {
-            RawFileHandle handle = package.LoadRawFileAsync($"Assets/Bundle/{pathName}/{asset}");
+            RawFileHandle handle = package.LoadRawFileAsync($"Assets/Bundle/Dll/{asset}");
             await handle;
             if (handle.Status != EOperationStatus.Succeed)
             {
