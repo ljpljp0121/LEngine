@@ -276,7 +276,7 @@ public class StartLoadUtils
     {
         string bucketName = "unity-2540297235";
         string endpoint = "oss-cn-hangzhou.aliyuncs.com";
-        string hostServerIP = $"https://{bucketName}.{endpoint}/{bootConfig.Version}/{bootConfig.Version}/{packageName}";
+        string hostServerIP = $"https://{bucketName}.{endpoint}/{bootConfig.ProjectName}/{bootConfig.Version}/{packageName}";
 
         return hostServerIP;
     }

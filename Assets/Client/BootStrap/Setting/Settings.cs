@@ -14,9 +14,9 @@ public class Settings : MonoBehaviour
             {
                 _instance = FindObjectOfType<Settings>();
 
-                if (_instance != null)
+                if (_instance == null)
                 {
-                    return _instance;
+                    _instance = GameObject.Find("Setting").AddComponent<Settings>();
                 }
             }
 
@@ -25,6 +25,7 @@ public class Settings : MonoBehaviour
     }
 
     [SerializeField] private BootConfig bootConfig;
+    [SerializeField] private EngineConfig engineConfig;
 
     public static BootConfig BootConfig
     {
@@ -44,14 +45,33 @@ public class Settings : MonoBehaviour
 #endif
             if (Instance.bootConfig == null)
             {
-                Instance.bootConfig = Resources.Load<BootConfig>("LEngineConfig");
+                Instance.bootConfig = Resources.Load<BootConfig>("BootConfig");
                 if (Instance.bootConfig == null)
                 {
                     Instance.bootConfig = ScriptableObject.CreateInstance<BootConfig>();
                     Debug.Log("not found boot config, create a new config");
                 }
             }
+
             return Instance.bootConfig;
         }
     }
+
+    public static EngineConfig EngineConfig
+    {
+        get
+        {
+            if (Instance.engineConfig == null)
+            {
+                Instance.engineConfig = Resources.Load<EngineConfig>("EngineConfig");
+                if (Instance.engineConfig == null)
+                {
+                    Instance.engineConfig = ScriptableObject.CreateInstance<EngineConfig>();
+                    Debug.Log("not found engine config, create a new config");
+                }
+            }
+            return Instance.engineConfig;
+        }
+    }
+
 }

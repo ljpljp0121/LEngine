@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using YooAsset;
 
-[CreateAssetMenu(fileName = "LEngineConfig", menuName = "LEngine/LEngineConfig")]
+[CreateAssetMenu(fileName = "BootConfig", menuName = "LEngine/BootConfig")]
 public class BootConfig : ScriptableObject
 {
     /// <summary>
