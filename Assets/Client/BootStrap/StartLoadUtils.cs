@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using YooAsset;
+using MergetoolGui;
 
 
 public class StartLoadUtils
@@ -13,6 +14,8 @@ public class StartLoadUtils
     private const int MAX_RETRY_TIME = 3;
 
     public static Dictionary<string, byte[]> assetDataDic = new Dictionary<string, byte[]>();
+
+    private static BootConfig bootConfig => Settings.BootConfig;
 
     public static async Task InitDll(string packageName, EPlayMode playMode)
     {
@@ -29,6 +32,9 @@ public class StartLoadUtils
         Debug.Log($"load assetPackage success Package{packageName}");
     }
 
+    /// <summary>
+    /// 加载资源包
+    /// </summary>
     private static async Task LoadPackage(string packageName, EPlayMode playMode)
     {
         await InitPackage(packageName, playMode); //初始化资源包
@@ -190,8 +196,8 @@ public class StartLoadUtils
     {
         Debug.Log($"加载热更DLL Package{packageName}");
         var package = YooAssets.GetPackage(packageName);
-        await LoadDllAssets(package, Settings.BootConfig.AOTMetaAssemblyFiles, true);
-        await LoadDllAssets(package, Settings.BootConfig.HotUpdateAssets);
+        await LoadDllAssets(package, bootConfig.AOTMetaAssemblyFiles, true);
+        await LoadDllAssets(package, bootConfig.HotUpdateAssets);
         LoadHotUpdateAssemblies();
     }
 
@@ -203,7 +209,7 @@ public class StartLoadUtils
     {
         foreach (var asset in assets)
         {
-            RawFileHandle handle = package.LoadRawFileAsync($"Assets/Bundle/Dll/{asset}");
+            RawFileHandle handle = package.LoadRawFileAsync($"{bootConfig.AssemblyAssetPath}/{asset}");
             await handle;
             if (handle.Status != EOperationStatus.Succeed)
             {
@@ -245,9 +251,9 @@ public class StartLoadUtils
 
     private static void LoadHotUpdateAssemblies()
     {
-        for (var i = 0; i < Settings.BootConfig.HotUpdateAssets.Count; i++)
-        {
-            var asset = Settings.BootConfig.HotUpdateAssets[i];
+        for (var i = 0; i < bootConfig.HotUpdateAssets.Count; i++)
+        {   
+            var asset = bootConfig.HotUpdateAssets[i];
             if (assetDataDic.TryGetValue(asset, out byte[] dllData))
             {
                 try
@@ -270,7 +276,7 @@ public class StartLoadUtils
     {
         string bucketName = "unity-2540297235";
         string endpoint = "oss-cn-hangzhou.aliyuncs.com";
-        string hostServerIP = $"https://{bucketName}.{endpoint}/{Settings.BootConfig.Version}/{Settings.BootConfig.Version}/{packageName}";
+        string hostServerIP = $"https://{bucketName}.{endpoint}/{bootConfig.Version}/{bootConfig.Version}/{packageName}";
 
         return hostServerIP;
     }

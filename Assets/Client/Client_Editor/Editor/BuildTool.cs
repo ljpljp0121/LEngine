@@ -38,9 +38,11 @@ public class BuildTool : OdinEditorWindow
     {
         SetPackageChoices();
         BuildTarget = EditorUserBuildSettings.activeBuildTarget;
+        bootConfig = Settings.BootConfig;
     }
 
     private static IEnumerable PackageChoices = new ValueDropdownList<string>();
+    private BootConfig bootConfig;
 
     [Title("基本配置")]
     [SerializeField, LabelText("Build管线")]
@@ -88,7 +90,7 @@ public class BuildTool : OdinEditorWindow
             + "\\"
             + SettingsUtil.GetAssembliesPostIl2CppStripDir(EditorUserBuildSettings.activeBuildTarget)
                 .Replace('/', '\\');
-        string aotDllTextDirPath = System.Environment.CurrentDirectory + "\\" + Settings.BootConfig.AssemblyAssetPath.Replace("/", "\\");
+        string aotDllTextDirPath = System.Environment.CurrentDirectory + "\\" + bootConfig.AssemblyAssetPath.Replace("/", "\\");
 
         foreach (var dllName in SettingsUtil.AOTAssemblyNames)
         {
@@ -114,7 +116,7 @@ public class BuildTool : OdinEditorWindow
                 .Replace('/', '\\');
 
         string hotUpdateDllTextDirPath =
-            System.Environment.CurrentDirectory + "\\" + Settings.BootConfig.AssemblyAssetPath.Replace('/', '\\');
+            System.Environment.CurrentDirectory + "\\" + bootConfig.AssemblyAssetPath.Replace('/', '\\');
 
         foreach (string dllName in SettingsUtil.HotUpdateAssemblyNamesExcludePreserved)
         {
