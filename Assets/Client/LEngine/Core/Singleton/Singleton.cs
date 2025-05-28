@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public abstract class Singleton<T> where T : Singleton<T>, new()
+namespace LEngine
 {
-    protected static T instance;
-    public static T Instance
+    public abstract class Singleton<T> where T : Singleton<T>, new()
     {
-        get { return instance ??= new T(); }
+        protected static T instance;
+        public static T Instance
+        {
+            get { return instance ??= new T(); }
+        }
     }
 }

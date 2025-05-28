@@ -1,3 +1,5 @@
+using LEngine;
+
 public class InitGameplayOnLoad 
 {
     public static bool loaded = false;

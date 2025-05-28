@@ -2,45 +2,48 @@ using System;
 using System.Reflection;
 using UnityEngine;
 
-public class InitLEngineOnLoad
+namespace LEngine
 {
-    public static bool loaded = false;
-    public static void Init()
+    public class InitLEngineOnLoad
     {
-        if (!loaded)
+        public static bool loaded = false;
+        public static void Init()
         {
-            InitOnLoadMethod.ProcessInitOnLoadMethod(typeof(InitLEngineOnLoad));
-            loaded = true;
+            if (!loaded)
+            {
+                InitOnLoadMethod.ProcessInitOnLoadMethod(typeof(InitLEngineOnLoad));
+                loaded = true;
+            }
         }
     }
-}
 
-[AttributeUsage(AttributeTargets.Method)]
-public class InitOnLoadAttribute : Attribute
-{
-}
-
-public class InitOnLoadMethod
-{
-    public static void ProcessInitOnLoadMethod(Type assemblyClassType)
+    [AttributeUsage(AttributeTargets.Method)]
+    public class InitOnLoadAttribute : Attribute
     {
-        Type[] types = assemblyClassType.Assembly.GetTypes();
-        foreach (Type type in types)
+    }
+
+    public class InitOnLoadMethod
+    {
+        public static void ProcessInitOnLoadMethod(Type assemblyClassType)
         {
-            MethodInfo[] info = type.GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
-            foreach (MethodInfo property in info)
+            Type[] types = assemblyClassType.Assembly.GetTypes();
+            foreach (Type type in types)
             {
-                foreach (var attribute in property.GetCustomAttributes(false))
+                MethodInfo[] info = type.GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
+                foreach (MethodInfo property in info)
                 {
-                    if (attribute.GetType() == typeof(InitOnLoadAttribute))
+                    foreach (var attribute in property.GetCustomAttributes(false))
                     {
-                        try
+                        if (attribute.GetType() == typeof(InitOnLoadAttribute))
                         {
-                            property.Invoke(null, null);
-                        }
-                        catch (Exception e)
-                        {
-                            Debug.Log(e.StackTrace);
+                            try
+                            {
+                                property.Invoke(null, null);
+                            }
+                            catch (Exception e)
+                            {
+                                Debug.Log(e.StackTrace);
+                            }
                         }
                     }
                 }

@@ -1,3 +1,5 @@
+using LEngine;
+
 public class InitUIOnLoad
 {
     public static bool loaded = false;

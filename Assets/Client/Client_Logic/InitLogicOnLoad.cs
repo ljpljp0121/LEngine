@@ -1,3 +1,5 @@
+using LEngine;
+
 public class InitLogicOnLoad
 {
     public static bool loaded = false;
