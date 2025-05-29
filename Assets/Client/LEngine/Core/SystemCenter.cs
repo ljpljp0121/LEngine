@@ -4,16 +4,16 @@ using UnityEngine;
 
 namespace LEngine
 {
-    public static class ModuleSystem
+    public static class SystemCenter
     {
         internal const int DESIGN_MODULE_COUNT = 16;
 
-        private static readonly Dictionary<Type, IModule> moduleMaps =
-            new Dictionary<Type, IModule>(DESIGN_MODULE_COUNT);
+        private static readonly Dictionary<Type, ISystem> systemMaps =
+            new Dictionary<Type, ISystem>(DESIGN_MODULE_COUNT);
 
-        private static readonly LinkedList<IModule> modules = new LinkedList<IModule>();
-        private static readonly LinkedList<IModule> updateModules = new LinkedList<IModule>();
-        private static readonly List<IModuleUpdate> updateExecuteList = new List<IModuleUpdate>(DESIGN_MODULE_COUNT);
+        private static readonly LinkedList<ISystem> systems = new LinkedList<ISystem>();
+        private static readonly LinkedList<ISystem> updateSystems = new LinkedList<ISystem>();
+        private static readonly List<ISystemUpdate> updateExecuteList = new List<ISystemUpdate>(DESIGN_MODULE_COUNT);
 
         private static bool isExecuteListDirty;
 
@@ -37,18 +37,18 @@ namespace LEngine
         /// </summary>
         public static void Shutdown()
         {
-            for (LinkedListNode<IModule> current = modules.Last; current != null; current = current.Previous)
+            for (LinkedListNode<ISystem> current = systems.Last; current != null; current = current.Previous)
             {
                 current.Value.Shutdown();
             }
 
-            modules.Clear();
-            moduleMaps.Clear();
-            updateModules.Clear();
+            systems.Clear();
+            systemMaps.Clear();
+            updateSystems.Clear();
             updateExecuteList.Clear();
         }
 
-        public static T GetModule<T>() where T : class
+        public static T GetSystem<T>() where T : class
         {
             Type interfaceType = typeof(T);
             if (!interfaceType.IsInterface)
@@ -56,7 +56,7 @@ namespace LEngine
                 Debug.LogError($"You must get module by interface, but {interfaceType.FullName} is not.");
             }
 
-            if (moduleMaps.TryGetValue(interfaceType, out IModule module))
+            if (systemMaps.TryGetValue(interfaceType, out ISystem module))
             {
                 return module as T;
             }
@@ -68,85 +68,85 @@ namespace LEngine
                 Debug.LogError($"Module type '{moduleName}' not found.");
                 return null;
             }
-            return GetModule(moduleType) as T;
+            return GetSystem(moduleType) as T;
         }
 
-        public static IModule GetModule(Type moduleType)
+        public static ISystem GetSystem(Type moduleType)
         {
-            return moduleMaps.TryGetValue(moduleType, out IModule module) ? module : CreateModule(moduleType);
+            return systemMaps.TryGetValue(moduleType, out ISystem module) ? module : CreateSystem(moduleType);
         }
 
         /// <summary>
         /// 创建游戏框架模块。
         /// </summary>
-        private static IModule CreateModule(Type moduleType)
+        private static ISystem CreateSystem(Type moduleType)
         {
-            IModule module = (IModule)Activator.CreateInstance(moduleType);
-            if (module == null)
+            ISystem system = (ISystem)Activator.CreateInstance(moduleType);
+            if (system == null)
             {
                 Debug.LogError($"Can not create module {moduleType.FullName}");
             }
 
-            moduleMaps[moduleType] = module;
+            systemMaps[moduleType] = system;
 
-            RegisterUpdate(module);
+            RegisterUpdate(system);
 
-            return module;
+            return system;
         }
 
-        public static T RegisterModule<T>(IModule module) where T : class
+        public static T RegisterSystem<T>(ISystem system) where T : class
         {
             Type interfaceType = typeof(T);
             if (!interfaceType.IsInterface)
             {
                 Debug.LogError($"You must get module by interface, but {interfaceType.FullName} is not.");
             }
-            moduleMaps[interfaceType] = module;
-            RegisterUpdate(module);
-            return module as T;
+            systemMaps[interfaceType] = system;
+            RegisterUpdate(system);
+            return system as T;
         }
 
-        private static void RegisterUpdate(IModule module)
+        private static void RegisterUpdate(ISystem system)
         {
-            LinkedListNode<IModule> current = modules.First;
+            LinkedListNode<ISystem> current = systems.First;
             while (current != null)
             {
-                if (module.Priority > current.Value.Priority)
+                if (system.Priority > current.Value.Priority)
                     break;
                 current = current.Next;
             }
 
             if (current != null)
-                modules.AddBefore(current, module);
+                systems.AddBefore(current, system);
             else
-                modules.AddLast(module);
+                systems.AddLast(system);
 
-            Type interfaceType = typeof(IModuleUpdate);
-            bool implementsInterface = interfaceType.IsInstanceOfType(module);
+            Type interfaceType = typeof(ISystemUpdate);
+            bool implementsInterface = interfaceType.IsInstanceOfType(system);
             if (implementsInterface)
             {
-                LinkedListNode<IModule> currentUpdate = updateModules.First;
+                LinkedListNode<ISystem> currentUpdate = updateSystems.First;
                 while (currentUpdate != null)
                 {
-                    if (module.Priority > currentUpdate.Value.Priority)
+                    if (system.Priority > currentUpdate.Value.Priority)
                         break;
                     currentUpdate = currentUpdate.Next;
                 }
                 if (currentUpdate != null)
-                    updateModules.AddBefore(currentUpdate, module);
+                    updateSystems.AddBefore(currentUpdate, system);
                 else
-                    updateModules.AddLast(module);
+                    updateSystems.AddLast(system);
                 isExecuteListDirty = true;
             }
-            module.OnInit();
+            system.OnInit();
         }
 
         private static void BuildExecuteList()
         {
             updateExecuteList.Clear();
-            foreach (IModule module in updateModules)
+            foreach (ISystem module in updateSystems)
             {
-                updateExecuteList.Add(module as IModuleUpdate);
+                updateExecuteList.Add(module as ISystemUpdate);
             }
         }
     }

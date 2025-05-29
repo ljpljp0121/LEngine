@@ -1,6 +1,6 @@
 namespace LEngine
 {
-    public interface IModuleUpdate
+    public interface ISystemUpdate
     {
         void Update(float elapseSeconds, float realElapseSeconds);
     }
@@ -8,7 +8,7 @@ namespace LEngine
     /// <summary>
     /// ¿ò¼ÜÄ£¿é»ùÀà
     /// </summary>
-    public interface IModule
+    public interface ISystem
     {
         public int Priority => 0;
 

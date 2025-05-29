@@ -1,3 +1,18 @@
 {
-	"name": "LEngine"
+    "name": "LEngine",
+    "rootNamespace": "",
+    "references": [
+        "GUID:e34a5702dd353724aa315fb8011f08c3",
+        "GUID:b3469b7ee523c454f8b2f1a2ae23f145",
+        "GUID:f8241a5fbb6392345999b75a13ee960f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

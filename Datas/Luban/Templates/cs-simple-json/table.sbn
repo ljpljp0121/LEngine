@@ -1,3 +1,4 @@
+using LEngine;
 using Luban;
 using SimpleJSON;
 using UnityEngine;
@@ -145,7 +146,7 @@ public partial class {{__name}} : IVOFun
 
     private string GetJson(string fileName)
     {
-        var textAsset = AssetSystem.LoadAsset<TextAsset>($"TableData/{fileName}.json");
+        var textAsset = Game.Asset.LoadAsset<TextAsset>($"TableData/{fileName}.json");
         return textAsset.text;
     }
 }
