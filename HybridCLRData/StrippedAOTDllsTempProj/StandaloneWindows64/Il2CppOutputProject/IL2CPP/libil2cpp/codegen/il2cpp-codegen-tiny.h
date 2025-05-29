@@ -1,6 +1,6 @@
 #pragma once
 
-#include "il2cpp-codegen-common-small.h"
+#include "il2cpp-codegen-common.h"
 #include "il2cpp-object-internals.h"
 #include "il2cpp-debug-metadata.h"
 #include "gc/GarbageCollector.h"
@@ -23,6 +23,7 @@
 #include "utils/MemoryUtils.h"
 #include "utils/StringView.h"
 #include <string>
+#include <cstdlib>
 
 struct Exception_t;
 struct Delegate_t;
@@ -162,7 +163,7 @@ struct Il2CppFakeBox : RuntimeObject
 #define IL2CPP_PUSH_ACTIVE_EXCEPTION(Exception) \
     __active_exceptions.push(Exception)
 
-#if HYBRIDCLR_UNITY_VERSION >= 20210331
+#if HYBRIDCLR_UNITY_VERSION >= 20220311
 #define IL2CPP_POP_ACTIVE_EXCEPTION(ExcType) \
     (ExcType)__active_exceptions.pop()
 #else

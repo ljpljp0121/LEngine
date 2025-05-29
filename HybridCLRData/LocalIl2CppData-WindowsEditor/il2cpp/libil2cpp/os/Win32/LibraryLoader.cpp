@@ -60,6 +60,7 @@ namespace os
         HARDCODED_DEPENDENCY_FUNCTION(FindFirstFileExW),
         HARDCODED_DEPENDENCY_FUNCTION(FindNextFileW),
         HARDCODED_DEPENDENCY_FUNCTION(MoveFileExW),
+        HARDCODED_DEPENDENCY_FUNCTION(MultiByteToWideChar),
         HARDCODED_DEPENDENCY_FUNCTION(RemoveDirectoryW),
         HARDCODED_DEPENDENCY_FUNCTION(ReplaceFileW),
         HARDCODED_DEPENDENCY_FUNCTION(SetFileAttributesW),
@@ -79,7 +80,7 @@ namespace os
 #endif
     };
 
-#if IL2CPP_TARGET_WINRT
+#if IL2CPP_TARGET_WINRT || IL2CPP_TARGET_WINDOWS_GAMES
     const HardcodedPInvokeDependencyFunction kBCryptFunctions[] =
     {
         HARDCODED_DEPENDENCY_FUNCTION(BCryptGenRandom),
@@ -119,7 +120,10 @@ namespace os
 // All these come without ".dll" extension!
     const HardcodedPInvokeDependencyLibrary kHardcodedPInvokeDependencies[] =
     {
-#if !IL2CPP_TARGET_WINDOWS_DESKTOP && !IL2CPP_TARGET_WINDOWS_GAMES // Some of these functions are win8+
+#if IL2CPP_TARGET_WINDOWS_GAMES
+        HARDCODED_DEPENDENCY_LIBRARY(L"bcrypt", kBCryptFunctions),
+#else
+#if !IL2CPP_TARGET_WINDOWS_DESKTOP // Some of these functions are win8+s
         HARDCODED_DEPENDENCY_LIBRARY(L"advapi32", kAdvapiFunctions),
         HARDCODED_DEPENDENCY_LIBRARY(L"api-ms-win-core-timezone-l1-1-0", kTimezoneFunctions),
 #endif
@@ -128,6 +132,7 @@ namespace os
 #if IL2CPP_TARGET_WINRT // Win8+, plus needs to be looked up dynamically on Xbox One
         HARDCODED_DEPENDENCY_LIBRARY(L"wintypes", kWinTypesFunctions),
         HARDCODED_DEPENDENCY_LIBRARY(L"bcrypt", kBCryptFunctions),
+#endif
 #endif
     };
 

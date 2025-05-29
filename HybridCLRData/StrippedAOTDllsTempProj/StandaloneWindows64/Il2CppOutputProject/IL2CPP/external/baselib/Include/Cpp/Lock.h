@@ -25,15 +25,16 @@ namespace baselib
 
             // Creates a lock synchronization primitive.
             // If there are not enough system resources to create a lock, process abort is triggered.
-            Lock() : m_LockData(Baselib_Lock_Create())
+            Lock()
             {
+                Baselib_Lock_CreateInplace(&m_LockData);
             }
 
             // Reclaim resources and memory held by lock.
             // If threads are waiting on the lock, calling free may trigger an assert and may cause process abort.
             ~Lock()
             {
-                Baselib_Lock_Free(&m_LockData);
+                Baselib_Lock_FreeInplace(&m_LockData);
             }
 
             // Acquire lock.

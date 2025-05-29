@@ -31,8 +31,9 @@ namespace baselib
 
             // Creates a reentrant lock synchronization primitive.
             // If there are not enough system resources to create a lock, process abort is triggered.
-            ReentrantLock() : m_ReentrantLockData(Baselib_ReentrantLock_Create())
+            ReentrantLock()
             {
+                Baselib_ReentrantLock_CreateInplace(&m_ReentrantLockData);
             }
 
             // Reclaim resources and memory held by lock.
@@ -41,7 +42,7 @@ namespace baselib
             // Calling this function with a nullptr result in a no-op
             ~ReentrantLock()
             {
-                Baselib_ReentrantLock_Free(&m_ReentrantLockData);
+                Baselib_ReentrantLock_FreeInplace(&m_ReentrantLockData);
             }
 
             // Acquire lock.

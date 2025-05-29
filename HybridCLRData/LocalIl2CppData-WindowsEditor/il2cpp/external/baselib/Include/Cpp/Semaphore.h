@@ -38,8 +38,9 @@ namespace baselib
 
             // Creates a counting semaphore synchronization primitive.
             // If there are not enough system resources to create a semaphore, process abort is triggered.
-            Semaphore() : m_SemaphoreData(Baselib_Semaphore_Create())
+            Semaphore()
             {
+                Baselib_Semaphore_CreateInplace(&m_SemaphoreData);
             }
 
             // Reclaim resources and memory held by the semaphore.
@@ -47,7 +48,7 @@ namespace baselib
             // If threads are waiting on the semaphore, destructor will trigger an assert and may cause process abort.
             ~Semaphore()
             {
-                Baselib_Semaphore_Free(&m_SemaphoreData);
+                Baselib_Semaphore_FreeInplace(&m_SemaphoreData);
             }
 
             // Wait for semaphore token to become available

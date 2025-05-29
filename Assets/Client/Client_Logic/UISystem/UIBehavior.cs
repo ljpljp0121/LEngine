@@ -38,7 +38,7 @@ namespace LEngine
 
         public bool IsVisible { get; private set; }
 
-        public bool IsShowing => UISystem.IsShow(wndInfo.Name);
+        public bool IsShowing => Game.UI.IsShow(wndInfo.Name);
 
         #endregion
 
@@ -180,17 +180,17 @@ namespace LEngine
 
         protected void ShowUI<T>(params object[] args) where T : UIBehavior
         {
-            UISystem.ShowUI<T>(args);
+            Game.UI.ShowUI<T>(args);
         }
 
         protected void HideUI<T>() where T : UIBehavior
         {
-            UISystem.HideUI<T>();
+            Game.UI.HideUI<T>();
         }
 
         protected void Hide()
         {
-            UISystem.HideUIByName(wndInfo.Name);
+            Game.UI.HideUIByName(wndInfo.Name);
         }
 
         #endregion
@@ -200,19 +200,19 @@ namespace LEngine
         public Task SetVisible(bool value)
         {
             IsVisible = value;
-            if (UISystem.SetVisibleFunc != null && this.gameObject != null)
+            if (Game.UI.SetVisibleFunc != null && this.gameObject != null)
             {
-                return UISystem.SetVisibleFunc(this.gameObject, value);
+                return Game.UI.SetVisibleFunc(this.gameObject, value);
             }
             return Task.CompletedTask;
         }
 
         public Task SetVisibleNotChangeVisible(bool value)
         {
-            if (UISystem.SetVisibleFunc != null && this.gameObject != null)
+            if (Game.UI.SetVisibleFunc != null && this.gameObject != null)
             {
-                return UISystem.SetVisibleFunc(this.gameObject, value);
-            }
+                return Game.UI.SetVisibleFunc(this.gameObject, value);
+            }   
             return Task.CompletedTask;
         }
 

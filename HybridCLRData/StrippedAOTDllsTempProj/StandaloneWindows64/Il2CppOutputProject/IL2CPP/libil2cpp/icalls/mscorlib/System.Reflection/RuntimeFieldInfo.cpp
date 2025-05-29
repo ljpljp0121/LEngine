@@ -10,8 +10,6 @@
 #include "vm/Runtime.h"
 #include "vm-utils/BlobReader.h"
 
-#include "hybridclr/metadata/MetadataUtil.h"
-
 namespace il2cpp
 {
 namespace icalls

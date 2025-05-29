@@ -42,9 +42,13 @@ enum { Baselib_SystemSemaphore_PlatformSize = 1 }; // unused but 1 to simplify t
     #define IMPORTED_SYMBOL __declspec(dllimport)
 #endif
 
-// Requires Windows 8
+// Requires Windows 8 or newer
 #ifndef PLATFORM_FUTEX_NATIVE_SUPPORT
-    #define PLATFORM_FUTEX_NATIVE_SUPPORT 0
+    #if NTDDI_VERSION <= 0x06010000 // NTDDI_WIN7
+        #define PLATFORM_FUTEX_NATIVE_SUPPORT 0
+    #else
+        #define PLATFORM_FUTEX_NATIVE_SUPPORT 1
+    #endif
 #endif
 
 // Malloc is specified to have 16 byte alignment on 64bit platforms.

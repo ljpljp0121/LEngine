@@ -1,4 +1,4 @@
-﻿
+﻿using LEngine;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -23,13 +23,13 @@ public class SuperScrollRect : ScrollRect, IPointerExitHandler
             isRestrainDrag = true;
         isOneTouchDrag = true;
         base.OnBeginDrag(eventData);
-        EventSystem.DispatchEvent(new E_OnSuperListBeginDrag(this.gameObject));
+        Game.Event.DispatchEvent(new E_OnSuperListBeginDrag(this.gameObject));
     }
 
     public override void OnEndDrag(PointerEventData eventData)
     {
         base.OnEndDrag(eventData);
-        EventSystem.DispatchEvent(new E_OnSuperListEndDrag(this.gameObject));
+        Game.Event.DispatchEvent(new E_OnSuperListEndDrag(this.gameObject));
     }
 
     public override void OnDrag(PointerEventData eventData)

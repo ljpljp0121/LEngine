@@ -8,6 +8,8 @@
 #include "vm/Object.h"
 #include "vm/Method.h"
 
+#include "hybridclr/metadata/MetadataUtil.h"
+
 namespace il2cpp
 {
 namespace vm
@@ -20,6 +22,7 @@ namespace vm
             return NULL;
 
         Il2CppClass* parameterType = Class::FromIl2CppType(method->parameters[parameterPosition]);
+        bool useInterpFormat = hybridclr::metadata::IsInterpreterType(method->klass);
         if (il2cpp::vm::Class::IsValuetype(parameterType))
         {
             if (il2cpp::vm::Class::IsNullable(parameterType))

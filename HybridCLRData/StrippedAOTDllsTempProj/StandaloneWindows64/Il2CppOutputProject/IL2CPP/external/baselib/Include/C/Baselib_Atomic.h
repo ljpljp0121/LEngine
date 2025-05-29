@@ -400,11 +400,7 @@ static FORCE_INLINE bool Baselib_atomic_compare_exchange_strong_ptr2x_seq_cst_se
 // Compiler Specific Implementation
 // ----------------------------------------------------------------------------------------------------------------------------------------
 
-#if PLATFORM_CUSTOM_ATOMICS
-// Platform header does not know where macro header lives and likely needs it.
-    #include "../../Include/C/Baselib_Atomic_Macros.h"
-    #include "C/Baselib_Atomic_Platform.inl.h"
-#elif COMPILER_CLANG || COMPILER_GCC
+#if COMPILER_CLANG || COMPILER_GCC
     #include "Internal/Compiler/Baselib_Atomic_Gcc.h"
 #elif COMPILER_MSVC
     #include "Internal/Compiler/Baselib_Atomic_Msvc.h"

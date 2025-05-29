@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Internal/page_allocator.inl.h"
+#include "../C/Baselib_ErrorState.h"
 
 namespace baselib
 {
@@ -99,8 +100,10 @@ namespace baselib
             // \returns Always returns `nullptr`.
             void* reallocate(void* ptr, size_t old_size, size_t new_size, error_state *error_state_ptr = nullptr) const
             {
-                if (error_state_ptr)
-                    *error_state_ptr |= RaiseError(Baselib_ErrorCode_NotSupported);
+                Baselib_ErrorState_RaiseError(error_state_ptr, Baselib_ErrorCode_NotSupported,
+                    Baselib_ErrorState_NativeErrorCodeType_None, 0,
+                    Baselib_ErrorState_ExtraInformationType_None, 0,
+                    BASELIB_SOURCELOCATION);
                 return nullptr;
             }
 

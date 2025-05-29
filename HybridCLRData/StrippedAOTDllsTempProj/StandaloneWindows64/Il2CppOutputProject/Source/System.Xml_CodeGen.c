@@ -12,7 +12,6 @@
 
 
 
-// 0x00000001 System.Void System.Xml.XmlReader::.cctor()
 extern void XmlReader__cctor_m9FF3BD38D3644E099B8305E251679A77A0DF493E (void);
 static Il2CppMethodPointer s_methodPointers[1] = 
 {
@@ -20,7 +19,7 @@ static Il2CppMethodPointer s_methodPointers[1] =
 };
 static const int32_t s_InvokerIndices[1] = 
 {
-	14929,
+	16142,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_System_Xml_CodeGenModule;
 const Il2CppCodeGenModule g_System_Xml_CodeGenModule = 
@@ -38,7 +37,7 @@ const Il2CppCodeGenModule g_System_Xml_CodeGenModule =
 	0,
 	NULL,
 	NULL,
-	NULL, // module initializer,
+	NULL,
 	NULL,
 	NULL,
 	NULL,

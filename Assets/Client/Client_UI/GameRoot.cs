@@ -13,7 +13,15 @@ public class GameRoot
         {
             Debug.LogError("Not found");
         }
-        gameRoot.TryAddComponent<LEngineRoot>();
-        
+        //¿ò¼ÜÆô¶¯
+        LEngineRoot engineRoot = gameRoot.TryAddComponent<LEngineRoot>();
+        engineRoot.Init();
+        //InitOnLoad
+        InitLEngineOnLoad.Init();
+        InitLogicOnLoad.Init();
+        InitGameplayOnLoad.Init();
+        InitUIOnLoad.Init();
+
+        Game.UI.ShowUI<StartPanel>();
     }
 }

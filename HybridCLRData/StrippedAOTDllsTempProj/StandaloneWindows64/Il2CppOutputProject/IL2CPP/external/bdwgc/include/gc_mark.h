@@ -152,6 +152,14 @@ GC_API struct GC_ms_entry * GC_CALL GC_mark_and_push(void * /* obj */,
            (GC_word)(obj) <= (GC_word)GC_greatest_plausible_heap_addr ? \
            GC_mark_and_push(obj, msp, lim, src) : (msp))
 
+GC_API struct GC_ms_entry * GC_CALL GC_custom_push_range(void * /* bottom */, void * /* top */,
+                                struct GC_ms_entry * /* mark_stack_ptr */,
+                                struct GC_ms_entry * /* mark_stack_limit */);
+
+GC_API struct GC_ms_entry * GC_CALL GC_custom_push_proc(GC_word /* proc */, void * /* start */,
+                                struct GC_ms_entry * /* mark_stack_ptr */,
+                                struct GC_ms_entry * /* mark_stack_limit */);
+
 GC_API size_t GC_debug_header_size;
        /* The size of the header added to objects allocated through    */
        /* the GC_debug routines.                                       */
@@ -287,6 +295,9 @@ GC_API void GC_CALL GC_push_conditional(void * /* bottom */, void * /* top */,
                                         int /* bool all */);
 GC_API void GC_CALL GC_push_finalizer_structures(void);
 
+
+GC_API void GC_CALL GC_push_proc(GC_word /* proc */, void * /* start */);
+
 /* Set and get the client push-other-roots procedure.  A client         */
 /* supplied procedure should also call the original procedure.          */
 /* Note that both the setter and getter require some external           */
@@ -313,7 +324,9 @@ GC_API void GC_CALL GC_print_trace_inner(GC_word /* gc_no */);
 /* Set the client for when mark stack is empty.  A client can use       */
 /* this callback to process (un)marked objects and push additional      */
 /* work onto the stack. Useful for implementing ephemerons.             */
-typedef void (GC_CALLBACK* GC_mark_stack_empty_proc)(void);
+typedef struct GC_ms_entry* (GC_CALLBACK* GC_mark_stack_empty_proc)(
+  struct GC_ms_entry* /* mark_stack_ptr */,
+  struct GC_ms_entry* /* mark_stack_limit */);
 GC_API void GC_CALL GC_set_mark_stack_empty (GC_mark_stack_empty_proc);
 GC_API GC_mark_stack_empty_proc GC_CALL GC_get_mark_stack_empty (void);
 

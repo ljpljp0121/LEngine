@@ -38,6 +38,7 @@ namespace LEngine
                         return null;
                     }
                     instance = go.TryAddComponent<UISystem>();
+                    instance.OnInit();
                 }
                 return instance;
             }
@@ -101,7 +102,7 @@ namespace LEngine
 
         #endregion
 
-        ////UI实例缓存字典,存储已经实例化的UI
+        //UI实例缓存字典,存储已经实例化的UI
         private readonly Dictionary<string, UIBehavior> uiBehaviorDic = new Dictionary<string, UIBehavior>();
         //预制体缓存字典,存储已经加载的UI预制体
         private readonly Dictionary<string, GameObject> loadedUIPrefabDic = new Dictionary<string, GameObject>();

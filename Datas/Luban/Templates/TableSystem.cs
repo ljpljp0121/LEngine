@@ -1,11 +1,12 @@
 using cfg;
 using System.Collections.Generic;
+using LEngine;
 
-public static class TableSystem
+public class TableSystem : Singleton<TableSystem>
 {
-    private static Dictionary<string, IVOFun> tables = new Dictionary<string, IVOFun>();
+    private Dictionary<string, IVOFun> tables = new Dictionary<string, IVOFun>();
 
-    public static T GetVOData<T>() where T : IVOFun,new()
+    public T GetVOData<T>() where T : IVOFun, new()
     {
         if (tables.ContainsKey(typeof(T).Name))
         {

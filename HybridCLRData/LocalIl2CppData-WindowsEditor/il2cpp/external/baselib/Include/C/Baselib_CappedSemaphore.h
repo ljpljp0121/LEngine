@@ -25,11 +25,21 @@
 //
 // Cap is the number of tokens that can be held by the semaphore when there is no contention.
 // If there are not enough system resources to create a semaphore, process abort is triggered.
+// Use Baselib_CappedSemaphore_Free() to free the semaphore.
 //
 // For optimal performance, the returned Baselib_CappedSemaphore should be stored at a cache aligned memory location.
 //
-// \returns          A struct representing a semaphore instance. Use Baselib_CappedSemaphore_Free to free the semaphore.
+// \returns          A struct representing a semaphore instance.
 BASELIB_INLINE_API Baselib_CappedSemaphore Baselib_CappedSemaphore_Create(uint16_t cap);
+
+// Creates a capped counting semaphore synchronization primitive in-place with memory provided by caller.
+//
+// Cap is the number of tokens that can be held by the semaphore when there is no contention.
+// If there are not enough system resources to create a semaphore, process abort is triggered.
+// Use Baselib_CappedSemaphore_FreeInplace() to free capped semaphore.
+//
+// For optimal performance, the returned Baselib_CappedSemaphore should be stored at a cache aligned memory location.
+BASELIB_INLINE_API void Baselib_CappedSemaphore_CreateInplace(Baselib_CappedSemaphore* semaphodateData, uint16_t cap);
 
 // Try to consume a token and return immediately.
 //
@@ -79,3 +89,9 @@ BASELIB_INLINE_API uint32_t Baselib_CappedSemaphore_ResetAndReleaseWaitingThread
 // If threads are waiting on the semaphore, calling free will trigger an assert and may cause process abort.
 // Calling this function with a nullptr result in a no-op.
 BASELIB_INLINE_API void Baselib_CappedSemaphore_Free(Baselib_CappedSemaphore* semaphore);
+
+// Reclaim resources and memory held by the semaphore. Caller is responsible for freeing memory pointed to by the semaphore.
+//
+// If threads are waiting on the semaphore, calling free will trigger an assert and may cause process abort.
+// Calling this function with a nullptr result in a no-op.
+BASELIB_INLINE_API void Baselib_CappedSemaphore_FreeInplace(Baselib_CappedSemaphore* semaphore);

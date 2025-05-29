@@ -35,8 +35,9 @@ namespace baselib
             // Cap is the number of tokens that can be held by the semaphore when there is no contention.
             //
             // If there are not enough system resources to create a semaphore, process abort is triggered.
-            CappedSemaphore(const uint16_t cap) : m_CappedSemaphoreData(Baselib_CappedSemaphore_Create(cap))
+            CappedSemaphore(const uint16_t cap)
             {
+                Baselib_CappedSemaphore_CreateInplace(&m_CappedSemaphoreData, cap);
             }
 
             // Reclaim resources and memory held by the semaphore.
@@ -44,7 +45,7 @@ namespace baselib
             // If threads are waiting on the semaphore, destructor will trigger an assert and may cause process abort.
             ~CappedSemaphore()
             {
-                Baselib_CappedSemaphore_Free(&m_CappedSemaphoreData);
+                Baselib_CappedSemaphore_FreeInplace(&m_CappedSemaphoreData);
             }
 
             // Wait for semaphore token to become available

@@ -32,15 +32,16 @@ namespace baselib
             // Creates an event semaphore synchronization primitive. Initial state of event is unset.
             //
             // If there are not enough system resources to create a semaphore, process abort is triggered.
-            EventSemaphore() : m_EventSemaphoreData(Baselib_EventSemaphore_Create())
+            EventSemaphore()
             {
+                Baselib_EventSemaphore_CreateInplace(&m_EventSemaphoreData);
             }
 
             // Reclaim resources and memory held by the semaphore.
             // If threads are waiting on the semaphore, calling free may trigger an assert and may cause process abort.
             ~EventSemaphore()
             {
-                Baselib_EventSemaphore_Free(&m_EventSemaphoreData);
+                Baselib_EventSemaphore_FreeInplace(&m_EventSemaphoreData);
             }
 
             // Try to acquire semaphore.

@@ -112,11 +112,17 @@ static FORCE_INLINE int32_t Detail_Baselib_EventSemaphore_SetWaitingForSetCount(
 
 BASELIB_INLINE_API Baselib_EventSemaphore Baselib_EventSemaphore_Create(void)
 {
-    Baselib_EventSemaphore semaphore = {{{0, 0}}, {0}, {0}, {0}, {0}, {0}, {0}};
-
-    semaphore.setSemaphore = Baselib_SystemSemaphore_CreateInplace(semaphore._systemSemaphoreDataSemaphore);
-    semaphore.setInProgressSemaphore = Baselib_SystemSemaphore_CreateInplace(semaphore._systemSemaphoreDataInProgressSemaphore);
+    Baselib_EventSemaphore semaphore = {{{0, 0}}, Baselib_SystemSemaphore_Create(), Baselib_SystemSemaphore_Create(), {0}, {0}, {0}, {0}};
     return semaphore;
+}
+
+BASELIB_INLINE_API void Baselib_EventSemaphore_CreateInplace(Baselib_EventSemaphore* semaphoreData)
+{
+    semaphoreData->state.parts.numWaitingForSetAndStateFlags = 0;
+    semaphoreData->state.parts.numWaitingForSetInProgress = 0;
+    semaphoreData->state.stateInt64 = 0;
+    semaphoreData->setSemaphore = Baselib_SystemSemaphore_CreateInplace(&semaphoreData->_systemSemaphoreDataSemaphore);
+    semaphoreData->setInProgressSemaphore = Baselib_SystemSemaphore_CreateInplace(&semaphoreData->_systemSemaphoreDataInProgressSemaphore);
 }
 
 COMPILER_WARN_UNUSED_RESULT
@@ -202,6 +208,15 @@ BASELIB_INLINE_API void Baselib_EventSemaphore_ResetAndReleaseWaitingThreads(Bas
 }
 
 BASELIB_INLINE_API void Baselib_EventSemaphore_Free(Baselib_EventSemaphore* semaphore)
+{
+    if (!semaphore)
+        return;
+
+    Baselib_SystemSemaphore_Free(semaphore->setSemaphore);
+    Baselib_SystemSemaphore_Free(semaphore->setInProgressSemaphore);
+}
+
+BASELIB_INLINE_API void Baselib_EventSemaphore_FreeInplace(Baselib_EventSemaphore* semaphore)
 {
     if (!semaphore)
         return;

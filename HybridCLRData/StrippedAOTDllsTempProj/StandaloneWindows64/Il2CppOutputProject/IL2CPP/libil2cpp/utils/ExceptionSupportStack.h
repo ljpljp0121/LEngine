@@ -25,7 +25,7 @@ namespace utils
             m_count++;
         }
 
-#if HYBRIDCLR_UNITY_VERSION >= 20210331
+#if HYBRIDCLR_UNITY_VERSION >= 20220311
         T pop()
         {
             IL2CPP_ASSERT(!empty());

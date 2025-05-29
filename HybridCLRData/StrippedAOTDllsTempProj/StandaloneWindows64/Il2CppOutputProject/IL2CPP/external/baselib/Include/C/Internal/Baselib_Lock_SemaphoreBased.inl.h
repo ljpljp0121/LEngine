@@ -16,6 +16,13 @@ BASELIB_INLINE_API Baselib_Lock Baselib_Lock_Create(void)
     return lock;
 }
 
+BASELIB_INLINE_API void Baselib_Lock_CreateInplace(Baselib_Lock* lockData)
+{
+    Baselib_CappedSemaphore_CreateInplace(&lockData->semaphore, 1);
+    uint16_t submittedTokens = Baselib_CappedSemaphore_Release(&lockData->semaphore, 1);
+    BaselibAssert(submittedTokens == 1, "CappedSemaphore was unable to accept our token");
+}
+
 BASELIB_INLINE_API void Baselib_Lock_Acquire(Baselib_Lock* lock)
 {
     Baselib_CappedSemaphore_Acquire(&lock->semaphore);
@@ -43,4 +50,11 @@ BASELIB_INLINE_API void Baselib_Lock_Free(Baselib_Lock* lock)
     if (!lock)
         return;
     Baselib_CappedSemaphore_Free(&lock->semaphore);
+}
+
+BASELIB_INLINE_API void Baselib_Lock_FreeInplace(Baselib_Lock* lock)
+{
+    if (!lock)
+        return;
+    Baselib_CappedSemaphore_FreeInplace(&lock->semaphore);
 }

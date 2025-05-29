@@ -12,7 +12,6 @@
 
 
 
-// 0x00000001 System.Void UnityEngine.GridLayout::DoNothing()
 extern void GridLayout_DoNothing_mA280987BF98D257023D46C2C01902FC82EE6A00A (void);
 static Il2CppMethodPointer s_methodPointers[1] = 
 {
@@ -20,7 +19,7 @@ static Il2CppMethodPointer s_methodPointers[1] =
 };
 static const int32_t s_InvokerIndices[1] = 
 {
-	9309,
+	9833,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_GridModule_CodeGenModule;
 const Il2CppCodeGenModule g_UnityEngine_GridModule_CodeGenModule = 
@@ -38,7 +37,7 @@ const Il2CppCodeGenModule g_UnityEngine_GridModule_CodeGenModule =
 	0,
 	NULL,
 	NULL,
-	NULL, // module initializer,
+	NULL,
 	NULL,
 	NULL,
 	NULL,

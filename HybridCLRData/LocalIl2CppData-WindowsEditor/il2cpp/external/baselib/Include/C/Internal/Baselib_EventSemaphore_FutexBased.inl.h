@@ -65,9 +65,15 @@ static FORCE_INLINE uint32_t Detail_Baselib_EventSemaphore_TransitionFrom_ResetN
     return state;
 }
 
+BASELIB_INLINE_API void Baselib_EventSemaphore_CreateInplace(Baselib_EventSemaphore* semaphoreData)
+{
+    semaphoreData->state = 0;
+}
+
 BASELIB_INLINE_API Baselib_EventSemaphore Baselib_EventSemaphore_Create(void)
 {
-    const Baselib_EventSemaphore semaphore = { 0, {0} };
+    Baselib_EventSemaphore semaphore;
+    Baselib_EventSemaphore_CreateInplace(&semaphore);
     return semaphore;
 }
 
@@ -194,5 +200,9 @@ BASELIB_INLINE_API void Baselib_EventSemaphore_ResetAndReleaseWaitingThreads(Bas
 }
 
 BASELIB_INLINE_API void Baselib_EventSemaphore_Free(Baselib_EventSemaphore* semaphore)
+{
+}
+
+BASELIB_INLINE_API void Baselib_EventSemaphore_FreeInplace(Baselib_EventSemaphore* semaphore)
 {
 }

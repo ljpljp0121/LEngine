@@ -21,9 +21,16 @@ typedef struct Baselib_HighCapacitySemaphore
     char _cachelineSpacer2[PLATFORM_CACHE_LINE_SIZE - sizeof(int64_t)];
 } Baselib_HighCapacitySemaphore;
 
+BASELIB_INLINE_API void Baselib_HighCapacitySemaphore_CreateInplace(Baselib_HighCapacitySemaphore* semaphoreData)
+{
+    semaphoreData->wakeups = 0;
+    semaphoreData->count = 0;
+}
+
 BASELIB_INLINE_API Baselib_HighCapacitySemaphore Baselib_HighCapacitySemaphore_Create(void)
 {
-    Baselib_HighCapacitySemaphore semaphore = {0, {0}, 0, {0}};
+    Baselib_HighCapacitySemaphore semaphore;
+    Baselib_HighCapacitySemaphore_CreateInplace(&semaphore);
     return semaphore;
 }
 
@@ -147,4 +154,9 @@ BASELIB_INLINE_API void Baselib_HighCapacitySemaphore_Free(Baselib_HighCapacityS
         return;
     const int64_t count = Baselib_atomic_load_64_seq_cst(&semaphore->count);
     BaselibAssert(count >= 0, "Destruction is not allowed when there are still threads waiting on the semaphore.");
+}
+
+BASELIB_INLINE_API void Baselib_HighCapacitySemaphore_FreeInplace(Baselib_HighCapacitySemaphore* semaphore)
+{
+    Baselib_HighCapacitySemaphore_Free(semaphore);
 }

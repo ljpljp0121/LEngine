@@ -20,6 +20,7 @@
 #endif
 
 // Creates an event semaphore synchronization primitive. Initial state of event is unset.
+// Use Baselib_EventSemaphore_Free() to free resources.
 //
 // If there are not enough system resources to create a semaphore, process abort is triggered.
 //
@@ -27,6 +28,14 @@
 //
 // \returns     A struct representing a semaphore instance. Use Baselib_EventSemaphore_Free to free the semaphore.
 BASELIB_INLINE_API Baselib_EventSemaphore Baselib_EventSemaphore_Create(void);
+
+// Creates an event semaphore synchronization primitive in-place with memory provided by the called. Initial state of event is unset.
+// Use Baselib_EventSemaphore_FreeInplace() to free resources.
+//
+// If there are not enough system resources to create a semaphore, process abort is triggered.
+//
+// For optimal performance, the Baselib_EventSemaphore should be stored at a cache aligned memory location.
+BASELIB_INLINE_API void Baselib_EventSemaphore_CreateInplace(Baselib_EventSemaphore* semaphoreData);
 
 // Try to acquire semaphore.
 //
@@ -86,3 +95,9 @@ BASELIB_INLINE_API void Baselib_EventSemaphore_ResetAndReleaseWaitingThreads(Bas
 // If threads are waiting on the semaphore, calling free may trigger an assert and may cause process abort.
 // Calling this function with a nullptr result in a no-op
 BASELIB_INLINE_API void Baselib_EventSemaphore_Free(Baselib_EventSemaphore* semaphore);
+
+// Reclaim resources and memory held by the semaphore. Caller is responsible for freeing memory pointed to by the semaphore.
+//
+// If threads are waiting on the semaphore, calling free may trigger an assert and may cause process abort.
+// Calling this function with a nullptr result in a no-op
+BASELIB_INLINE_API void Baselib_EventSemaphore_FreeInplace(Baselib_EventSemaphore* semaphore);

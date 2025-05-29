@@ -85,7 +85,6 @@
 #define Baselib_atomic_llsc_ptr_seq_cst_seq_cst_v(obj, expected, value, code) detail_Baselib_atomic_llsc_v(obj, expected, value, code, ptr, seq_cst, seq_cst)
 
 #if PLATFORM_ARCH_64
-
 #define Baselib_atomic_llsc_ptr2x_relaxed_relaxed_v(obj, expected, value, code) detail_Baselib_atomic_llsc_128_v(obj, expected, value, code, relaxed, relaxed)
 #define Baselib_atomic_llsc_ptr2x_acquire_relaxed_v(obj, expected, value, code) detail_Baselib_atomic_llsc_128_v(obj, expected, value, code, acquire, relaxed)
 #define Baselib_atomic_llsc_ptr2x_relaxed_release_v(obj, expected, value, code) detail_Baselib_atomic_llsc_128_v(obj, expected, value, code, relaxed, release)
@@ -124,10 +123,10 @@
 // Generic implementation of LLSC macros
 #include "Baselib_Atomic.h"
 
-// LLSC exlusive state access break implementation (nop)
+// LLSC exclusive state access break implementation (nop)
 #define detail_Baselib_atomic_llsc_break()
 
-// LLSC implementation using load/cmp_xcgh
+// LLSC implementation using load/cmp_xchg
 #define detail_Baselib_atomic_llsc_cmpxchg_v(obj, expected, value, code, size, loadbarrier, storebarrier)                   \
     do {                                                                                                                    \
         Baselib_atomic_load_##size##_##loadbarrier##_v(obj, expected);                                                      \

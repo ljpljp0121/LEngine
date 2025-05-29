@@ -43,8 +43,14 @@ namespace LEngine
         /// <summary>
         /// 对象池系统
         /// </summary>
-        public static PoolSystem Pool => pool ??= Get<PoolSystem>();
-        private static PoolSystem pool;
+        public static IPoolSystem Pool => pool ??= Get<PoolSystem>();
+        private static IPoolSystem pool;
+
+        /// <summary>
+        /// 事件系统
+        /// </summary>
+        public static IEventSystem Event => _event ??= Get<IEventSystem>();
+        private static IEventSystem _event;
 
         private static T Get<T>() where T : class
         {

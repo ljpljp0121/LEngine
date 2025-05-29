@@ -1,8 +1,7 @@
 #include "il2cpp-config.h"
 #include "utils/Memory.h"
 
-#if (IL2CPP_TARGET_JAVASCRIPT || IL2CPP_TARGET_LINUX || IL2CPP_TARGET_LUMIN && !RUNTIME_TINY) || IL2CPP_TARGET_ANDROID
-
+#if (IL2CPP_TARGET_JAVASCRIPT || IL2CPP_TARGET_LINUX || IL2CPP_TARGET_QNX && !RUNTIME_TINY) || IL2CPP_TARGET_ANDROID
 #include "os/Image.h"
 
 #if IL2CPP_TARGET_JAVASCRIPT
@@ -11,7 +10,7 @@
 #include <dlfcn.h>
 #endif
 
-#if IL2CPP_ENABLE_NATIVE_INSTRUCTION_POINTER_EMISSION && (IL2CPP_TARGET_ANDROID || IL2CPP_TARGET_LINUX)
+#if IL2CPP_ENABLE_NATIVE_INSTRUCTION_POINTER_EMISSION && (IL2CPP_TARGET_ANDROID || IL2CPP_TARGET_LINUX || IL2CPP_TARGET_QNX)
 #include <elf.h>
 
 #if __x86_64__ || __aarch64__
@@ -138,8 +137,8 @@ namespace Image
         if (dladdr(anySymbol, &info))
         {
             size_t nameSize = strlen(info.dli_fname);
-            char* imageName = (char*)IL2CPP_MALLOC(nameSize);
-            strncpy(imageName, info.dli_fname, nameSize);
+            char* imageName = (char*)IL2CPP_MALLOC(nameSize + 1);
+            strncpy(imageName, info.dli_fname, nameSize + 1);
             return imageName;
         }
         else

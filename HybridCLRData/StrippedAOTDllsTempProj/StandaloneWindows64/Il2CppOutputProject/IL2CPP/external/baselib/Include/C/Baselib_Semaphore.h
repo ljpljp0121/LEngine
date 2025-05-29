@@ -25,6 +25,7 @@ static const int32_t Baselib_Semaphore_MaxGuaranteedCount = UINT16_MAX;
 #endif
 
 // Creates a counting semaphore synchronization primitive.
+// Use Baselib_Semaphore_Free() to free semaphore.
 //
 // If there are not enough system resources to create a semaphore, process abort is triggered.
 //
@@ -32,6 +33,14 @@ static const int32_t Baselib_Semaphore_MaxGuaranteedCount = UINT16_MAX;
 //
 // \returns          A struct representing a semaphore instance. Use Baselib_Semaphore_Free to free the semaphore.
 BASELIB_INLINE_API Baselib_Semaphore Baselib_Semaphore_Create(void);
+
+// Creates a counting semaphore synchronization primitive in-place with memory provided by caller.
+// Use Baselib_Semaphore_FreeInplace() to free semaphore.
+//
+// If there are not enough system resources to create a semaphore, process abort is triggered.
+//
+// For optimal performance, created Baselib_Semaphore should be stored at a cache aligned memory location.
+BASELIB_INLINE_API void Baselib_Semaphore_CreateInplace(Baselib_Semaphore* semaphore);
 
 // Wait for semaphore token to become available
 //
@@ -82,3 +91,9 @@ BASELIB_INLINE_API uint32_t Baselib_Semaphore_ResetAndReleaseWaitingThreads(Base
 // If threads are waiting on the semaphore, calling free will trigger an assert and may cause process abort.
 // Calling this function with a nullptr result in a no-op
 BASELIB_INLINE_API void Baselib_Semaphore_Free(Baselib_Semaphore* semaphore);
+
+// Reclaim resources held by the semaphore. Caller is responsible for freeing memory pointed to by semaphore
+//
+// If threads are waiting on the semaphore, calling free will trigger an assert and may cause process abort.
+// Calling this function with a nullptr result in a no-op
+BASELIB_INLINE_API void Baselib_Semaphore_FreeInplace(Baselib_Semaphore* semaphore);

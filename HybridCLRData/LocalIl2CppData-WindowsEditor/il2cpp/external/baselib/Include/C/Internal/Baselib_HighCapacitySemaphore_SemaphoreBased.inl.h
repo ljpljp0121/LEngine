@@ -22,8 +22,14 @@ BASELIB_STATIC_ASSERT((offsetof(Baselib_HighCapacitySemaphore, count) + PLATFORM
 BASELIB_INLINE_API Baselib_HighCapacitySemaphore Baselib_HighCapacitySemaphore_Create(void)
 {
     Baselib_HighCapacitySemaphore semaphore = {0, {0}, {0}, {0}};
-    semaphore.handle = Baselib_SystemSemaphore_CreateInplace(&semaphore._systemSemaphoreData);
+    semaphore.handle = Baselib_SystemSemaphore_Create();
     return semaphore;
+}
+
+BASELIB_INLINE_API void Baselib_HighCapacitySemaphore_CreateInplace(Baselib_HighCapacitySemaphore* semaphoreData)
+{
+    semaphoreData->count = 0;
+    semaphoreData->handle = Baselib_SystemSemaphore_CreateInplace(&semaphoreData->_systemSemaphoreData);
 }
 
 BASELIB_INLINE_API bool Baselib_HighCapacitySemaphore_TryAcquire(Baselib_HighCapacitySemaphore* semaphore)
@@ -117,6 +123,15 @@ BASELIB_INLINE_API uint64_t Baselib_HighCapacitySemaphore_ResetAndReleaseWaiting
 }
 
 BASELIB_INLINE_API void Baselib_HighCapacitySemaphore_Free(Baselib_HighCapacitySemaphore* semaphore)
+{
+    if (!semaphore)
+        return;
+    const int64_t count = Baselib_atomic_load_64_seq_cst(&semaphore->count);
+    BaselibAssert(count >= 0, "Destruction is not allowed when there are still threads waiting on the semaphore.");
+    Baselib_SystemSemaphore_Free(semaphore->handle);
+}
+
+BASELIB_INLINE_API void Baselib_HighCapacitySemaphore_FreeInplace(Baselib_HighCapacitySemaphore* semaphore)
 {
     if (!semaphore)
         return;

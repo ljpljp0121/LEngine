@@ -16,9 +16,15 @@ typedef struct Baselib_Lock
     char _cachelineSpacer[PLATFORM_CACHE_LINE_SIZE - sizeof(int32_t)];
 } Baselib_Lock;
 
+BASELIB_INLINE_API void Baselib_Lock_CreateInplace(Baselib_Lock* lockData)
+{
+    lockData->state = Detail_Baselib_Lock_UNLOCKED;
+}
+
 BASELIB_INLINE_API Baselib_Lock Baselib_Lock_Create(void)
 {
-    Baselib_Lock lock = {Detail_Baselib_Lock_UNLOCKED, {0}};
+    Baselib_Lock lock;
+    Baselib_Lock_CreateInplace(&lock);
     return lock;
 }
 
@@ -88,5 +94,9 @@ BASELIB_INLINE_API void Baselib_Lock_Release(Baselib_Lock* lock)
 }
 
 BASELIB_INLINE_API void Baselib_Lock_Free(Baselib_Lock* lock)
+{
+}
+
+BASELIB_INLINE_API void Baselib_Lock_FreeInplace(Baselib_Lock* lock)
 {
 }

@@ -11,6 +11,7 @@
 #include "vm/Assembly.h"
 #include "vm/AssemblyName.h"
 #include "vm/Class.h"
+#include "vm/Field.h"
 #include "vm/GenericClass.h"
 #include "vm/GenericContainer.h"
 #include "vm/MetadataCache.h"
@@ -1090,6 +1091,11 @@ namespace vm
         return type->type == IL2CPP_TYPE_GENERICINST;
     }
 
+    bool Type::IsGenericParameter(const Il2CppType* type)
+    {
+        return type->type == IL2CPP_TYPE_VAR || type->type == IL2CPP_TYPE_MVAR;
+    }
+
     Il2CppClass* Type::GetDeclaringType(const Il2CppType* type)
     {
         Il2CppClass *typeInfo = NULL;
@@ -1214,26 +1220,31 @@ namespace vm
 
     bool Type::HasVariableRuntimeSizeWhenFullyShared(const Il2CppType* type)
     {
+        // This needs to align with TypeRuntimeStoage::RuntimeFieldLayout
+
         // Anything passed by ref is pointer sized
         if (type->byref)
             return false;
 
-        // Any generic parameter that is not constarined to be a reference type would be fully shared
-        if (type->type == IL2CPP_TYPE_VAR || type->type == IL2CPP_TYPE_MVAR)
+        // Any generic parameter that is not constrained to be a reference type would be fully shared
+        if (IsGenericParameter(type))
             return MetadataCache::IsReferenceTypeGenericParameter(MetadataCache::GetGenericParameterFromType(type)) != GenericParameterRestrictionReferenceType;
 
-        // If we're not a generic instance then we'll be a concrete type
-        if (!IsGenericInstance(type))
-            return false;
-
         // If a reference type or pointer then we aren't variable sized
-        if (!GenericInstIsValuetype(type))
+        if (!IsValueType(type))
             return false;
 
-        // Otherwise we're a generic value type - e.g. Struct<T> and we need to examine our generic parameters
-        for (uint32_t i = 0; i < type->data.generic_class->context.class_inst->type_argc; i++)
+        Il2CppClass* klass = Class::FromIl2CppType(type);
+
+        // If we're not a generic instance or generic type definition then we'll be a concrete type
+        if (!vm::Class::IsInflated(klass) && !vm::Class::IsGeneric(klass))
+            return false;
+
+        FieldInfo* field;
+        void* iter = NULL;
+        while ((field = Class::GetFields(klass, &iter)))
         {
-            if (HasVariableRuntimeSizeWhenFullyShared(type->data.generic_class->context.class_inst->type_argv[i]))
+            if (Field::IsInstance(field) && HasVariableRuntimeSizeWhenFullyShared(Field::GetType(field)))
                 return true;
         }
 

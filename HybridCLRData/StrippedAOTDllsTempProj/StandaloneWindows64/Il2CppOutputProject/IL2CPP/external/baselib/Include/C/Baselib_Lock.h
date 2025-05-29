@@ -21,6 +21,14 @@
 // \returns          A struct representing a lock instance. Use Baselib_Lock_Free to free the lock.
 BASELIB_INLINE_API Baselib_Lock Baselib_Lock_Create(void);
 
+// Creates a lock synchronization primitive in-place with memory provided by caller.
+// Use Baselib_Lock_FreeInplace to free the lock
+//
+// If there are not enough system resources to create a lock, process abort is triggered.
+//
+// For optimal performance, the Baselib_Lock should be stored at a cache aligned memory location.
+BASELIB_INLINE_API void Baselib_Lock_CreateInplace(Baselib_Lock* lockData);
+
 // Try to acquire lock and return immediately.
 //
 // If lock is held, either by this or another thread, then lock is not acquired and function return false.
@@ -67,3 +75,9 @@ BASELIB_INLINE_API void Baselib_Lock_Release(Baselib_Lock* lock);
 // If threads are waiting on the lock, calling free may trigger an assert and may cause process abort.
 // Calling this function with a nullptr result in a no-op
 BASELIB_INLINE_API void Baselib_Lock_Free(Baselib_Lock* lock);
+
+// Reclaim resources and memory held by lock. Caller is responsible for freeing memory pointed to by lock.
+//
+// If threads are waiting on the lock, calling free may trigger an assert and may cause process abort.
+// Calling this function with a nullptr result in a no-op
+BASELIB_INLINE_API void Baselib_Lock_FreeInplace(Baselib_Lock* lock);

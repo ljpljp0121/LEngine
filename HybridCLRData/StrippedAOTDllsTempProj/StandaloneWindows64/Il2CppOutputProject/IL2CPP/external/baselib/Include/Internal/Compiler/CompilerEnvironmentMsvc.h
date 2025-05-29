@@ -66,3 +66,18 @@
 #if !defined(alloca)
     #define alloca _alloca
 #endif
+
+#if PLATFORM_SUPPORTS_SSE
+
+#include <xmmintrin.h>
+
+// Prefetches memory for reading from address `address` if supported on the current architecture
+    #define COMPILER_PREFETCH_READ(address)     _mm_prefetch(reinterpret_cast<const char*>(address), _MM_HINT_T0)
+// Prefetches memory for writing from address `address` if supported on the current architecture
+    #define COMPILER_PREFETCH_WRITE(address)    _mm_prefetch(reinterpret_cast<const char*>(address), _MM_HINT_ENTA)
+#else
+// Prefetches memory for reading from address `address` if supported on the current architecture
+    #define COMPILER_PREFETCH_READ(address)
+// Prefetches memory for writing from address `address` if supported on the current architecture
+    #define COMPILER_PREFETCH_WRITE(address)
+#endif

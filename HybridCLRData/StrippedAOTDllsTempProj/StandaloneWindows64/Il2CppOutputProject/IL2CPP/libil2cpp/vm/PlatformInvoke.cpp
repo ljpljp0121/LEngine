@@ -9,6 +9,7 @@
 #include "Object.h"
 #include "Runtime.h"
 #include "Type.h"
+#include "Reflection.h"
 
 #include "gc/WriteBarrier.h"
 #include "os/LibraryLoader.h"
@@ -398,22 +399,35 @@ namespace vm
 
     static Il2CppCallConvention GetDelegateCallConvention(Il2CppDelegate* d)
     {
-        CustomAttributesCache* customAttributes = MetadataCache::GenerateCustomAttributesCache(d->object.klass->image, d->object.klass->token);
-        if (customAttributes == nullptr)
+        const Il2CppImage* image = d->object.klass->image;
+
+        Il2CppMetadataCustomAttributeHandle customAttributeHandle = MetadataCache::GetCustomAttributeTypeToken(image, d->object.klass->token);
+        if (!customAttributeHandle)
         {
-            return Il2CppCallConvention::IL2CPP_CALL_DEFAULT;
+            return IL2CPP_CALL_DEFAULT;
         }
-        for (int i = 0; i < customAttributes->count; i++)
+
+        static Il2CppClass* umanagedFunctionPointerAttributeClass = nullptr;
+
+        if (umanagedFunctionPointerAttributeClass == nullptr)
         {
-            Il2CppObject* attribute = customAttributes->attributes[i];
-            if (attribute->klass->image == il2cpp_defaults.corlib && !strcmp(attribute->klass->name, "UnmanagedFunctionPointerAttribute"))
+            umanagedFunctionPointerAttributeClass = Class::FromName(il2cpp_defaults.corlib, "System.Runtime.InteropServices", "UnmanagedFunctionPointerAttribute");
+            if (umanagedFunctionPointerAttributeClass == nullptr)
             {
-                int32_t callConv = *(int32_t*)(attribute + 1);
-                IL2CPP_ASSERT(callConv >= 1 && callConv <= 5);
-                return (Il2CppCallConvention)(callConv - 1);
+                return IL2CPP_CALL_DEFAULT;
             }
         }
-        return IL2CPP_CALL_DEFAULT;
+
+        Il2CppObject* customAttribute = il2cpp::vm::Reflection::GetCustomAttribute(customAttributeHandle, umanagedFunctionPointerAttributeClass);
+
+        if (!customAttribute)
+        {
+            return IL2CPP_CALL_DEFAULT;
+        }
+
+        int32_t callConv = *(int32_t*)(customAttribute + 1);
+        IL2CPP_ASSERT(callConv >= 1 && callConv <= 5);
+        return (Il2CppCallConvention)(callConv - 1);
     }
 
 #if !IL2CPP_TINY

@@ -1169,15 +1169,6 @@ GC_INNER size_t GC_page_size = 0;
   }
 #endif /* LINUX_STACKBOTTOM */
 
-#ifdef QNX_STACKBOTTOM
-
-  STATIC ptr_t GC_qnx_main_stack_base(void)
-  {
-    return (ptr_t)__builtin_frame_address(0);
-  }
-
-#endif /* QNX_STACKBOTTOM */
-
 #ifdef FREEBSD_STACKBOTTOM
   /* This uses an undocumented sysctl call, but at least one expert     */
   /* believes it will stay.                                             */
@@ -1277,8 +1268,6 @@ GC_INNER size_t GC_page_size = 0;
 #       endif
 #     elif defined(LINUX_STACKBOTTOM)
          result = GC_linux_main_stack_base();
-#     elif defined(QNX_STACKBOTTOM)
-         result = GC_qnx_main_stack_base();
 #     elif defined(FREEBSD_STACKBOTTOM)
          result = GC_freebsd_main_stack_base();
 #     elif defined(HEURISTIC2)
@@ -2056,6 +2045,8 @@ void GC_register_data_segments(void)
           if ((word)DATASTART < (word)p)
             GC_add_roots_inner(DATASTART, p, FALSE);
         }
+#     elif defined(GC_DONT_REGISTER_MAIN_STATIC_DATA)
+        /* avoid referencing DATASTART & DATAEND as they may be invalid */
 #     else
         if ((word)DATASTART - 1U >= (word)DATAEND) {
                                 /* Subtract one to check also for NULL  */
@@ -2809,7 +2800,7 @@ void GC_reset_default_push_other_roots(void)
 #endif
 }
 
-GC_push_other_roots_proc GC_on_mark_stack_empty;
+GC_mark_stack_empty_proc GC_on_mark_stack_empty;
 
 GC_API void GC_CALL GC_set_mark_stack_empty (GC_mark_stack_empty_proc fn)
 {

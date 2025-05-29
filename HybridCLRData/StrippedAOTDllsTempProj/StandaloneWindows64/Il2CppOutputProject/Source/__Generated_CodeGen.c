@@ -12,10 +12,7 @@
 
 
 
-// 0x00000001 System.Object IActivationFactory::ActivateInstance()
-// 0x00000002 System.Void System.__Il2CppComObject::Finalize()
 extern void __Il2CppComObject_Finalize_m720B2062F661A0770A32D24B731AD4AFE314A5CD (void);
-// 0x00000003 System.Void System.__Il2CppComDelegate::Finalize()
 extern void __Il2CppComDelegate_Finalize_mC9F8EA94444C3AF0A43CC723A23EE4D8B7984F8C (void);
 static Il2CppMethodPointer s_methodPointers[3] = 
 {
@@ -26,8 +23,8 @@ static Il2CppMethodPointer s_methodPointers[3] =
 static const int32_t s_InvokerIndices[3] = 
 {
 	0,
-	9309,
-	9309,
+	9833,
+	9833,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g___Generated_CodeGenModule;
 const Il2CppCodeGenModule g___Generated_CodeGenModule = 
@@ -45,7 +42,7 @@ const Il2CppCodeGenModule g___Generated_CodeGenModule =
 	0,
 	NULL,
 	NULL,
-	NULL, // module initializer,
+	NULL,
 	NULL,
 	NULL,
 	NULL,

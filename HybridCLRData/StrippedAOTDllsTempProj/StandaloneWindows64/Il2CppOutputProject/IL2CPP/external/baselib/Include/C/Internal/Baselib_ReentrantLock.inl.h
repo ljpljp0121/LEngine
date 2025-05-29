@@ -21,6 +21,13 @@ BASELIB_INLINE_API Baselib_ReentrantLock Baselib_ReentrantLock_Create(void)
     return lock;
 }
 
+BASELIB_INLINE_API void Baselib_ReentrantLock_CreateInplace(Baselib_ReentrantLock* lockData)
+{
+    Baselib_Lock_CreateInplace(&lockData->lock);
+    lockData->owner = Baselib_Thread_InvalidId;
+    lockData->count = 0;
+}
+
 COMPILER_WARN_UNUSED_RESULT
 BASELIB_INLINE_API bool Baselib_ReentrantLock_TryAcquire(Baselib_ReentrantLock* lock)
 {
@@ -90,4 +97,11 @@ BASELIB_INLINE_API void Baselib_ReentrantLock_Free(Baselib_ReentrantLock* lock)
     if (!lock)
         return;
     Baselib_Lock_Free(&lock->lock);
+}
+
+BASELIB_INLINE_API void Baselib_ReentrantLock_FreeInplace(Baselib_ReentrantLock* lock)
+{
+    if (!lock)
+        return;
+    Baselib_Lock_FreeInplace(&lock->lock);
 }

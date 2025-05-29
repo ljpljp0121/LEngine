@@ -63,9 +63,8 @@ namespace LEngine
             }
         }
 
-        private void Awake()
+        public void Init()
         {
-            base.Awake();
             Debug.Log("Start Framework Init");
             Debug.Log($"Unity Version: {Application.unityVersion}");
 
@@ -103,7 +102,7 @@ namespace LEngine
         private void OnDestroy()
         {
 #if !UNITY_EDITOR
-            ModuleSystem.Shutdown();
+            SystemCenter.Shutdown();
 #endif
         }
 

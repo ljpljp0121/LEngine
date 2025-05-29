@@ -97,3 +97,8 @@
 #define COMPILER_WARNINGS_PUSH              _Pragma("GCC diagnostic push")
 #define COMPILER_WARNINGS_POP               _Pragma("GCC diagnostic pop")
 #define COMPILER_WARNINGS_DISABLE(Warn)     _Pragma(PP_STRINGIZE(GCC diagnostic ignored Warn))
+
+// Prefetches memory for reading from address `address` if supported on the current architecture
+#define COMPILER_PREFETCH_READ(address)     __builtin_prefetch(address, 0)
+// Prefetches memory for writing from address `address` if supported on the current architecture
+#define COMPILER_PREFETCH_WRITE(address)    __builtin_prefetch(address, 1)

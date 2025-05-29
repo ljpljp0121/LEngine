@@ -50,7 +50,7 @@ public partial class TbUIWnd : IVOFun
 
     private string GetJson(string fileName)
     {
-        var textAsset = Game.Asset.LoadAsset<TextAsset>($"TableData/{fileName}.json");
+        var textAsset = Game.Asset.LoadAsset<TextAsset>($"Config/TableData/json/{fileName}");
         return textAsset.text;
     }
 }

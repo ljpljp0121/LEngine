@@ -12,11 +12,8 @@
 
 
 
-// 0x00000001 System.Void UnityEngine.AI.NavMesh::Internal_CallOnNavMeshPreUpdate()
 extern void NavMesh_Internal_CallOnNavMeshPreUpdate_m2A62DB32F5E1435F527AD8A59A882B9F2A193177 (void);
-// 0x00000002 System.Void UnityEngine.AI.NavMesh/OnNavMeshPreUpdate::.ctor(System.Object,System.IntPtr)
 extern void OnNavMeshPreUpdate__ctor_m7142A3AA991BE50B637A16D946AB7604C64EF9BA (void);
-// 0x00000003 System.Void UnityEngine.AI.NavMesh/OnNavMeshPreUpdate::Invoke()
 extern void OnNavMeshPreUpdate_Invoke_mFB224B9BBF9C78B7F39AA91A047F175C69897914 (void);
 static Il2CppMethodPointer s_methodPointers[3] = 
 {
@@ -26,9 +23,9 @@ static Il2CppMethodPointer s_methodPointers[3] =
 };
 static const int32_t s_InvokerIndices[3] = 
 {
-	14929,
-	3980,
-	9309,
+	16142,
+	4381,
+	9833,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_AIModule_CodeGenModule;
 const Il2CppCodeGenModule g_UnityEngine_AIModule_CodeGenModule = 
@@ -46,7 +43,7 @@ const Il2CppCodeGenModule g_UnityEngine_AIModule_CodeGenModule =
 	0,
 	NULL,
 	NULL,
-	NULL, // module initializer,
+	NULL,
 	NULL,
 	NULL,
 	NULL,

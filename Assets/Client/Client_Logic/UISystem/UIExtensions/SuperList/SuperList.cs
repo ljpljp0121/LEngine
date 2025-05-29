@@ -1,8 +1,7 @@
 ﻿
+using Sirenix.OdinInspector;
 using System;
 using System.Collections.Generic;
-using Sirenix.OdinInspector;
-using Sirenix.OdinInspector.Editor.Validation;
 using UnityEngine;
 using UnityEngine.UI;
 

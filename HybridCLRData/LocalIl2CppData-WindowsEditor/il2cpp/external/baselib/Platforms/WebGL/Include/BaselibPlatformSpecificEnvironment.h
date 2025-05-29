@@ -30,17 +30,11 @@ enum { Baselib_SystemSemaphore_PlatformSize = 16 }; // sem_t with support for th
     #endif
 #endif
 
-// Has custom atomics instead of compiler intrinsics.
-#define PLATFORM_CUSTOM_ATOMICS 1
-
 // The default, std::max_align_t, has the same value as this, but C's max_align_t is not available.
 // See: https://github.com/emscripten-core/emscripten/blob/2bca083cbbd5a4133db61fbd74d04f7feecfa907/tests/core/test_stddef.cpp
 #ifndef PLATFORM_MEMORY_MALLOC_MIN_ALIGNMENT
-    #if __asmjs__
-        #define PLATFORM_MEMORY_MALLOC_MIN_ALIGNMENT 8
-    #else
-        #define PLATFORM_MEMORY_MALLOC_MIN_ALIGNMENT 16
-    #endif
+// Currently Emscripten min alignment is at 8 bytes, independent of what max_align_t returns.
+    #define PLATFORM_MEMORY_MALLOC_MIN_ALIGNMENT 8
 #endif
 
 #ifdef __cplusplus
@@ -57,6 +51,4 @@ void emscripten_debugger(void);
 
 // The debugger statement invokes any available debugging functionality, such as setting a breakpoint.
 // If no debugging functionality is available, this statement has no effect.
-// Also Using compilers __builtin_debugtrap generates:
-// "WARNING:root:disabling asm.js validation due to use of non-supported features: llvm.debugtrap is used"
 #define BASELIB_DEBUG_TRAP() emscripten_debugger()

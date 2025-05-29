@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace LEngine
 {
@@ -389,32 +388,6 @@ namespace LEngine
             }
         }
 
-        private readonly List<System.Timers.Timer> _ticker = new List<System.Timers.Timer>();
-
-        public System.Timers.Timer AddSystemTimer(Action<object, System.Timers.ElapsedEventArgs> callBack)
-        {
-            int interval = 1000;
-            var timerTick = new System.Timers.Timer(interval);
-            timerTick.AutoReset = true;
-            timerTick.Enabled = true;
-            timerTick.Elapsed += new System.Timers.ElapsedEventHandler(callBack);
-
-            _ticker.Add(timerTick);
-
-            return timerTick;
-        }
-
-        private void DestroySystemTimer()
-        {
-            foreach (var ticker in _ticker)
-            {
-                if (ticker != null)
-                {
-                    ticker.Stop();
-                }
-            }
-        }
-
         public void OnInit()
         {
         }
@@ -422,7 +395,6 @@ namespace LEngine
         public void Shutdown()
         {
             RemoveAllTimer();
-            DestroySystemTimer();
         }
 
         public void Update(float elapseSeconds, float realElapseSeconds)

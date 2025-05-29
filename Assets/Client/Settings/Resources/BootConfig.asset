@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProjectName: LEngine
   Version: 1.0.0
-  PlayMode: 0
+  PlayMode: 1
   ResourcePackageName: ResourcePackage
   DllPackageName: DllPackage
   AOTMetaAssemblyFiles:
@@ -26,3 +26,4 @@ MonoBehaviour:
   - Client_Logic.dll
   - Client_Gameplay.dll
   - Client_UI.dll
+  AssemblyAssetPath: Assets/Bundle/Dll

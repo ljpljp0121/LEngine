@@ -311,28 +311,28 @@ static FORCE_INLINE bool Baselib_atomic_compare_exchange_strong_ptr_seq_cst_seq_
 static FORCE_INLINE int_type Baselib_atomic_##op##_##id##_##order(const int_type* obj)                                          \
 {                                                                                                                               \
     int_type result;                                                                                                            \
-    Baselib_atomic_##op##_##bits##_##order##_v(obj, &result);                                                                       \
+    Baselib_atomic_##op##_##bits##_##order##_v(obj, &result);                                                                   \
     return result;                                                                                                              \
 }
 
 #define detail_STORE(op, order, id , bits, int_type, ...)                                                                       \
-static FORCE_INLINE void Baselib_atomic_##op##_##id##_##order(int_type* obj, int_type value)                                  \
+static FORCE_INLINE void Baselib_atomic_##op##_##id##_##order(int_type* obj, int_type value)                                    \
 {                                                                                                                               \
-    Baselib_atomic_##op##_##bits##_##order##_v(obj, &value);                                                                        \
+    Baselib_atomic_##op##_##bits##_##order##_v(obj, &value);                                                                    \
 }
 
 #define detail_LOAD_STORE(op, order, id , bits, int_type, ...)                                                                  \
-static FORCE_INLINE int_type Baselib_atomic_##op##_##id##_##order(int_type* obj, int_type value)                              \
+static FORCE_INLINE int_type Baselib_atomic_##op##_##id##_##order(int_type* obj, int_type value)                                \
 {                                                                                                                               \
     int_type result;                                                                                                            \
-    Baselib_atomic_##op##_##bits##_##order##_v(obj, &value, &result);                                                                        \
+    Baselib_atomic_##op##_##bits##_##order##_v(obj, &value, &result);                                                           \
     return result;                                                                                                              \
 }
 
 #define detail_CMP_XCHG(op, order1, order2, id , bits, int_type, ...)                                                           \
-static FORCE_INLINE bool Baselib_atomic_##op##_##id##_##order1##_##order2(int_type* obj, int_type* expected, int_type value)  \
+static FORCE_INLINE bool Baselib_atomic_##op##_##id##_##order1##_##order2(int_type* obj, int_type* expected, int_type value)    \
 {                                                                                                                               \
-    return Baselib_atomic_##op##_##bits##_##order1##_##order2##_v(obj, expected, &value);                      \
+    return Baselib_atomic_##op##_##bits##_##order1##_##order2##_v(obj, expected, &value);                                       \
 }
 
 Baselib_Atomic_FOR_EACH_ATOMIC_OP_MEMORY_ORDER_AND_TYPE2(detail_LOAD, detail_STORE, detail_LOAD_STORE, detail_CMP_XCHG);
