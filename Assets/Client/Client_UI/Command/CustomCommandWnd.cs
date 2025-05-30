@@ -1,10 +1,8 @@
 ﻿
+using DG.Tweening;
+using LEngine;
 using System;
 using System.Reflection;
-using DG.Tweening;
-using IngameDebugConsole;
-using LEngine;
-using log4net.Util;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -165,39 +163,23 @@ public class GameCommand
     private static void Init()
     {
         Debug.Log("Command Init");
-        //在本类里添加命令
-        DebugLogConsole.AddCommand<string, GameObject>("test1", "test1 to add command ", AddChild);
-        //方法可以在任何类里(必须是静态方法)
-        DebugLogConsole.AddCommandStatic("test2", "test2 to add command", "TestMethod",
-            typeof(TestCommandClass));
-        //方法可以在任何类里(因为不是静态方法所以必须有类的实例)
-        DebugLogConsole.AddCommandInstance("test3", "test3 to add command", "TestMethod2", TestCommandClass.Instance);
+
     }
 
-    public static GameObject AddChild(string name)
-    {
-        GameObject child = new GameObject(name);
-        return child;
-    }
+    #region 示例
 
+    //在本类里添加命令(必须是静态方法)
+    //DebugLogConsole.AddCommand<string, GameObject>("test1", "test1 to add command ", AddChild);
+    //方法可以在任何类里(必须是静态方法)
+    //DebugLogConsole.AddCommandStatic("test2", "test2 to add command", "TestMethod", typeof(TestCommandClass));
+    //方法可以在任何类里(因为不是静态方法所以必须有类的实例)
+    //DebugLogConsole.AddCommandInstance("test3", "test3 to add command", "TestMethod2", TestCommandClass.Instance);
     //使用Attribute添加命令
-    [ConsoleMethod("test4", "test4 to add command")]
-    public static void TestDebug(int name)
-    {
-        Debug.Log($"Command1111Debug  {name}");
-    }
-}
+    //[ConsoleMethod("test4", "test4 to add command")]
+    //public static void TestDebug(int name)
+    //{
+    //    Debug.Log($"Command1111Debug  {name}");
+    //}
 
-public class TestCommandClass : Singleton<TestCommandClass>
-{
-    public void TestMethod2(float num)
-    {
-        Debug.Log($"TestClass TestMethod2 {num}");
-    }
-
-    //这种GameObject参数就直接填场景里GameObject的名字
-    public static void TestMethod(GameObject obj)
-    {
-        Debug.Log($"TestClass TestMethod {obj.name}");
-    }
+    #endregion
 }
