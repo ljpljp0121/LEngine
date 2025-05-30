@@ -123,6 +123,8 @@ public class CustomQuickWnd : MonoBehaviour
         }
     }
 
+    #region 示例
+
     [CommandBtn("GetVersion()")]
     public void Test1()
     {
@@ -153,6 +155,8 @@ public class CustomQuickWnd : MonoBehaviour
     {
         return flag;
     }
+
+    #endregion
 }
 
 
