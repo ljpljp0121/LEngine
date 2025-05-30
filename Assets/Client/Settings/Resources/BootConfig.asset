@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProjectName: LEngine
   Version: 1.0.0
-  PlayMode: 1
+  PlayMode: 0
   ResourcePackageName: ResourcePackage
   DllPackageName: DllPackage
   AOTMetaAssemblyFiles:
