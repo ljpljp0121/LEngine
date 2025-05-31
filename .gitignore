@@ -1,3 +1,4 @@
+# Ignore Visual Studio temporary files, build results
 /Client/Client_Gameplay/bin/
 /Client/Client_Gameplay/obj/
 /Client/Client_UI/bin/
@@ -7,3 +8,5 @@
 /Client/LEngine/bin/
 /Client/LEngine/obj/
 **/.vs/
+**/bin/
+**/obj/
