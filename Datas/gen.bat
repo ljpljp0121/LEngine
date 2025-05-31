@@ -1,4 +1,4 @@
-set WORKSPACE=..
+set WORKSPACE=..\UnityProjects
 set CONF_ROOT=.
 set LUBAN_DLL=%CONF_ROOT%\Luban\Luban.dll
 set DATA_OUTPATH=%WORKSPACE%\Assets\Bundle\Config\TableData\json
