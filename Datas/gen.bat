@@ -1,8 +1,8 @@
-set WORKSPACE=..\UnityProjects
+set WORKSPACE=..
 set CONF_ROOT=.
 set LUBAN_DLL=%CONF_ROOT%\Luban\Luban.dll
-set DATA_OUTPATH=%WORKSPACE%\Assets\Bundle\Config\TableData\json
-set CODE_OUTPATH=%WORKSPACE%\Assets\Client\Client_Logic\TableSystem\Tables
+set DATA_OUTPATH=%WORKSPACE%\UnityProjects\Assets\Bundle\Config\TableData\json
+set CODE_OUTPATH=%WORKSPACE%\Client\Client_Logic\Client_Logic\TableSystem\Tables
 
 xcopy /s /e /i /y "%CONF_ROOT%\Luban\Templates\TableSystem.cs" "%CODE_OUTPATH%\..\TableSystem.cs"
 
