@@ -1,3 +1,10 @@
-**/.vs/
-**/bin/
-**/obj/
+/Client/Client_Gameplay/bin/
+/Client/Client_Gameplay/obj/
+/Client/Client_UI/bin/
+/Client/Client_UI/obj/
+/Client/Client_Logic/bin/
+/Client/Client_Logic/obj/
+/Client/LEngine/bin/
+/Client/LEngine/obj/
+/Client/.vs/
+/.vs/
