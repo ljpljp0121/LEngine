@@ -109,10 +109,15 @@ public class BuildTool : OdinEditorWindow
     private void GenerateHotUpdateBytesFile()
     {
         Debug.Log("Start generate HotUpdate DLL bytes");
+        //string hotUpdateDllDirPath =
+        //    System.Environment.CurrentDirectory
+        //    + "\\"
+        //    + SettingsUtil.GetHotUpdateDllsOutputDirByTarget(EditorUserBuildSettings.activeBuildTarget)
+        //        .Replace('/', '\\');
         string hotUpdateDllDirPath =
             System.Environment.CurrentDirectory
             + "\\"
-            + SettingsUtil.GetHotUpdateDllsOutputDirByTarget(EditorUserBuildSettings.activeBuildTarget)
+            + "Assets/Plugins"
                 .Replace('/', '\\');
 
         string hotUpdateDllTextDirPath =
