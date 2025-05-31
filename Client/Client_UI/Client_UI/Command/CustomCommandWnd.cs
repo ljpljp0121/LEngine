@@ -125,36 +125,36 @@ public class CustomQuickWnd : MonoBehaviour
 
     #region 示例
 
-    [CommandBtn("GetVersion()")]
-    public void Test1()
-    {
-        Debug.Log($"当前版本{Application.version}");
-    }
+    //[CommandBtn("GetVersion()")]
+    //public void Test1()
+    //{
+    //    Debug.Log($"当前版本{Application.version}");
+    //}
 
-    public string GetVersion()
-    {
-        return "ver: " + Application.version;
-    }
+    //public string GetVersion()
+    //{
+    //    return "ver: " + Application.version;
+    //}
 
-    [CommandBtn("测试按钮")]
-    public void Test2()
-    {
-        Debug.Log("测试测试测试活动");
-    }
+    //[CommandBtn("测试按钮")]
+    //public void Test2()
+    //{
+    //    Debug.Log("测试测试测试活动");
+    //}
 
-    [CommandBtn("Flag测试", "TestFlag")]
-    public void FlagTest()
-    {
-        flag = !flag;
-        Debug.Log($"Flag测试{flag}");
-    }
+    //[CommandBtn("Flag测试", "TestFlag")]
+    //public void FlagTest()
+    //{
+    //    flag = !flag;
+    //    Debug.Log($"Flag测试{flag}");
+    //}
 
-    private bool flag;
+    //private bool flag;
 
-    public bool TestFlag()
-    {
-        return flag;
-    }
+    //public bool TestFlag()
+    //{
+    //    return flag;
+    //}
 
     #endregion
 }
