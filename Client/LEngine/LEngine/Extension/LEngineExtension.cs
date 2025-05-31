@@ -49,7 +49,7 @@ namespace LEngine
 
         public static void ThrowException(this string reason)
         {
-            throw new System.Exception("Framework running because " + reason);
+            throw new System.Exception("Framework stop running because " + reason);
         }
 
         public static void Reset(this Transform ts)
