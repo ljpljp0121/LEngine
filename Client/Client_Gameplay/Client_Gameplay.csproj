@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <BaseOutputPath></BaseOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Client_Logic\Client_Logic.csproj" />
+    <ProjectReference Include="..\LEngine\LEngine.csproj" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy &quot;bin\Debug\netstandard2.1\Client_Gameplay.dll&quot; &quot;../../UnityProjects/Assets/Plugins&quot; /y &#xD;&#xA;xcopy &quot;bin\Debug\netstandard2.1\Client_Gameplay.pdb&quot; &quot;../../UnityProjects/Assets/Plugins&quot; /y " />
+  </Target>
+
+</Project>

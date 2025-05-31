@@ -14,7 +14,7 @@ public class StartLoadUtils
 
     public static Dictionary<string, byte[]> assetDataDic = new Dictionary<string, byte[]>();
 
-    private static BootConfig bootConfig => Settings.BootConfig;
+    private static BootConfig bootConfig => BootSettings.BootConfig;
 
     public static async Task InitDll(string packageName, EPlayMode playMode)
     {

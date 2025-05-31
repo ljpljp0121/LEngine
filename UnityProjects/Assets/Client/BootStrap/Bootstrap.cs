@@ -18,7 +18,7 @@ public class Bootstrap : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
-        bootConfig = Settings.BootConfig;
+        bootConfig = BootSettings.BootConfig;
         Debug.Log($"资源系统运行模式：{bootConfig.PlayMode}");
         Instance = this;
         DontDestroyOnLoad(gameObject);
