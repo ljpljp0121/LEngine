@@ -20,6 +20,7 @@ MonoBehaviour:
   - rid: 96342568082079755
   - rid: 96342569327525890
   - rid: 96342569327525891
+  - rid: 96342569327525896
   edges:
   - GUID: 0dd23f6a-512a-4e3d-80f4-73cfdb57d1f9
     owner: {fileID: 11400000}
@@ -69,6 +70,14 @@ MonoBehaviour:
     outputFieldName: executes
     inputPortIdentifier: 
     outputPortIdentifier: 
+  - GUID: 01198a01-c2b9-4972-81ee-9978b1685970
+    owner: {fileID: 11400000}
+    inputNodeGUID: 52e8c0ff-dd84-4663-9ea3-ed8d5c6e2714
+    outputNodeGUID: e5a05fa2-b280-4470-92b8-0ebc4985fefb
+    inputFieldName: executed
+    outputFieldName: executes
+    inputPortIdentifier: 
+    outputPortIdentifier: 
   groups: []
   stackNodes: []
   pinnedElements:
@@ -78,7 +87,7 @@ MonoBehaviour:
       y: 21
       width: 150
       height: 200
-    opened: 1
+    opened: 0
     editorType:
       serializedType: GraphProcessor.ProcessorView, com.alelievr.NodeGraphProcessor.Editor,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -88,14 +97,14 @@ MonoBehaviour:
       y: 263
       width: 150
       height: 200
-    opened: 1
+    opened: 0
     editorType:
       serializedType: GraphProcessor.ExposedParameterView, com.alelievr.NodeGraphProcessor.Editor,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   - position:
       serializedVersion: 2
-      x: 24
-      y: 179
+      x: 404
+      y: 20
       width: 142
       height: 199
     opened: 0
@@ -107,8 +116,8 @@ MonoBehaviour:
   serializedParameterList: []
   stickyNotes: []
   nodeInspectorReference: {fileID: 0}
-  position: {x: 161, y: -121, z: 0}
-  scale: {x: 1.15, y: 1.15, z: 1}
+  position: {x: 423, y: 39, z: 0}
+  scale: {x: 0.65751624, y: 0.65751624, z: 1}
   references:
     version: 2
     RefIds:
@@ -117,7 +126,7 @@ MonoBehaviour:
       data:
         nodeCustomName: 
         GUID: 52e8c0ff-dd84-4663-9ea3-ed8d5c6e2714
-        computeOrder: 0
+        computeOrder: 1
         position:
           serializedVersion: 2
           x: 148
@@ -134,7 +143,7 @@ MonoBehaviour:
       data:
         nodeCustomName: 
         GUID: 618d8691-06a9-45d7-ae43-f1122363db92
-        computeOrder: 1
+        computeOrder: 2
         position:
           serializedVersion: 2
           x: 426.69568
@@ -151,7 +160,7 @@ MonoBehaviour:
       data:
         nodeCustomName: 
         GUID: bdc43311-e465-45da-8500-a63169b9b1b7
-        computeOrder: 3
+        computeOrder: 4
         position:
           serializedVersion: 2
           x: 737.28
@@ -161,14 +170,14 @@ MonoBehaviour:
         expanded: 0
         debug: 0
         nodeLock: 0
-        condition: 1
-        compareOperator: 5
+        condition: 0
+        compareOperator: 1
     - rid: 96342568082079753
       type: {class: Comparison, ns: NodeGraphProcessor.Examples, asm: Assembly-CSharp}
       data:
         nodeCustomName: 
         GUID: df3abb2e-842d-4d2a-ab73-b50f56274047
-        computeOrder: 2
+        computeOrder: 3
         position:
           serializedVersion: 2
           x: 480.56528
@@ -178,16 +187,16 @@ MonoBehaviour:
         expanded: 1
         debug: 0
         nodeLock: 0
-        inA: 0
+        inA: 111
         inB: 0
-        compared: 1
-        compareFunction: 3
+        compared: 0
+        compareFunction: 1
     - rid: 96342568082079755
       type: {class: ConsoleNode, ns: NodeGraphProcessor.Examples, asm: Assembly-CSharp}
       data:
         nodeCustomName: 
         GUID: 5b95fbd8-5b99-4ec8-8f03-4fc0d7c10a49
-        computeOrder: 4
+        computeOrder: 5
         position:
           serializedVersion: 2
           x: 1061.826
@@ -222,7 +231,7 @@ MonoBehaviour:
       data:
         nodeCustomName: 
         GUID: 1b309f65-e807-499b-8335-ae7f71230300
-        computeOrder: 5
+        computeOrder: 6
         position:
           serializedVersion: 2
           x: 950
@@ -239,7 +248,7 @@ MonoBehaviour:
       data:
         nodeCustomName: 
         GUID: 21e94eb4-a073-4d6d-b8ef-948409ff93c6
-        computeOrder: 6
+        computeOrder: 7
         position:
           serializedVersion: 2
           x: 1204
@@ -251,3 +260,18 @@ MonoBehaviour:
         nodeLock: 0
         logText: 333333
         logType: 3
+    - rid: 96342569327525896
+      type: {class: StartNode, ns: NodeGraphProcessor.Examples, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: e5a05fa2-b280-4470-92b8-0ebc4985fefb
+        computeOrder: 0
+        position:
+          serializedVersion: 2
+          x: -33.550003
+          y: 160.00002
+          width: 88
+          height: 75
+        expanded: 0
+        debug: 0
+        nodeLock: 0
