@@ -13,7 +13,7 @@ using SimpleJSON;
 namespace cfg
 {
 
-public interface IVOFun
+public interface ITable
 {
     void _LoadData();
 }

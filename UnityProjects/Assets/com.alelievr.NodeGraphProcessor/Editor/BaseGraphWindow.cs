@@ -1,0 +1,146 @@
+﻿using System.Linq;
+using System;
+using UnityEngine;
+using UnityEditor;
+using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
+using UnityEditor.SceneManagement;
+using UnityEditor.Experimental.GraphView;
+
+namespace GraphProcessor
+{
+    [System.Serializable]
+    public abstract class BaseGraphWindow : EditorWindow
+    {
+        protected VisualElement rootView;
+        protected BaseGraphView graphView;
+
+        [SerializeField]
+        protected BaseGraph graph;
+
+        readonly string graphWindowStyle = "GraphProcessorStyles/BaseGraphView";
+
+        /// <summary>
+        /// 节点图是否加载
+        /// </summary>
+        public bool isGraphLoaded
+        {
+            get { return graphView != null && graphView.graph != null; }
+        }
+
+        bool reloadWorkaround = false;
+
+        public event Action<BaseGraph> graphLoaded;
+        public event Action<BaseGraph> graphUnloaded;
+
+        /// <summary>
+        /// 窗口启用时调用
+        /// </summary>
+        protected virtual void OnEnable()
+        {
+            rootView = rootVisualElement;
+            //rootView.name = "graphRootView";
+
+            if (graph != null)
+                LoadGraph();
+            else
+                reloadWorkaround = true;
+        }
+
+        protected virtual void Update()
+        {
+            // Workaround for the Refresh option of the editor window:
+            // When Refresh is clicked, OnEnable is called before the serialized data in the
+            // editor window is deserialized, causing the graph view to not be loaded
+            if (reloadWorkaround && graph != null)
+            {
+                LoadGraph();
+                reloadWorkaround = false;
+            }
+        }
+
+        /// <summary>
+        /// 窗口被禁用时调用
+        /// </summary>
+        protected virtual void OnDisable()
+        {
+            if (graph != null && graphView != null)
+                graphView.SaveGraphToDisk();
+        }
+
+        /// <summary>
+        /// 窗口关闭时调用
+        /// </summary>
+        protected virtual void OnDestroy() { }
+
+        void LoadGraph()
+        {
+            // We wait for the graph to be initialized
+            if (graph.isEnabled)
+                InitializeGraph(graph);
+            else
+                graph.onEnabled += () => InitializeGraph(graph);
+        }
+
+        public void InitializeGraph(BaseGraph graph)
+        {
+            if (this.graph != null && graph != this.graph)
+            {
+                // Save the graph to the disk
+                EditorUtility.SetDirty(this.graph);
+                AssetDatabase.SaveAssets();
+                // Unload the graph
+                graphUnloaded?.Invoke(this.graph);
+            }
+
+            graphLoaded?.Invoke(graph);
+            this.graph = graph;
+
+            if (graphView != null)
+                rootView.Remove(graphView);
+
+            //Initialize will provide the BaseGraphView
+            InitializeWindow(graph);
+
+            if (graphView == null)
+            {
+                Debug.LogError("GraphView has not been added to the BaseGraph root view !");
+                return;
+            }
+            graphView.styleSheets.Add(Resources.Load<StyleSheet>(graphWindowStyle));
+            graphView.Initialize(graph);
+
+            InitializeGraphView(graphView);
+
+            if (graph.IsLinkedToScene())
+                LinkGraphWindowToScene(graph.GetLinkedScene());
+            else
+                graph.onSceneLinked += LinkGraphWindowToScene;
+        }
+
+        void LinkGraphWindowToScene(Scene scene)
+        {
+            EditorSceneManager.sceneClosed += CloseWindowWhenSceneIsClosed;
+
+            void CloseWindowWhenSceneIsClosed(Scene closedScene)
+            {
+                if (scene == closedScene)
+                {
+                    Close();
+                    EditorSceneManager.sceneClosed -= CloseWindowWhenSceneIsClosed;
+                }
+            }
+        }
+
+        public virtual void OnGraphDeleted()
+        {
+            if (graph != null && graphView != null)
+                rootView.Remove(graphView);
+
+            graphView = null;
+        }
+
+        protected abstract void InitializeWindow(BaseGraph graph);
+        protected virtual void InitializeGraphView(BaseGraphView view) { }
+    }
+}

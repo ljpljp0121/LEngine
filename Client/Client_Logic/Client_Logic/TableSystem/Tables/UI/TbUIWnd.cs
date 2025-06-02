@@ -15,7 +15,7 @@ using UnityEngine;
 
 namespace cfg.UI
 {
-public partial class TbUIWnd : IVOFun
+public partial class TbUIWnd : ITable
 {
     private readonly System.Collections.Generic.Dictionary<string, UI.UIWnd> _dataMap;
     private readonly System.Collections.Generic.List<UI.UIWnd> _dataList;

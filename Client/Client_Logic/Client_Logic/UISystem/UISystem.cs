@@ -231,7 +231,7 @@ namespace LEngine
                 }
                 if (wndInfo == null)
                 {
-                    wndInfo = Game.Table.GetVOData<TbUIWnd>().Get(uiName);
+                    wndInfo = Game.Table.GetTable<TbUIWnd>().Get(uiName);
                     if (wndInfo == null)
                     {
                         Debug.LogError("! ! ! Can't find in UI config. " + uiName);
@@ -255,7 +255,7 @@ namespace LEngine
                 return (cachePrefab, null);
             }
 
-            UIWnd wndInfo = Game.Table.GetVOData<TbUIWnd>().Get(uiName);
+            UIWnd wndInfo = Game.Table.GetTable<TbUIWnd>().Get(uiName);
             if (wndInfo == null)
             {
                 Debug.LogError($"! ! ! Can't find in UI config. {uiName}");
@@ -414,9 +414,6 @@ namespace LEngine
 
         #region ShowUI之前拓展
 
-        /// <summary>
-        /// ShowUI之前拓展
-        /// </summary>
         private async Task PreShowUI(UIBehavior uiBehavior)
         {
             await DealLayerOnShow(uiBehavior);
@@ -463,9 +460,6 @@ namespace LEngine
 
         #region ShowUI之后拓展
 
-        /// <summary>
-        /// ShowUI之后拓展
-        /// </summary>
         private void PostShowUI(UIBehavior uiBehavior, object[] args)
         {
             Debug.Log($"PostShowUI: {uiBehavior.name}");
@@ -499,9 +493,6 @@ namespace LEngine
 
         #region HideUI拓展
 
-        /// <summary>
-        /// HideUI拓展
-        /// </summary>
         private void PostUIHide(UIBehavior uiBehavior)
         {
             Debug.Log($"UISystem HideUI : {uiBehavior.name}");

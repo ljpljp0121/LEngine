@@ -3,7 +3,7 @@ using SimpleJSON;
 
 {{namespace_with_grace_begin __namespace}}
 
-public interface IVOFun
+public interface ITable
 {
     void _LoadData();
 }

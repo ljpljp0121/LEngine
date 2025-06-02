@@ -1,0 +1,12 @@
+#graphRootView
+{
+    background-color: #101010;
+}
+
+GridBackground
+{
+    --grid-background-color: #111111;
+    --line-color: #1D1D1D;
+    --thick-line-color: #292929;
+    --spacing: 20;
+}

@@ -4,9 +4,9 @@ using LEngine;
 
 public class TableSystem : Singleton<TableSystem>
 {
-    private Dictionary<string, IVOFun> tables = new Dictionary<string, IVOFun>();
+    private Dictionary<string, ITable> tables = new Dictionary<string, ITable>();
 
-    public T GetVOData<T>() where T : IVOFun, new()
+    public T GetTable<T>() where T : ITable, new()
     {
         if (tables.ContainsKey(typeof(T).Name))
         {
