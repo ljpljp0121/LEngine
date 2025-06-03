@@ -1,10 +1,10 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Sirenix.OdinInspector;
 using UnityEngine;
-using System;
-using UnityEngine.Serialization;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 namespace GraphProcessor
 {
@@ -38,8 +38,7 @@ namespace GraphProcessor
     /// <summary>
     /// 节点图的核心数据结构（序列化存储）
     /// </summary>
-    [System.Serializable]
-    public class BaseGraph : ScriptableObject, ISerializationCallbackReceiver
+    public class BaseGraph : SerializedScriptableObject
     {
         // 防止无限递归的安全阈值
         static readonly int maxComputeOrderDepth = 1000;
@@ -55,7 +54,6 @@ namespace GraphProcessor
         /// <summary>
         /// 图中所有节点的列表
         /// </summary>
-        [SerializeReference]
         public List<BaseNode> nodes = new List<BaseNode>();
 
         /// <summary>
@@ -638,16 +636,14 @@ namespace GraphProcessor
 
         #endregion
 
-        public void OnBeforeSerialize()
+        protected override void OnBeforeSerialize()
         {
-            // Cleanup broken elements
             stackNodes.RemoveAll(s => s == null);
             nodes.RemoveAll(n => n == null);
         }
 
         public void Deserialize()
         {
-            // Disable nodes correctly before removing them:
             if (nodes != null)
             {
                 foreach (var node in nodes)
@@ -656,8 +652,6 @@ namespace GraphProcessor
 
             InitializeGraphElements();
         }
-
-        public void OnAfterDeserialize() { }
 
         void DestroyBrokenGraphElements()
         {

@@ -15,7 +15,6 @@ namespace GraphProcessor
     /// 节点系统核心基类
     /// 所有自定义节点必须继承此类
     /// </summary>
-    [Serializable]
     public abstract class BaseNode
     {
         #region 基础属性
@@ -65,10 +64,10 @@ namespace GraphProcessor
         public bool nodeLock;
 
         /// <summary>输入端口容器</summary>
-        [NonSerialized] public readonly NodeInputPortContainer inputPorts;
+        [NonSerialized] public NodeInputPortContainer inputPorts;
 
         /// <summary>输出端口容器</summary>
-        [NonSerialized] public readonly NodeOutputPortContainer outputPorts;
+        [NonSerialized] public NodeOutputPortContainer outputPorts;
 
         /// <summary>消息列表</summary>
         [NonSerialized] List<string> messages = new List<string>();
@@ -215,6 +214,10 @@ namespace GraphProcessor
         {
             this.graph = graph;
             ExceptionToLog.Call(() => Enable());
+            inputPorts = new NodeInputPortContainer(this);
+            outputPorts = new NodeOutputPortContainer(this);
+            nodeFields = new Dictionary<string, NodeFieldInformation>();
+            InitializeInOutDatas();
             InitializePorts();
         }
 
@@ -276,7 +279,7 @@ namespace GraphProcessor
                 string name = field.Name;
                 string tooltip = null;
 
-                if (showInInspector != null)
+                //if (showInInspector != null)
                     _needsInspector = true;
 
                 if (inputAttribute == null && outputAttribute == null)
@@ -599,6 +602,9 @@ namespace GraphProcessor
         public bool UpdatePortsForField(string fieldName, bool sendPortUpdatedEvent = true)
         {
             bool changed = false;
+
+            fieldsToUpdate ??= new Stack<PortUpdate>();
+            updatedFields ??= new HashSet<PortUpdate>();
 
             fieldsToUpdate.Clear();
             updatedFields.Clear();

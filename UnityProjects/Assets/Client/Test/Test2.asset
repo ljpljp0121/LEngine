@@ -12,71 +12,110 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31390c44c9f3a3d40b424bf6821999a2, type: 3}
   m_Name: Test2
   m_EditorClassIdentifier: 
-  nodes:
-  - rid: 96342568082079745
-  - rid: 96342568082079750
-  - rid: 96342568082079755
-  - rid: 96342569327525890
-  - rid: 96342569327525891
-  - rid: 96342569327525896
-  - rid: 96342572264062987
-  edges:
-  - GUID: 0dd23f6a-512a-4e3d-80f4-73cfdb57d1f9
-    owner: {fileID: 11400000}
-    inputNodeGUID: 618d8691-06a9-45d7-ae43-f1122363db92
-    outputNodeGUID: 52e8c0ff-dd84-4663-9ea3-ed8d5c6e2714
-    inputFieldName: executed
-    outputFieldName: executes
-    inputPortIdentifier: 
-    outputPortIdentifier: 
-  - GUID: 01198a01-c2b9-4972-81ee-9978b1685970
-    owner: {fileID: 11400000}
-    inputNodeGUID: 52e8c0ff-dd84-4663-9ea3-ed8d5c6e2714
-    outputNodeGUID: e5a05fa2-b280-4470-92b8-0ebc4985fefb
-    inputFieldName: executed
-    outputFieldName: executes
-    inputPortIdentifier: 
-    outputPortIdentifier: 
-  - GUID: 5b8bc262-c1c1-4036-908b-ea91d5e9eaa8
-    owner: {fileID: 11400000}
-    inputNodeGUID: 1d063d93-1ebc-45c9-9cf4-f9b5867f17c7
-    outputNodeGUID: 618d8691-06a9-45d7-ae43-f1122363db92
-    inputFieldName: executed
-    outputFieldName: executes
-    inputPortIdentifier: 
-    outputPortIdentifier: 
-  - GUID: 2dd51054-4b76-415b-9f23-11661151a824
-    owner: {fileID: 11400000}
-    inputNodeGUID: 5b95fbd8-5b99-4ec8-8f03-4fc0d7c10a49
-    outputNodeGUID: 1d063d93-1ebc-45c9-9cf4-f9b5867f17c7
-    inputFieldName: executed
-    outputFieldName: loopBody
-    inputPortIdentifier: 
-    outputPortIdentifier: 
-  - GUID: 9be684c0-e79e-48ba-abb0-9c12faa24120
-    owner: {fileID: 11400000}
-    inputNodeGUID: 1b309f65-e807-499b-8335-ae7f71230300
-    outputNodeGUID: 1d063d93-1ebc-45c9-9cf4-f9b5867f17c7
-    inputFieldName: executed
-    outputFieldName: loopCompleted
-    inputPortIdentifier: 
-    outputPortIdentifier: 
-  - GUID: 5fca62c9-1944-4b14-8900-501ec986a6dc
-    owner: {fileID: 11400000}
-    inputNodeGUID: 21e94eb4-a073-4d6d-b8ef-948409ff93c6
-    outputNodeGUID: 1d063d93-1ebc-45c9-9cf4-f9b5867f17c7
-    inputFieldName: executed
-    outputFieldName: loopCompleted
-    inputPortIdentifier: 
-    outputPortIdentifier: 
-  - GUID: 6adc55c3-5dd4-4077-bb0b-fd729428db0b
-    owner: {fileID: 11400000}
-    inputNodeGUID: 21e94eb4-a073-4d6d-b8ef-948409ff93c6
-    outputNodeGUID: 1d063d93-1ebc-45c9-9cf4-f9b5867f17c7
-    inputFieldName: executed
-    outputFieldName: loopBody
-    inputPortIdentifier: 
-    outputPortIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: nodes
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[GraphProcessor.BaseNode, com.alelievr.NodeGraphProcessor.Runtime]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|RelayNode, com.alelievr.NodeGraphProcessor.Runtime
+    - Name: nodeCustomName
+      Entry: 6
+      Data: 
+    - Name: GUID
+      Entry: 1
+      Data: 3785c792-4d1c-4fde-af4a-beefb06bf902
+    - Name: computeOrder
+      Entry: 3
+      Data: 0
+    - Name: position
+      Entry: 7
+      Data: UnityEngine.Rect, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 90.51105
+    - Name: 
+      Entry: 4
+      Data: 265.499146
+    - Name: 
+      Entry: 4
+      Data: 200
+    - Name: 
+      Entry: 4
+      Data: 200
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: expanded
+      Entry: 5
+      Data: false
+    - Name: debug
+      Entry: 5
+      Data: false
+    - Name: nodeLock
+      Entry: 5
+      Data: false
+    - Name: input
+      Entry: 7
+      Data: RelayNode+PackedRelayData, com.alelievr.NodeGraphProcessor.Runtime
+    - Name: values
+      Entry: 6
+      Data: 
+    - Name: names
+      Entry: 6
+      Data: 
+    - Name: types
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: output
+      Entry: 7
+      Data: RelayNode+PackedRelayData, com.alelievr.NodeGraphProcessor.Runtime
+    - Name: values
+      Entry: 6
+      Data: 
+    - Name: names
+      Entry: 6
+      Data: 
+    - Name: types
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: unpackOutput
+      Entry: 5
+      Data: false
+    - Name: packInput
+      Entry: 5
+      Data: false
+    - Name: inputEdgeCount
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  edges: []
   groups: []
   stackNodes: []
   pinnedElements:
@@ -115,62 +154,11 @@ MonoBehaviour:
   serializedParameterList: []
   stickyNotes: []
   nodeInspectorReference: {fileID: 0}
-  position: {x: 286, y: 68, z: 0}
-  scale: {x: 0.65751624, y: 0.65751624, z: 1}
+  position: {x: 253, y: -71, z: 0}
+  scale: {x: 1, y: 1, z: 1}
   references:
     version: 2
     RefIds:
-    - rid: 96342568082079745
-      type: {class: ConsoleNode, ns: NodeGraphProcessor.Examples, asm: Assembly-CSharp}
-      data:
-        nodeCustomName: 
-        GUID: 52e8c0ff-dd84-4663-9ea3-ed8d5c6e2714
-        computeOrder: 1
-        position:
-          serializedVersion: 2
-          x: 148
-          y: 160
-          width: 170
-          height: 123
-        expanded: 0
-        debug: 1
-        nodeLock: 0
-        logText: "\u4F60\u597D\u554A\uFF0C\u6211\u662F\u8D1D\u5229\u4E9A"
-        logType: 3
-    - rid: 96342568082079750
-      type: {class: ConsoleNode, ns: NodeGraphProcessor.Examples, asm: Assembly-CSharp}
-      data:
-        nodeCustomName: 
-        GUID: 618d8691-06a9-45d7-ae43-f1122363db92
-        computeOrder: 2
-        position:
-          serializedVersion: 2
-          x: 426.69568
-          y: 159.49998
-          width: 170
-          height: 123
-        expanded: 0
-        debug: 1
-        nodeLock: 0
-        logText: "\u4F60\u597D\u4F60\u597D\u4F60\u597D"
-        logType: 3
-    - rid: 96342568082079755
-      type: {class: ConsoleNode, ns: NodeGraphProcessor.Examples, asm: Assembly-CSharp}
-      data:
-        nodeCustomName: 
-        GUID: 5b95fbd8-5b99-4ec8-8f03-4fc0d7c10a49
-        computeOrder: 4
-        position:
-          serializedVersion: 2
-          x: 1061.826
-          y: 139.60869
-          width: 170
-          height: 123
-        expanded: 0
-        debug: 0
-        nodeLock: 0
-        logText: 2222
-        logType: 3
     - rid: 96342568082079788
       type: {class: FloatParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
       data:
@@ -189,70 +177,3 @@ MonoBehaviour:
         mode: 0
         min: 0
         max: 1
-    - rid: 96342569327525890
-      type: {class: ConsoleNode, ns: NodeGraphProcessor.Examples, asm: Assembly-CSharp}
-      data:
-        nodeCustomName: 
-        GUID: 1b309f65-e807-499b-8335-ae7f71230300
-        computeOrder: 5
-        position:
-          serializedVersion: 2
-          x: 892.00006
-          y: 430.33255
-          width: 170
-          height: 137
-        expanded: 0
-        debug: 1
-        nodeLock: 0
-        logText: 11111
-        logType: 3
-    - rid: 96342569327525891
-      type: {class: ConsoleNode, ns: NodeGraphProcessor.Examples, asm: Assembly-CSharp}
-      data:
-        nodeCustomName: 
-        GUID: 21e94eb4-a073-4d6d-b8ef-948409ff93c6
-        computeOrder: 6
-        position:
-          serializedVersion: 2
-          x: 1120
-          y: 321.6653
-          width: 170
-          height: 123
-        expanded: 0
-        debug: 0
-        nodeLock: 0
-        logText: 333333
-        logType: 3
-    - rid: 96342569327525896
-      type: {class: StartNode, ns: NodeGraphProcessor.Examples, asm: Assembly-CSharp}
-      data:
-        nodeCustomName: 
-        GUID: e5a05fa2-b280-4470-92b8-0ebc4985fefb
-        computeOrder: 0
-        position:
-          serializedVersion: 2
-          x: -33.550003
-          y: 160.00002
-          width: 88
-          height: 75
-        expanded: 0
-        debug: 1
-        nodeLock: 0
-    - rid: 96342572264062987
-      type: {class: ForLoopNode, ns: , asm: Assembly-CSharp}
-      data:
-        nodeCustomName: 
-        GUID: 1d063d93-1ebc-45c9-9cf4-f9b5867f17c7
-        computeOrder: 3
-        position:
-          serializedVersion: 2
-          x: 641.1626
-          y: 160
-          width: 209
-          height: 163
-        expanded: 0
-        debug: 0
-        nodeLock: 0
-        start: 0
-        end: 10
-        index: 3
