@@ -27,88 +27,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 1|RelayNode, com.alelievr.NodeGraphProcessor.Runtime
-    - Name: nodeCustomName
-      Entry: 6
-      Data: 
-    - Name: GUID
-      Entry: 1
-      Data: 3785c792-4d1c-4fde-af4a-beefb06bf902
-    - Name: computeOrder
-      Entry: 3
       Data: 0
-    - Name: position
-      Entry: 7
-      Data: UnityEngine.Rect, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 90.51105
-    - Name: 
-      Entry: 4
-      Data: 265.499146
-    - Name: 
-      Entry: 4
-      Data: 200
-    - Name: 
-      Entry: 4
-      Data: 200
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: expanded
-      Entry: 5
-      Data: false
-    - Name: debug
-      Entry: 5
-      Data: false
-    - Name: nodeLock
-      Entry: 5
-      Data: false
-    - Name: input
-      Entry: 7
-      Data: RelayNode+PackedRelayData, com.alelievr.NodeGraphProcessor.Runtime
-    - Name: values
-      Entry: 6
-      Data: 
-    - Name: names
-      Entry: 6
-      Data: 
-    - Name: types
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: output
-      Entry: 7
-      Data: RelayNode+PackedRelayData, com.alelievr.NodeGraphProcessor.Runtime
-    - Name: values
-      Entry: 6
-      Data: 
-    - Name: names
-      Entry: 6
-      Data: 
-    - Name: types
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: unpackOutput
-      Entry: 5
-      Data: false
-    - Name: packInput
-      Entry: 5
-      Data: false
-    - Name: inputEdgeCount
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -121,8 +40,8 @@ MonoBehaviour:
   pinnedElements:
   - position:
       serializedVersion: 2
-      x: 26
-      y: 173
+      x: 0
+      y: 145
       width: 150
       height: 200
     opened: 0
@@ -132,48 +51,19 @@ MonoBehaviour:
   - position:
       serializedVersion: 2
       x: 0
-      y: 370
+      y: 197
       width: 150
       height: 200
     opened: 0
     editorType:
       serializedType: GraphProcessor.ExposedParameterView, com.alelievr.NodeGraphProcessor.Editor,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  - position:
-      serializedVersion: 2
-      x: 0
-      y: 47
-      width: 142
-      height: 199
-    opened: 1
-    editorType:
-      serializedType: ConditionalProcessorView, Assembly-CSharp-Editor, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-  exposedParameters:
-  - rid: 96342568082079788
+  exposedParameters: []
   serializedParameterList: []
   stickyNotes: []
   nodeInspectorReference: {fileID: 0}
-  position: {x: 253, y: -71, z: 0}
-  scale: {x: 1, y: 1, z: 1}
+  position: {x: 329, y: -79, z: 0}
+  scale: {x: 1.3225, y: 1.3225, z: 1}
   references:
     version: 2
-    RefIds:
-    - rid: 96342568082079788
-      type: {class: FloatParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
-      data:
-        guid: 2d7e0a21-66df-4a75-a082-039072fa1819
-        name: New Float
-        input: 1
-        settings:
-          rid: 96342568082079789
-        val: 0
-    - rid: 96342568082079789
-      type: {class: FloatParameter/FloatSettings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
-      data:
-        isHidden: 0
-        expanded: 0
-        guid: 2d7e0a21-66df-4a75-a082-039072fa1819
-        mode: 0
-        min: 0
-        max: 1
+    RefIds: []

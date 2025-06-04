@@ -37,32 +37,12 @@ MonoBehaviour:
   edges: []
   groups: []
   stackNodes: []
-  pinnedElements:
-  - position:
-      serializedVersion: 2
-      x: 0
-      y: 119
-      width: 150
-      height: 200
-    opened: 0
-    editorType:
-      serializedType: GraphProcessor.ProcessorView, com.alelievr.NodeGraphProcessor.Editor,
-        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  - position:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 150
-      height: 200
-    opened: 0
-    editorType:
-      serializedType: GraphProcessor.ExposedParameterView, com.alelievr.NodeGraphProcessor.Editor,
-        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  pinnedElements: []
   exposedParameters: []
   serializedParameterList: []
   stickyNotes: []
   nodeInspectorReference: {fileID: 0}
-  position: {x: -179, y: -121, z: 0}
+  position: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   references:
     version: 2

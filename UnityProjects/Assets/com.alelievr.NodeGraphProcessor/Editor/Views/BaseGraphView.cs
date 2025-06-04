@@ -119,7 +119,6 @@ namespace GraphProcessor
         {
             get
             {
-
                 if (graph.nodeInspectorReference == null)
                     graph.nodeInspectorReference = CreateNodeInspectorObject();
                 return graph.nodeInspectorReference as NodeInspectorObject;
@@ -743,9 +742,7 @@ namespace GraphProcessor
 
         public void Initialize(BaseGraph graph)
         {
-            GridBackground gridBackground = new GridBackground();
-            gridBackground.StretchToParentSize();
-            Insert(0, gridBackground);
+            
             if (this.graph != null)
             {
                 SaveGraphToDisk();

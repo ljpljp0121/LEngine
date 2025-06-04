@@ -1,12 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEditor;
-using UnityEditor.UIElements;
-using UnityEditor.Experimental.GraphView;
-using UnityEngine.UIElements;
 using GraphProcessor;
-using System.Linq;
+using UnityEditor.UIElements;
+using UnityEngine.UIElements;
 
 [NodeCustomEditor(typeof(ParameterNode))]
 public class ParameterNodeView : BaseNodeView

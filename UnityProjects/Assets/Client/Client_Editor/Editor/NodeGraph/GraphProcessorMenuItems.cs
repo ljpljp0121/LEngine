@@ -25,13 +25,13 @@ public class GraphProcessorMenuItems : NodeGraphProcessorMenuItems
         return false;
     }
 
-    [MenuItem("Assets/Create/NodeGraph/Node C# Script",false, MenuItemPosition.afterCreateScript)]
+    [MenuItem("Assets/Create/NodeGraph/Node C# Script",false)]
     private static void CreateNodeScript()
     {
         CreateDefaultNodeCSharpScritpt();
     }
 
-    [MenuItem("Assets/Create/NodeGraph/NodeView C# Script", false, MenuItemPosition.beforeCreateScript)]
+    [MenuItem("Assets/Create/NodeGraph/NodeView C# Script", false)]
     private static void CreateNodeViewScript()
     {
         CreateDefaultNodeViewCSharpScritpt();

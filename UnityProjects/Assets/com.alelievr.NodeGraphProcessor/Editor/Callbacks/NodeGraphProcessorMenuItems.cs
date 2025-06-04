@@ -1,21 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEditor;
 using System.IO;
-using System.Reflection;
-using UnityEditor.ProjectWindowCallback;
+using UnityEditor;
+using UnityEngine;
 
 namespace GraphProcessor
 {
     /// <summary>
     /// To add the menu items that create node C# script templates files you can inherit from this class and use it's API combined with [MenuItem]
-    /// See GraphProcessorMenuItems.cs in examples for implementation details
     /// </summary>
     public class NodeGraphProcessorMenuItems
     {
         static readonly string nodeBaseName = "Node.cs";
         static readonly string nodeViewBaseName = "NodeView.cs";
+
         static string _nodeTemplatePath = null;
         static string nodeTemplatePath
         {
@@ -29,6 +25,7 @@ namespace GraphProcessor
                 return _nodeTemplatePath;
             }
         }
+
         static string _nodeViewTemplatePath;
         static string nodeViewTemplatePath
         {
@@ -41,12 +38,6 @@ namespace GraphProcessor
                 }
                 return _nodeViewTemplatePath;
             }
-        }
-
-        protected static class MenuItemPosition
-        {
-            public const int afterCreateScript = 81;
-            public const int beforeCreateScript = 79;
         }
 
         protected static string GetCurrentProjectWindowPath()
