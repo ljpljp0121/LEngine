@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client_UI", "Client_UI.cspr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LEngine", "LEngine.csproj", "{6CB138DA-EAE0-452D-B824-98C9F510F9A0}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap", "Bootstrap.csproj", "{AB41E367-09ED-4C37-99A3-258E3AD304C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{6CB138DA-EAE0-452D-B824-98C9F510F9A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CB138DA-EAE0-452D-B824-98C9F510F9A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CB138DA-EAE0-452D-B824-98C9F510F9A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB41E367-09ED-4C37-99A3-258E3AD304C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB41E367-09ED-4C37-99A3-258E3AD304C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB41E367-09ED-4C37-99A3-258E3AD304C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB41E367-09ED-4C37-99A3-258E3AD304C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

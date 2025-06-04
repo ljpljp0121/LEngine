@@ -7,16 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Bootstrap\**" />
     <Compile Remove="Client_Editor\**" />
     <Compile Remove="Client_Logic\**" />
     <Compile Remove="Client_UI\**" />
     <Compile Remove="LEngine\**" />
     <Compile Remove="lib\**" />
+    <EmbeddedResource Remove="Bootstrap\**" />
     <EmbeddedResource Remove="Client_Editor\**" />
     <EmbeddedResource Remove="Client_Logic\**" />
     <EmbeddedResource Remove="Client_UI\**" />
     <EmbeddedResource Remove="LEngine\**" />
     <EmbeddedResource Remove="lib\**" />
+    <None Remove="Bootstrap\**" />
     <None Remove="Client_Editor\**" />
     <None Remove="Client_Logic\**" />
     <None Remove="Client_UI\**" />
@@ -25,12 +28,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Client_Gameplay\NodeGraph\" />
+    <ProjectReference Include="Bootstrap.csproj" />
+    <ProjectReference Include="Client_Logic.csproj" />
+    <ProjectReference Include="LEngine.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="Client_Logic.csproj" />
-    <ProjectReference Include="LEngine.csproj" />
+    <Reference Include="com.alelievr.NodeGraphProcessor.Runtime">
+      <HintPath>lib\com.alelievr.NodeGraphProcessor.Runtime.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

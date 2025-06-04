@@ -3,63 +3,64 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
-    <BaseOutputPath></BaseOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Bootstrap\**" />
     <Compile Remove="Client_Editor\**" />
     <Compile Remove="Client_Gameplay\**" />
     <Compile Remove="Client_Logic\**" />
+    <Compile Remove="Client_UI\**" />
     <Compile Remove="LEngine\**" />
     <Compile Remove="lib\**" />
-    <EmbeddedResource Remove="Bootstrap\**" />
     <EmbeddedResource Remove="Client_Editor\**" />
     <EmbeddedResource Remove="Client_Gameplay\**" />
     <EmbeddedResource Remove="Client_Logic\**" />
+    <EmbeddedResource Remove="Client_UI\**" />
     <EmbeddedResource Remove="LEngine\**" />
     <EmbeddedResource Remove="lib\**" />
-    <None Remove="Bootstrap\**" />
     <None Remove="Client_Editor\**" />
     <None Remove="Client_Gameplay\**" />
     <None Remove="Client_Logic\**" />
+    <None Remove="Client_UI\**" />
     <None Remove="LEngine\**" />
     <None Remove="lib\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="Bootstrap.csproj" />
-    <ProjectReference Include="Client_Gameplay.csproj" />
-    <ProjectReference Include="Client_Logic.csproj" />
-    <ProjectReference Include="LEngine.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="DOTween">
-      <HintPath>lib\DOTween.dll</HintPath>
+    <Reference Include="HybridCLR.Runtime">
+      <HintPath>lib\HybridCLR.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="DOTweenModule">
-      <HintPath>lib\DOTweenModule.dll</HintPath>
+    <Reference Include="Sirenix.Serialization">
+      <HintPath>lib\Odin\Sirenix.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="IngameDebugConsole.Runtime">
-      <HintPath>lib\IngameDebugConsole.Runtime.dll</HintPath>
+    <Reference Include="Sirenix.Utilities">
+      <HintPath>lib\Odin\Sirenix.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="UniTask">
+      <HintPath>lib\UniTask.dll</HintPath>
+    </Reference>
+    <Reference Include="UniTask.YooAsset">
+      <HintPath>lib\UniTask.YooAsset.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>lib\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>lib\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>lib\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>lib\UnityEngine.UI.dll</HintPath>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>lib\UnityEngine.UnityWebRequestModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UIModule">
-      <HintPath>lib\UnityEngine.UIModule.dll</HintPath>
+    <Reference Include="YooAsset">
+      <HintPath>lib\YooAsset.dll</HintPath>
     </Reference>
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy &quot;bin\Debug\netstandard2.1\Client_UI.dll&quot; &quot;../UnityProjects/Assets/Plugins&quot; /y &#xD;&#xA;xcopy &quot;bin\Debug\netstandard2.1\Client_UI.pdb&quot; &quot;../UnityProjects/Assets/Plugins&quot; /y &#xD;&#xA;" />
+    <Exec Command="xcopy &quot;bin\Debug\netstandard2.1\Bootstrap.dll&quot; &quot;../UnityProjects/Assets/Plugins&quot; /y &#xD;&#xA;xcopy &quot;bin\Debug\netstandard2.1\Bootstrap.pdb&quot; &quot;../UnityProjects/Assets/Plugins&quot; /y " />
   </Target>
 
 </Project>

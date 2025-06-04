@@ -7,16 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Bootstrap\**" />
     <Compile Remove="Client_Editor\**" />
     <Compile Remove="Client_Gameplay\**" />
     <Compile Remove="Client_UI\**" />
     <Compile Remove="LEngine\**" />
     <Compile Remove="lib\**" />
+    <EmbeddedResource Remove="Bootstrap\**" />
     <EmbeddedResource Remove="Client_Editor\**" />
     <EmbeddedResource Remove="Client_Gameplay\**" />
     <EmbeddedResource Remove="Client_UI\**" />
     <EmbeddedResource Remove="LEngine\**" />
     <EmbeddedResource Remove="lib\**" />
+    <None Remove="Bootstrap\**" />
     <None Remove="Client_Editor\**" />
     <None Remove="Client_Gameplay\**" />
     <None Remove="Client_UI\**" />
@@ -25,6 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="Bootstrap.csproj" />
     <ProjectReference Include="LEngine.csproj" />
   </ItemGroup>
 

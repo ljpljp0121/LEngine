@@ -6,16 +6,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Bootstrap\**" />
     <Compile Remove="Client_Gameplay\**" />
     <Compile Remove="Client_Logic\**" />
     <Compile Remove="Client_UI\**" />
     <Compile Remove="LEngine\**" />
     <Compile Remove="lib\**" />
+    <EmbeddedResource Remove="Bootstrap\**" />
     <EmbeddedResource Remove="Client_Gameplay\**" />
     <EmbeddedResource Remove="Client_Logic\**" />
     <EmbeddedResource Remove="Client_UI\**" />
     <EmbeddedResource Remove="LEngine\**" />
     <EmbeddedResource Remove="lib\**" />
+    <None Remove="Bootstrap\**" />
     <None Remove="Client_Gameplay\**" />
     <None Remove="Client_Logic\**" />
     <None Remove="Client_UI\**" />
@@ -24,36 +27,85 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Bootstrap">
+      <HintPath>bin\Debug\netstandard2.1\Bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="Client_Gameplay">
+      <HintPath>bin\Debug\netstandard2.1\Client_Gameplay.dll</HintPath>
+    </Reference>
+    <Reference Include="Client_Logic">
+      <HintPath>bin\Debug\netstandard2.1\Client_Logic.dll</HintPath>
+    </Reference>
+    <Reference Include="Client_UI">
+      <HintPath>bin\Debug\netstandard2.1\Client_UI.dll</HintPath>
+    </Reference>
+    <Reference Include="com.alelievr.NodeGraphProcessor.Editor">
+      <HintPath>lib\com.alelievr.NodeGraphProcessor.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="com.alelievr.NodeGraphProcessor.Runtime">
+      <HintPath>lib\com.alelievr.NodeGraphProcessor.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="HybridCLR.Editor">
-      <HintPath>..\lib\HybridCLR.Editor.dll</HintPath>
+      <HintPath>lib\HybridCLR.Editor.dll</HintPath>
     </Reference>
     <Reference Include="IngameDebugConsole.Editor">
-      <HintPath>..\lib\IngameDebugConsole.Editor.dll</HintPath>
+      <HintPath>lib\IngameDebugConsole.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="LEngine">
+      <HintPath>bin\Debug\netstandard2.1\LEngine.dll</HintPath>
     </Reference>
     <Reference Include="Sirenix.OdinInspector.Attributes">
-      <HintPath>..\lib\Odin\Sirenix.OdinInspector.Attributes.dll</HintPath>
+      <HintPath>lib\Odin\Sirenix.OdinInspector.Attributes.dll</HintPath>
     </Reference>
     <Reference Include="Sirenix.OdinInspector.Editor">
-      <HintPath>..\lib\Odin\Sirenix.OdinInspector.Editor.dll</HintPath>
+      <HintPath>lib\Odin\Sirenix.OdinInspector.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Sirenix.OdinInspector.Modules.UnityMathematics">
-      <HintPath>..\lib\Sirenix.OdinInspector.Modules.UnityMathematics.dll</HintPath>
+      <HintPath>lib\Sirenix.OdinInspector.Modules.UnityMathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Reflection.Editor">
+      <HintPath>lib\Odin\Sirenix.Reflection.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Serialization">
+      <HintPath>lib\Odin\Sirenix.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Utilities">
+      <HintPath>lib\Odin\Sirenix.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Utilities.Editor">
+      <HintPath>lib\Odin\Sirenix.Utilities.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>..\lib\UnityEditor.dll</HintPath>
+      <HintPath>lib\UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.CoreModule">
-      <HintPath>..\lib\UnityEditor.CoreModule.dll</HintPath>
+      <HintPath>lib\UnityEditor.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.GraphViewModule">
+      <HintPath>lib\UnityEditor.GraphViewModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UIElementsModule">
+      <HintPath>lib\UnityEditor.UIElementsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>..\lib\UnityEngine.dll</HintPath>
+      <HintPath>lib\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\lib\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>lib\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>lib\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>lib\UnityEngine.UIElementsModule.dll</HintPath>
     </Reference>
     <Reference Include="YooAsset.Editor">
-      <HintPath>..\lib\YooAsset.Editor.dll</HintPath>
+      <HintPath>lib\YooAsset.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy &quot;bin\Debug\netstandard2.1\Client_Editor.dll&quot; &quot;../UnityProjects/Assets/Game/Editor&quot; /y &#xD;&#xA;xcopy &quot;bin\Debug\netstandard2.1\Client_Editor.pdb&quot; &quot;../UnityProjects/Assets/Game/Editor&quot; /y " />
+  </Target>
 
 </Project>
