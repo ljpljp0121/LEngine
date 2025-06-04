@@ -1,0 +1,74 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <BaseOutputPath></BaseOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Client_Editor\**" />
+    <Compile Remove="Client_Gameplay\**" />
+    <Compile Remove="Client_UI\**" />
+    <Compile Remove="LEngine\**" />
+    <Compile Remove="lib\**" />
+    <EmbeddedResource Remove="Client_Editor\**" />
+    <EmbeddedResource Remove="Client_Gameplay\**" />
+    <EmbeddedResource Remove="Client_UI\**" />
+    <EmbeddedResource Remove="LEngine\**" />
+    <EmbeddedResource Remove="lib\**" />
+    <None Remove="Client_Editor\**" />
+    <None Remove="Client_Gameplay\**" />
+    <None Remove="Client_UI\**" />
+    <None Remove="LEngine\**" />
+    <None Remove="lib\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="LEngine.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="DOTween">
+      <HintPath>lib\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTweenModule">
+      <HintPath>lib\DOTweenModule.dll</HintPath>
+    </Reference>
+    <Reference Include="HybridCLR.Runtime">
+      <HintPath>lib\HybridCLR.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Luban.Runtime">
+      <HintPath>lib\Luban.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.OdinInspector.Attributes">
+      <HintPath>lib\Odin\Sirenix.OdinInspector.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Serialization">
+      <HintPath>lib\Odin\Sirenix.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>lib\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>lib\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>lib\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>lib\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>lib\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>lib\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy &quot;bin\Debug\netstandard2.1\Client_Logic.dll&quot; &quot;../UnityProjects/Assets/Plugins&quot; /y &#xD;&#xA;xcopy &quot;bin\Debug\netstandard2.1\Client_Logic.pdb&quot; &quot;../UnityProjects/Assets/Plugins&quot; /y " />
+  </Target>
+
+</Project>

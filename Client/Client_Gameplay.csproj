@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <BaseOutputPath></BaseOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Client_Editor\**" />
+    <Compile Remove="Client_Logic\**" />
+    <Compile Remove="Client_UI\**" />
+    <Compile Remove="LEngine\**" />
+    <Compile Remove="lib\**" />
+    <EmbeddedResource Remove="Client_Editor\**" />
+    <EmbeddedResource Remove="Client_Logic\**" />
+    <EmbeddedResource Remove="Client_UI\**" />
+    <EmbeddedResource Remove="LEngine\**" />
+    <EmbeddedResource Remove="lib\**" />
+    <None Remove="Client_Editor\**" />
+    <None Remove="Client_Logic\**" />
+    <None Remove="Client_UI\**" />
+    <None Remove="LEngine\**" />
+    <None Remove="lib\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Client_Gameplay\NodeGraph\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="Client_Logic.csproj" />
+    <ProjectReference Include="LEngine.csproj" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy &quot;bin\Debug\netstandard2.1\Client_Gameplay.dll&quot; &quot;../UnityProjects/Assets/Plugins&quot; /y &#xD;&#xA;xcopy &quot;bin\Debug\netstandard2.1\Client_Gameplay.pdb&quot; &quot;../UnityProjects/Assets/Plugins&quot; /y " />
+  </Target>
+
+</Project>

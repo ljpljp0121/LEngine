@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <BaseOutputPath></BaseOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Client_Editor\**" />
+    <Compile Remove="Client_Gameplay\**" />
+    <Compile Remove="Client_Logic\**" />
+    <Compile Remove="Client_UI\**" />
+    <Compile Remove="lib\**" />
+    <EmbeddedResource Remove="Client_Editor\**" />
+    <EmbeddedResource Remove="Client_Gameplay\**" />
+    <EmbeddedResource Remove="Client_Logic\**" />
+    <EmbeddedResource Remove="Client_UI\**" />
+    <EmbeddedResource Remove="lib\**" />
+    <None Remove="Client_Editor\**" />
+    <None Remove="Client_Gameplay\**" />
+    <None Remove="Client_Logic\**" />
+    <None Remove="Client_UI\**" />
+    <None Remove="lib\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="UnityEngine">
+      <HintPath>lib\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>lib\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>lib\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>lib\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="YooAsset">
+      <HintPath>lib\YooAsset.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy &quot;bin\Debug\netstandard2.1\LEngine.dll&quot; &quot;../UnityProjects/Assets/Plugins&quot; /y &#xD;&#xA;xcopy &quot;bin\Debug\netstandard2.1\LEngine.pdb&quot; &quot;../UnityProjects/Assets/Plugins&quot; /y " />
+  </Target>
+
+</Project>
