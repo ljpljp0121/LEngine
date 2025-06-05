@@ -106,7 +106,7 @@
 
   <ItemGroup>
     <Folder Include="Client_Editor\NodeGraph\Graph\ConditionalGraph\" />
-    <Folder Include="Client_Editor\NodeGraph\Nodes\Conditional\" />
+    <Folder Include="Client_Editor\NodeGraph\Nodes\Common\" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

@@ -1,10 +1,7 @@
-using System;
-using System.Collections;
+﻿using GraphProcessor;
 using System.Collections.Generic;
-using UnityEngine;
-using GraphProcessor;
-using System.Linq;
 using Sirenix.OdinInspector;
+using UnityEngine;
 
 [System.Serializable, NodeMenuItem("Custom/AllPortTestNode")]
 public class AllPortTestNode : BaseNode
@@ -16,16 +13,16 @@ public class AllPortTestNode : BaseNode
     [Input(name = "input_Double")] public double input_Double;
     [Input(name = "input_String")] public string input_String;
     [Input(name = "input_Object")] public object input_Object;
-    [Input(name = "input_Array"),ShowPortIcon(IconNameMatchedInUSSFile = "Array"), TableMatrix(HorizontalTitle = "input_Array")] public int[,] input_Array = new int[3,3];
+    [Input(name = "input_Array"), ShowPortIcon(IconNameMatchedInUSSFile = "Array"), TableMatrix(HorizontalTitle = "input_Array")] public int[,] input_Array = new int[3, 3];
     [Input(name = "input_Vector2")] public Vector2 input_Vector2;
     [Input(name = "input_Vector3")] public Vector3 input_Vector3;
     [Input(name = "input_Vector4")] public Vector4 input_Vector4;
     [Input(name = "input_Quaternion")] public Quaternion input_Quaternion;
     [Input(name = "input_Color")] public Color output_Color;
     [Input(name = "input_HashSet"), ShowPortIcon(ShowIcon = true, IconNameMatchedInUSSFile = "Object")] public HashSet<string> output_HashSet;
-    
+
     [Output(name = "output_List"), ShowPortIcon(ShowIcon = true, IconNameMatchedInUSSFile = "Object")] public List<string> output_List;
-    [Output(name = "output_Dictionary"), ShowPortIcon(ShowIcon = true, IconNameMatchedInUSSFile = "Object")] public Dictionary<string,string> output_Dictionary;
+    [Output(name = "output_Dictionary"), ShowPortIcon(ShowIcon = true, IconNameMatchedInUSSFile = "Object")] public Dictionary<string, string> output_Dictionary;
     [Output(name = "output_IfCondition"), ShowPortIcon(ShowIcon = true, IconNameMatchedInUSSFile = "IfCondition")] public bool output_IfCondition;
     [Output(name = "output_ForEach"), ShowPortIcon(ShowIcon = true, IconNameMatchedInUSSFile = "ForEachLoop")] public bool output_ForEach;
     [Output(name = "output_WhileLoop"), ShowPortIcon(ShowIcon = true, IconNameMatchedInUSSFile = "WhileLoop")] public bool output_WhileLoop;
