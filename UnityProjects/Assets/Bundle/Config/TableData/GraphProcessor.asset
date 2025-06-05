@@ -27,7 +27,337 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 1|StartNode, Client_Gameplay
+    - Name: nodeCustomName
+      Entry: 6
+      Data: 
+    - Name: GUID
+      Entry: 1
+      Data: a69e05fe-5661-4ef9-888d-b7a341441a71
+    - Name: computeOrder
+      Entry: 3
       Data: 0
+    - Name: position
+      Entry: 7
+      Data: UnityEngine.Rect, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 210.811
+    - Name: 
+      Entry: 4
+      Data: 124.905487
+    - Name: 
+      Entry: 4
+      Data: 90
+    - Name: 
+      Entry: 4
+      Data: 75
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: expanded
+      Entry: 5
+      Data: false
+    - Name: debug
+      Entry: 5
+      Data: false
+    - Name: nodeLock
+      Entry: 5
+      Data: false
+    - Name: executes
+      Entry: 7
+      Data: ConditionalLink, Client_Gameplay
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 2|IfNode, Client_Gameplay
+    - Name: nodeCustomName
+      Entry: 6
+      Data: 
+    - Name: GUID
+      Entry: 1
+      Data: 636819e9-ac69-4d4e-b517-d221eb061ce9
+    - Name: computeOrder
+      Entry: 3
+      Data: 3
+    - Name: position
+      Entry: 7
+      Data: UnityEngine.Rect, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 470
+    - Name: 
+      Entry: 4
+      Data: 151
+    - Name: 
+      Entry: 4
+      Data: 164
+    - Name: 
+      Entry: 4
+      Data: 113
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: expanded
+      Entry: 5
+      Data: false
+    - Name: debug
+      Entry: 5
+      Data: false
+    - Name: nodeLock
+      Entry: 5
+      Data: false
+    - Name: executed
+      Entry: 7
+      Data: ConditionalLink, Client_Gameplay
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: condition
+      Entry: 5
+      Data: true
+    - Name: true
+      Entry: 7
+      Data: ConditionalLink, Client_Gameplay
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: false
+      Entry: 7
+      Data: ConditionalLink, Client_Gameplay
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: compareOperator
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|Comparison, Client_Gameplay
+    - Name: nodeCustomName
+      Entry: 6
+      Data: 
+    - Name: GUID
+      Entry: 1
+      Data: fafeaf27-8c16-4e3b-a606-33e347686ad7
+    - Name: computeOrder
+      Entry: 3
+      Data: 2
+    - Name: position
+      Entry: 7
+      Data: UnityEngine.Rect, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 184
+    - Name: 
+      Entry: 4
+      Data: 255
+    - Name: 
+      Entry: 4
+      Data: 209
+    - Name: 
+      Entry: 4
+      Data: 157
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: expanded
+      Entry: 5
+      Data: false
+    - Name: debug
+      Entry: 5
+      Data: false
+    - Name: nodeLock
+      Entry: 5
+      Data: false
+    - Name: inA
+      Entry: 4
+      Data: 5
+    - Name: inB
+      Entry: 4
+      Data: 1
+    - Name: compared
+      Entry: 5
+      Data: true
+    - Name: compareFunction
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 4|NodeGraphProcessor.Examples.ConsoleNode, NodeGraphProcessor.Examples
+    - Name: nodeCustomName
+      Entry: 6
+      Data: 
+    - Name: GUID
+      Entry: 1
+      Data: 3d8132a6-a773-495c-885c-1bdbe4d3d68e
+    - Name: computeOrder
+      Entry: 3
+      Data: 4
+    - Name: position
+      Entry: 7
+      Data: UnityEngine.Rect, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 802
+    - Name: 
+      Entry: 4
+      Data: 75
+    - Name: 
+      Entry: 4
+      Data: 170
+    - Name: 
+      Entry: 4
+      Data: 123
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: expanded
+      Entry: 5
+      Data: false
+    - Name: debug
+      Entry: 5
+      Data: false
+    - Name: nodeLock
+      Entry: 5
+      Data: false
+    - Name: executed
+      Entry: 7
+      Data: ConditionalLink, Client_Gameplay
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: executes
+      Entry: 7
+      Data: ConditionalLink, Client_Gameplay
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: obj
+      Entry: 6
+      Data: 
+    - Name: logText
+      Entry: 1
+      Data: 777
+    - Name: logType
+      Entry: 3
+      Data: 3
+    - Name: TestDic
+      Entry: 7
+      Data: 5|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.String,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 6|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|NodeGraphProcessor.Examples.ConsoleNode, NodeGraphProcessor.Examples
+    - Name: nodeCustomName
+      Entry: 6
+      Data: 
+    - Name: GUID
+      Entry: 1
+      Data: c194113c-1f2d-41ad-a698-aecb2d2407b7
+    - Name: computeOrder
+      Entry: 3
+      Data: 5
+    - Name: position
+      Entry: 7
+      Data: UnityEngine.Rect, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 793
+    - Name: 
+      Entry: 4
+      Data: 301
+    - Name: 
+      Entry: 4
+      Data: 170
+    - Name: 
+      Entry: 4
+      Data: 123
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: expanded
+      Entry: 5
+      Data: false
+    - Name: debug
+      Entry: 5
+      Data: false
+    - Name: nodeLock
+      Entry: 5
+      Data: false
+    - Name: executed
+      Entry: 7
+      Data: ConditionalLink, Client_Gameplay
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: executes
+      Entry: 7
+      Data: ConditionalLink, Client_Gameplay
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: obj
+      Entry: 6
+      Data: 
+    - Name: logText
+      Entry: 1
+      Data: 444
+    - Name: logType
+      Entry: 3
+      Data: 3
+    - Name: TestDic
+      Entry: 7
+      Data: 8|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.String,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 6
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -36,7 +366,7 @@ MonoBehaviour:
       Data: 
     - Name: groups
       Entry: 7
-      Data: 1|System.Collections.Generic.List`1[[GraphProcessor.Group, com.alelievr.NodeGraphProcessor.Runtime]],
+      Data: 9|System.Collections.Generic.List`1[[GraphProcessor.Group, com.alelievr.NodeGraphProcessor.Runtime]],
         mscorlib
     - Name: 
       Entry: 12
@@ -48,14 +378,56 @@ MonoBehaviour:
       Entry: 8
       Data: 
   serializedNodes: []
-  edges: []
+  edges:
+  - GUID: 0905d97a-6d7c-44f5-9fd9-88c59ddf81fb
+    owner: {fileID: 11400000}
+    inputNodeGUID: 636819e9-ac69-4d4e-b517-d221eb061ce9
+    outputNodeGUID: fafeaf27-8c16-4e3b-a606-33e347686ad7
+    inputFieldName: condition
+    outputFieldName: compared
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 59056597-267b-471a-bc33-cba6986462da
+    owner: {fileID: 11400000}
+    inputNodeGUID: 3d8132a6-a773-495c-885c-1bdbe4d3d68e
+    outputNodeGUID: 636819e9-ac69-4d4e-b517-d221eb061ce9
+    inputFieldName: executed
+    outputFieldName: true
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 14f01bd7-9eb8-464e-899a-786439b20c5c
+    owner: {fileID: 11400000}
+    inputNodeGUID: c194113c-1f2d-41ad-a698-aecb2d2407b7
+    outputNodeGUID: 636819e9-ac69-4d4e-b517-d221eb061ce9
+    inputFieldName: executed
+    outputFieldName: false
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: f0193da7-fc39-420f-bfc3-c9251b93cb04
+    owner: {fileID: 11400000}
+    inputNodeGUID: 636819e9-ac69-4d4e-b517-d221eb061ce9
+    outputNodeGUID: a69e05fe-5661-4ef9-888d-b7a341441a71
+    inputFieldName: executed
+    outputFieldName: executes
+    inputPortIdentifier: 
+    outputPortIdentifier: 
   stackNodes: []
-  pinnedElements: []
+  pinnedElements:
+  - position:
+      serializedVersion: 2
+      x: 0
+      y: 192
+      width: 150
+      height: 200
+    opened: 1
+    editorType:
+      serializedType: ConditionalProcessorView, Client_Editor, Version=1.0.0.0, Culture=neutral,
+        PublicKeyToken=null
   exposedParameters: []
   serializedParameterList: []
   stickyNotes: []
-  position: {x: 0, y: 9, z: 0}
-  scale: {x: 1, y: 1, z: 1}
+  position: {x: 46, y: 52, z: 0}
+  scale: {x: 0.7561437, y: 0.7561437, z: 1}
   references:
     version: 2
     RefIds: []
