@@ -25,9 +25,9 @@ namespace GraphProcessor
 
     public static class TypeAdapter
     {
-        static Dictionary< (Type from, Type to), Func<object, object> > adapters = new Dictionary< (Type, Type), Func<object, object> >();
-        static Dictionary< (Type from, Type to), MethodInfo > adapterMethods = new Dictionary< (Type, Type), MethodInfo >();
-        static List< (Type from, Type to)> incompatibleTypes = new List<( Type from, Type to) >();
+        static Dictionary<(Type from, Type to), Func<object, object>> adapters = new Dictionary<(Type, Type), Func<object, object>>();
+        static Dictionary<(Type from, Type to), MethodInfo> adapterMethods = new Dictionary<(Type, Type), MethodInfo>();
+        static List<(Type from, Type to)> incompatibleTypes = new List<(Type from, Type to)>();
 
         [System.NonSerialized]
         static bool adaptersLoaded = false;
@@ -53,7 +53,7 @@ namespace GraphProcessor
                 {
                     if (type.IsAbstract)
                         continue;
-                    
+
                     var adapter = Activator.CreateInstance(type) as ITypeAdapter;
                     if (adapter != null)
                     {
@@ -63,7 +63,7 @@ namespace GraphProcessor
                             incompatibleTypes.Add((types.Item2, types.Item1));
                         }
                     }
-                    
+
                     foreach (var method in type.GetMethods(BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
                     {
                         if (method.GetParameters().Length != 1)
@@ -79,25 +79,28 @@ namespace GraphProcessor
                         Type from = method.GetParameters()[0].ParameterType;
                         Type to = method.ReturnType;
 
-                        try {
+                        try
+                        {
 
 #if ENABLE_IL2CPP
                             // IL2CPP doesn't suport calling generic functions via reflection (AOT can't generate templated code)
                             Func<object, object> r = (object param) => { return (object)method.Invoke(null, new object[]{ param }); };
 #else
-                            MethodInfo genericHelper = typeof(TypeAdapter).GetMethod("ConvertTypeMethodHelper", 
+                            MethodInfo genericHelper = typeof(TypeAdapter).GetMethod("ConvertTypeMethodHelper",
                                 BindingFlags.Static | BindingFlags.NonPublic);
-                            
+
                             // Now supply the type arguments
                             MethodInfo constructedHelper = genericHelper.MakeGenericMethod(from, to);
 
-                            object ret = constructedHelper.Invoke(null, new object[] {method});
-                            var r = (Func<object, object>) ret;
+                            object ret = constructedHelper.Invoke(null, new object[] { method });
+                            var r = (Func<object, object>)ret;
 #endif
 
                             adapters.Add((method.GetParameters()[0].ParameterType, method.ReturnType), r);
                             adapterMethods.Add((method.GetParameters()[0].ParameterType, method.ReturnType), method);
-                        } catch (Exception e) {
+                        }
+                        catch (Exception e)
+                        {
                             Debug.LogError($"Failed to load the type convertion method: {method}\n{e}");
                         }
                     }
@@ -111,7 +114,7 @@ namespace GraphProcessor
                 if (!adapters.ContainsKey((kp.Key.to, kp.Key.from)))
                     Debug.LogError($"Missing convertion method. There is one for {kp.Key.from} to {kp.Key.to} but not for {kp.Key.to} to {kp.Key.from}");
             }
-            
+
             adaptersLoaded = true;
         }
 
@@ -126,7 +129,7 @@ namespace GraphProcessor
         {
             if (!adaptersLoaded)
                 LoadAllAdapters();
-            
+
             if (AreIncompatible(from, to))
                 return false;
 

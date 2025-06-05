@@ -151,4 +151,5 @@ MonoBehaviour:
   position: {x: -140, y: 355, z: 0}
   scale: {x: 1.15, y: 1.15, z: 1}
   references:
-    version: 1
+    version: 2
+    RefIds: []

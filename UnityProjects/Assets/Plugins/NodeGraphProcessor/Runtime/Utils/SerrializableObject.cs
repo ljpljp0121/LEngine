@@ -58,10 +58,13 @@ namespace GraphProcessor
                 value = serializedValue.Length > 1 ? serializedValue.Substring(1, serializedValue.Length - 2).Replace("\\\"", "\"") : "";
             else
             {
-                try {
+                try
+                {
                     value = Activator.CreateInstance(type);
                     JsonUtility.FromJsonOverwrite(serializedValue, value);
-                } catch (Exception e){
+                }
+                catch (Exception e)
+                {
                     Debug.LogError(e);
                     Debug.LogError("Can't serialize type " + serializedType);
                 }
@@ -71,7 +74,7 @@ namespace GraphProcessor
         public void Serialize()
         {
             if (value == null)
-                return ;
+                return;
 
             serializedType = value.GetType().AssemblyQualifiedName;
 
@@ -80,7 +83,7 @@ namespace GraphProcessor
             else if (value is UnityEngine.Object) //type is a unity object
             {
                 if ((value as UnityEngine.Object) == null)
-                    return ;
+                    return;
 
                 ObjectWrapper wrapper = new ObjectWrapper { value = value as UnityEngine.Object };
                 serializedValue = JsonUtility.ToJson(wrapper);
@@ -89,11 +92,14 @@ namespace GraphProcessor
                 serializedValue = "\"" + ((string)value).Replace("\"", "\\\"") + "\"";
             else
             {
-                try {
+                try
+                {
                     serializedValue = JsonUtility.ToJson(value);
                     if (String.IsNullOrEmpty(serializedValue))
                         throw new Exception();
-                } catch {
+                }
+                catch
+                {
                     Debug.LogError("Can't serialize type " + serializedType);
                 }
             }

@@ -26,7 +26,7 @@ namespace GraphProcessor
         {
             return AllTypeCache;
         }
-        
+
         public static IEnumerable<Type> GetChildrenTypes<T>()
         {
             return GetChildrenTypes(typeof(T));

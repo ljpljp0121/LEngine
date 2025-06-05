@@ -30,7 +30,7 @@ MonoBehaviour:
       Data: 18
     - Name: 
       Entry: 7
-      Data: 1|ForLoopNode, Assembly-CSharp
+      Data: 1|ForLoopNode, NodeGraphProcessor.Examples
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -69,19 +69,19 @@ MonoBehaviour:
       Data: false
     - Name: executed
       Entry: 7
-      Data: NodeGraphProcessor.Examples.ConditionalLink, Assembly-CSharp
+      Data: NodeGraphProcessor.Examples.ConditionalLink, NodeGraphProcessor.Examples
     - Name: 
       Entry: 8
       Data: 
     - Name: loopBody
       Entry: 7
-      Data: NodeGraphProcessor.Examples.ConditionalLink, Assembly-CSharp
+      Data: NodeGraphProcessor.Examples.ConditionalLink, NodeGraphProcessor.Examples
     - Name: 
       Entry: 8
       Data: 
     - Name: loopCompleted
       Entry: 7
-      Data: NodeGraphProcessor.Examples.ConditionalLink, Assembly-CSharp
+      Data: NodeGraphProcessor.Examples.ConditionalLink, NodeGraphProcessor.Examples
     - Name: 
       Entry: 8
       Data: 
@@ -99,7 +99,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 2|IfNode, Assembly-CSharp
+      Data: 2|IfNode, NodeGraphProcessor.Examples
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -138,7 +138,7 @@ MonoBehaviour:
       Data: false
     - Name: executed
       Entry: 7
-      Data: NodeGraphProcessor.Examples.ConditionalLink, Assembly-CSharp
+      Data: NodeGraphProcessor.Examples.ConditionalLink, NodeGraphProcessor.Examples
     - Name: 
       Entry: 8
       Data: 
@@ -147,13 +147,13 @@ MonoBehaviour:
       Data: false
     - Name: true
       Entry: 7
-      Data: NodeGraphProcessor.Examples.ConditionalLink, Assembly-CSharp
+      Data: NodeGraphProcessor.Examples.ConditionalLink, NodeGraphProcessor.Examples
     - Name: 
       Entry: 8
       Data: 
     - Name: false
       Entry: 7
-      Data: NodeGraphProcessor.Examples.ConditionalLink, Assembly-CSharp
+      Data: NodeGraphProcessor.Examples.ConditionalLink, NodeGraphProcessor.Examples
     - Name: 
       Entry: 8
       Data: 
@@ -165,7 +165,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 3|IfNode, Assembly-CSharp
+      Data: 3|IfNode, NodeGraphProcessor.Examples
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -204,7 +204,7 @@ MonoBehaviour:
       Data: false
     - Name: executed
       Entry: 7
-      Data: NodeGraphProcessor.Examples.ConditionalLink, Assembly-CSharp
+      Data: NodeGraphProcessor.Examples.ConditionalLink, NodeGraphProcessor.Examples
     - Name: 
       Entry: 8
       Data: 
@@ -213,13 +213,13 @@ MonoBehaviour:
       Data: false
     - Name: true
       Entry: 7
-      Data: NodeGraphProcessor.Examples.ConditionalLink, Assembly-CSharp
+      Data: NodeGraphProcessor.Examples.ConditionalLink, NodeGraphProcessor.Examples
     - Name: 
       Entry: 8
       Data: 
     - Name: false
       Entry: 7
-      Data: NodeGraphProcessor.Examples.ConditionalLink, Assembly-CSharp
+      Data: NodeGraphProcessor.Examples.ConditionalLink, NodeGraphProcessor.Examples
     - Name: 
       Entry: 8
       Data: 
@@ -231,7 +231,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 4|MultiAddNode, Assembly-CSharp
+      Data: 4|MultiAddNode, NodeGraphProcessor.Examples
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -283,7 +283,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|FloatNode, Assembly-CSharp
+      Data: 6|FloatNode, NodeGraphProcessor.Examples
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -298,16 +298,16 @@ MonoBehaviour:
       Data: UnityEngine.Rect, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 290
+      Data: 293.000031
     - Name: 
       Entry: 4
-      Data: -190
+      Data: -236.999969
     - Name: 
       Entry: 4
-      Data: 101
+      Data: 126
     - Name: 
       Entry: 4
-      Data: 101
+      Data: 99
     - Name: 
       Entry: 8
       Data: 
@@ -331,7 +331,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 7|FloatNode, Assembly-CSharp
+      Data: 7|FloatNode, NodeGraphProcessor.Examples
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -379,7 +379,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 8|IfNode, Assembly-CSharp
+      Data: 8|IfNode, NodeGraphProcessor.Examples
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -418,7 +418,7 @@ MonoBehaviour:
       Data: false
     - Name: executed
       Entry: 7
-      Data: NodeGraphProcessor.Examples.ConditionalLink, Assembly-CSharp
+      Data: NodeGraphProcessor.Examples.ConditionalLink, NodeGraphProcessor.Examples
     - Name: 
       Entry: 8
       Data: 
@@ -427,13 +427,13 @@ MonoBehaviour:
       Data: false
     - Name: true
       Entry: 7
-      Data: NodeGraphProcessor.Examples.ConditionalLink, Assembly-CSharp
+      Data: NodeGraphProcessor.Examples.ConditionalLink, NodeGraphProcessor.Examples
     - Name: 
       Entry: 8
       Data: 
     - Name: false
       Entry: 7
-      Data: NodeGraphProcessor.Examples.ConditionalLink, Assembly-CSharp
+      Data: NodeGraphProcessor.Examples.ConditionalLink, NodeGraphProcessor.Examples
     - Name: 
       Entry: 8
       Data: 
@@ -445,7 +445,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|MultiAddNode, Assembly-CSharp
+      Data: 9|MultiAddNode, NodeGraphProcessor.Examples
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -497,7 +497,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 11|FloatNode, Assembly-CSharp
+      Data: 11|FloatNode, NodeGraphProcessor.Examples
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -545,7 +545,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 12|FloatNode, Assembly-CSharp
+      Data: 12|FloatNode, NodeGraphProcessor.Examples
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -593,7 +593,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 13|MultiAddNode, Assembly-CSharp
+      Data: 13|MultiAddNode, NodeGraphProcessor.Examples
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -645,7 +645,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 15|FloatNode, Assembly-CSharp
+      Data: 15|FloatNode, NodeGraphProcessor.Examples
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -693,7 +693,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 16|FloatNode, Assembly-CSharp
+      Data: 16|FloatNode, NodeGraphProcessor.Examples
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -741,7 +741,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 17|ConditionalPrintNode, Assembly-CSharp
+      Data: 17|ConditionalPrintNode, NodeGraphProcessor.Examples
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -780,13 +780,13 @@ MonoBehaviour:
       Data: false
     - Name: executed
       Entry: 7
-      Data: NodeGraphProcessor.Examples.ConditionalLink, Assembly-CSharp
+      Data: NodeGraphProcessor.Examples.ConditionalLink, NodeGraphProcessor.Examples
     - Name: 
       Entry: 8
       Data: 
     - Name: executes
       Entry: 7
-      Data: NodeGraphProcessor.Examples.ConditionalLink, Assembly-CSharp
+      Data: NodeGraphProcessor.Examples.ConditionalLink, NodeGraphProcessor.Examples
     - Name: 
       Entry: 8
       Data: 
@@ -804,7 +804,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 19|ConditionalPrintNode, Assembly-CSharp
+      Data: 19|ConditionalPrintNode, NodeGraphProcessor.Examples
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -843,13 +843,13 @@ MonoBehaviour:
       Data: false
     - Name: executed
       Entry: 7
-      Data: NodeGraphProcessor.Examples.ConditionalLink, Assembly-CSharp
+      Data: NodeGraphProcessor.Examples.ConditionalLink, NodeGraphProcessor.Examples
     - Name: 
       Entry: 8
       Data: 
     - Name: executes
       Entry: 7
-      Data: NodeGraphProcessor.Examples.ConditionalLink, Assembly-CSharp
+      Data: NodeGraphProcessor.Examples.ConditionalLink, NodeGraphProcessor.Examples
     - Name: 
       Entry: 8
       Data: 
@@ -867,7 +867,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 21|StringNode, Assembly-CSharp
+      Data: 21|StringNode, NodeGraphProcessor.Examples
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -912,7 +912,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 22|NodeGraphProcessor.Examples.Comparison, Assembly-CSharp
+      Data: 22|NodeGraphProcessor.Examples.Comparison, NodeGraphProcessor.Examples
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -966,7 +966,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 23|NodeGraphProcessor.Examples.StartNode, Assembly-CSharp
+      Data: 23|NodeGraphProcessor.Examples.StartNode, NodeGraphProcessor.Examples
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -1005,13 +1005,26 @@ MonoBehaviour:
       Data: false
     - Name: executes
       Entry: 7
-      Data: NodeGraphProcessor.Examples.ConditionalLink, Assembly-CSharp
+      Data: NodeGraphProcessor.Examples.ConditionalLink, NodeGraphProcessor.Examples
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 8
       Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: groups
+      Entry: 7
+      Data: 24|System.Collections.Generic.List`1[[GraphProcessor.Group, com.alelievr.NodeGraphProcessor.Runtime]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
     - Name: 
       Entry: 13
       Data: 
@@ -1148,7 +1161,6 @@ MonoBehaviour:
     outputFieldName: executes
     inputPortIdentifier: 
     outputPortIdentifier: 
-  groups: []
   stackNodes: []
   pinnedElements:
   - position:
@@ -1163,8 +1175,8 @@ MonoBehaviour:
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   - position:
       serializedVersion: 2
-      x: 2
-      y: 132
+      x: 0
+      y: 68
       width: 150
       height: 200
     opened: 0
@@ -1183,18 +1195,29 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
   - position:
       serializedVersion: 2
-      x: 405
-      y: 455
+      x: 0
+      y: 360
       width: 150
       height: 200
     opened: 1
     editorType:
       serializedType: GraphProcessor.ProcessorView, com.alelievr.NodeGraphProcessor.Editor,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - position:
+      serializedVersion: 2
+      x: 0
+      y: 160
+      width: 150
+      height: 200
+    opened: 0
+    editorType:
+      serializedType: ConditionalProcessorView, NodeGraphProcessor.Examples, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
   exposedParameters: []
   serializedParameterList: []
   stickyNotes: []
-  position: {x: 111, y: 238, z: 0}
-  scale: {x: 0.21494322, y: 0.21494322, z: 1}
+  position: {x: -554, y: 201, z: 0}
+  scale: {x: 0.43232757, y: 0.43232757, z: 1}
   references:
-    version: 1
+    version: 2
+    RefIds: []
