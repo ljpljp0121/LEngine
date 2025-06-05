@@ -45,13 +45,13 @@ MonoBehaviour:
       Data: UnityEngine.Rect, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 380.5
+      Data: 309.7001
     - Name: 
       Entry: 4
-      Data: 268.5
+      Data: 303.000031
     - Name: 
       Entry: 4
-      Data: 88
+      Data: 90
     - Name: 
       Entry: 4
       Data: 75
@@ -93,16 +93,16 @@ MonoBehaviour:
       Data: UnityEngine.Rect, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 172
+      Data: 52.97499
     - Name: 
       Entry: 4
-      Data: 95.5
+      Data: 90.71001
     - Name: 
       Entry: 4
-      Data: 142
+      Data: 163
     - Name: 
       Entry: 4
-      Data: 339
+      Data: 387
     - Name: 
       Entry: 8
       Data: 
@@ -163,6 +163,33 @@ MonoBehaviour:
     - Name: floatInput
       Entry: 4
       Data: 0
+    - Name: vector3Int
+      Entry: 7
+      Data: UnityEngine.Vector3Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: vector2Int
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: intInput
       Entry: 3
       Data: 0
@@ -228,13 +255,13 @@ MonoBehaviour:
       Data: UnityEngine.Rect, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 507
+      Data: 508.5123
     - Name: 
       Entry: 4
       Data: 303
     - Name: 
       Entry: 4
-      Data: 194
+      Data: 195
     - Name: 
       Entry: 4
       Data: 99
@@ -277,7 +304,7 @@ MonoBehaviour:
       Data: 5|System.Delegate[], mscorlib
     - Name: 
       Entry: 12
-      Data: 25
+      Data: 28
     - Name: 
       Entry: 7
       Data: 6|System.Action`1[[NodeGraphProcessor.Examples.WaitableNode, NodeGraphProcessor.Examples]],
@@ -1405,6 +1432,150 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 85|System.Action`1[[NodeGraphProcessor.Examples.WaitableNode, NodeGraphProcessor.Examples]],
+        mscorlib
+    - Name: target
+      Entry: 7
+      Data: 86|NodeGraphProcessor.Examples.ConditionalProcessor+<>c__DisplayClass14_0,
+        NodeGraphProcessor.Examples
+    - Name: <waitableNode>5__2
+      Entry: 9
+      Data: 3
+    - Name: <>4__this
+      Entry: 7
+      Data: 87|NodeGraphProcessor.Examples.ConditionalProcessor, NodeGraphProcessor.Examples
+    - Name: pause
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declaringType
+      Entry: 9
+      Data: 9
+    - Name: methodName
+      Entry: 1
+      Data: <RunTheGraph>b__0
+    - Name: delegateType
+      Entry: 9
+      Data: 10
+    - Name: signature
+      Entry: 7
+      Data: 88|System.Type[], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 9
+      Data: 12
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 89|System.Action`1[[NodeGraphProcessor.Examples.WaitableNode, NodeGraphProcessor.Examples]],
+        mscorlib
+    - Name: target
+      Entry: 7
+      Data: 90|NodeGraphProcessor.Examples.ConditionalProcessor+<>c__DisplayClass14_0,
+        NodeGraphProcessor.Examples
+    - Name: <waitableNode>5__2
+      Entry: 9
+      Data: 3
+    - Name: <>4__this
+      Entry: 9
+      Data: 87
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declaringType
+      Entry: 9
+      Data: 9
+    - Name: methodName
+      Entry: 1
+      Data: <RunTheGraph>b__0
+    - Name: delegateType
+      Entry: 9
+      Data: 10
+    - Name: signature
+      Entry: 7
+      Data: 91|System.Type[], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 9
+      Data: 12
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 92|System.Action`1[[NodeGraphProcessor.Examples.WaitableNode, NodeGraphProcessor.Examples]],
+        mscorlib
+    - Name: target
+      Entry: 7
+      Data: 93|NodeGraphProcessor.Examples.ConditionalProcessor+<>c__DisplayClass14_0,
+        NodeGraphProcessor.Examples
+    - Name: <waitableNode>5__2
+      Entry: 9
+      Data: 3
+    - Name: <>4__this
+      Entry: 7
+      Data: 94|NodeGraphProcessor.Examples.ConditionalProcessor, NodeGraphProcessor.Examples
+    - Name: pause
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declaringType
+      Entry: 9
+      Data: 9
+    - Name: methodName
+      Entry: 1
+      Data: <RunTheGraph>b__0
+    - Name: delegateType
+      Entry: 9
+      Data: 10
+    - Name: signature
+      Entry: 7
+      Data: 95|System.Type[], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 9
+      Data: 12
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -1421,7 +1592,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 85|NodeGraphProcessor.Examples.ConsoleNode, NodeGraphProcessor.Examples
+      Data: 96|NodeGraphProcessor.Examples.ConsoleNode, NodeGraphProcessor.Examples
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -1436,16 +1607,16 @@ MonoBehaviour:
       Data: UnityEngine.Rect, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 692
+      Data: 767.5861
     - Name: 
       Entry: 4
-      Data: 459
+      Data: 271.241974
     - Name: 
       Entry: 4
-      Data: 100
+      Data: 170
     - Name: 
       Entry: 4
-      Data: 100
+      Data: 123
     - Name: 
       Entry: 8
       Data: 
@@ -1481,11 +1652,11 @@ MonoBehaviour:
       Data: 3
     - Name: TestDic
       Entry: 7
-      Data: 86|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.String,
+      Data: 97|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.String,
         mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 87|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      Data: 98|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
         mscorlib]], mscorlib
     - Name: 
       Entry: 8
@@ -1510,7 +1681,7 @@ MonoBehaviour:
       Data: 
     - Name: groups
       Entry: 7
-      Data: 88|System.Collections.Generic.List`1[[GraphProcessor.Group, com.alelievr.NodeGraphProcessor.Runtime]],
+      Data: 99|System.Collections.Generic.List`1[[GraphProcessor.Group, com.alelievr.NodeGraphProcessor.Runtime]],
         mscorlib
     - Name: 
       Entry: 12
@@ -1523,14 +1694,14 @@ MonoBehaviour:
       Data: 
     - Name: NpBlackBoard
       Entry: 7
-      Data: 89|Examples.Editor._05_All.NP_BlackBoard, NodeGraphProcessor.Examples
+      Data: 100|Examples.Editor._05_All.NP_BlackBoard, NodeGraphProcessor.Examples
     - Name: TestEvent
       Entry: 7
-      Data: 90|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.String,
+      Data: 101|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.String,
         mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 91|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      Data: 102|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
         mscorlib]], mscorlib
     - Name: 
       Entry: 8
@@ -1546,11 +1717,11 @@ MonoBehaviour:
       Data: 
     - Name: TestId
       Entry: 7
-      Data: 92|System.Collections.Generic.Dictionary`2[[System.Int64, mscorlib],[System.Int64,
+      Data: 103|System.Collections.Generic.Dictionary`2[[System.Int64, mscorlib],[System.Int64,
         mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 93|System.Collections.Generic.GenericEqualityComparer`1[[System.Int64,
+      Data: 104|System.Collections.Generic.GenericEqualityComparer`1[[System.Int64,
         mscorlib]], mscorlib
     - Name: 
       Entry: 8
@@ -1600,7 +1771,8 @@ MonoBehaviour:
   exposedParameters: []
   serializedParameterList: []
   stickyNotes: []
-  position: {x: 19, y: 8, z: 0}
+  position: {x: 98, y: -41, z: 0}
   scale: {x: 0.57175326, y: 0.57175326, z: 1}
   references:
-    version: 1
+    version: 2
+    RefIds: []

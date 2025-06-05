@@ -9,9 +9,14 @@ using Sirenix.OdinInspector;
 
 namespace GraphProcessor
 {
+    // 自定义端口行为委托
     public delegate IEnumerable<PortData> CustomPortBehaviorDelegate(List<SerializableEdge> edges);
     public delegate IEnumerable<PortData> CustomPortTypeBehaviorDelegate(string fieldName, string displayName, object value);
 
+    /// <summary>
+    /// 节点系统核心基类
+    /// 所有自定义节点必须继承此类
+    /// </summary>
     [BoxGroup]
     [HideLabel]
     public abstract class BaseNode
@@ -296,7 +301,16 @@ namespace GraphProcessor
                 else
                 {
                     // If we don't have a custom behavior on the node, we just have to create a simple port
-                    AddPort(nodeField.input, nodeField.fieldName, new PortData { acceptMultipleEdges = nodeField.isMultiple, displayName = nodeField.name, tooltip = nodeField.tooltip, vertical = nodeField.vertical, showPortIcon = nodeField.showPortIcon, portIconName = nodeField.portIconName });
+                    AddPort(nodeField.input, nodeField.fieldName,
+                        new PortData
+                        {
+                            acceptMultipleEdges = nodeField.isMultiple,
+                            displayName = nodeField.name,
+                            tooltip = nodeField.tooltip,
+                            vertical = nodeField.vertical,
+                            showPortIcon = nodeField.showPortIcon,
+                            portIconName = nodeField.portIconName
+                        });
                 }
             }
         }

@@ -1,11 +1,5 @@
 {
   "dependencies": {
-    "com.alelievr.node-graph-processor": {
-      "version": "file:com.alelievr.NodeGraphProcessor",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
-    },
     "com.code-philosophy.hybridclr": {
       "version": "https://gitee.com/focus-creative-games/hybridclr_unity.git",
       "depth": 0,
@@ -48,6 +42,13 @@
     },
     "com.unity.collab-proxy": {
       "version": "2.8.2",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.editorcoroutines": {
+      "version": "1.0.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {},

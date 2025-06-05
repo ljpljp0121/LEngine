@@ -96,7 +96,7 @@ namespace GraphProcessor
 
             rootView.name = "graphRootView";
 
-            rootView.styleSheets.Add(Resources.Load<StyleSheet>(graphWindowStyle));
+            //rootView.styleSheets.Add(Resources.Load<StyleSheet>(graphWindowStyle));
         }
 
         /// <summary>
@@ -126,6 +126,7 @@ namespace GraphProcessor
             InitializeWindow(graph);
             rootView.Add(graphView);
 
+            graphView.styleSheets.Add(Resources.Load<StyleSheet>(graphWindowStyle));
             graphView = rootView.Children().FirstOrDefault(e => e is BaseGraphView) as BaseGraphView;
 
             if (graphView == null)

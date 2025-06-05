@@ -699,6 +699,9 @@ namespace GraphProcessor
 
         public IEnumerator Initialize(BaseGraph graph)
         {
+            GridBackground gridBackground = new GridBackground();
+            gridBackground.StretchToParentSize();
+            Insert(0, gridBackground);
             if (this.graph != null)
             {
                 // Close pinned windows from old graph:

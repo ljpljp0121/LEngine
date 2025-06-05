@@ -37,6 +37,12 @@
     <Reference Include="com.alelievr.NodeGraphProcessor.Runtime">
       <HintPath>lib\com.alelievr.NodeGraphProcessor.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>lib\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>lib\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

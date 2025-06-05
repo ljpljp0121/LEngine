@@ -104,6 +104,11 @@
     </Reference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Client_Editor\NodeGraph\Graph\ConditionalGraph\" />
+    <Folder Include="Client_Editor\NodeGraph\Nodes\Conditional\" />
+  </ItemGroup>
+
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="xcopy &quot;bin\Debug\netstandard2.1\Client_Editor.dll&quot; &quot;../UnityProjects/Assets/Game/Editor&quot; /y &#xD;&#xA;xcopy &quot;bin\Debug\netstandard2.1\Client_Editor.pdb&quot; &quot;../UnityProjects/Assets/Game/Editor&quot; /y " />
   </Target>
