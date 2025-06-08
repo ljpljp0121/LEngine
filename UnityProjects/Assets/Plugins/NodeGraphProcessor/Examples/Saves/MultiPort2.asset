@@ -31,7 +31,7 @@ MonoBehaviour:
       Data: 4
     - Name: 
       Entry: 7
-      Data: 1|CustomPortData, NodeGraphProcessor.Examples
+      Data: 1|CustomPortData, Client_Gameplay
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -79,7 +79,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 2|PrefabNode, NodeGraphProcessor.Examples
+      Data: 2|PrefabNode, Client_Gameplay
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -124,7 +124,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 3|CustomPortsNode, NodeGraphProcessor.Examples
+      Data: 3|CustomPortsNode, Client_Gameplay
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -196,7 +196,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|FloatNode, NodeGraphProcessor.Examples
+      Data: 6|FloatNode, Client_Gameplay
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -315,4 +315,5 @@ MonoBehaviour:
   position: {x: 232, y: 133, z: 0}
   scale: {x: 0.7561437, y: 0.7561437, z: 1}
   references:
-    version: 1
+    version: 2
+    RefIds: []

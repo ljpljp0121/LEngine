@@ -30,7 +30,7 @@ MonoBehaviour:
       Data: 11
     - Name: 
       Entry: 7
-      Data: 1|FloatNode, Assembly-CSharp
+      Data: 1|FloatNode, Client_Gameplay
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -78,7 +78,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 2|FloatNode, Assembly-CSharp
+      Data: 2|FloatNode, Client_Gameplay
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -126,7 +126,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 3|FloatNode, Assembly-CSharp
+      Data: 3|FloatNode, Client_Gameplay
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -174,7 +174,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 4|CustomPortData, Assembly-CSharp
+      Data: 4|CustomPortData, Client_Gameplay
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -222,7 +222,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 5|PrefabNode, Assembly-CSharp
+      Data: 5|PrefabNode, Client_Gameplay
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -267,7 +267,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|PrintNode, Assembly-CSharp
+      Data: 6|PrintNode, Client_Gameplay
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -312,7 +312,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 7|MultiAddNode, Assembly-CSharp
+      Data: 7|MultiAddNode, Client_Gameplay
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -360,7 +360,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 8|CustomPortData, Assembly-CSharp
+      Data: 8|CustomPortData, Client_Gameplay
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -408,7 +408,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|InspectorNode, Assembly-CSharp
+      Data: 9|InspectorNode, Client_Gameplay
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -462,7 +462,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 10|InspectorNode, Assembly-CSharp
+      Data: 10|InspectorNode, Client_Gameplay
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -516,7 +516,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 11|InspectorNode, Assembly-CSharp
+      Data: 11|InspectorNode, Client_Gameplay
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -574,6 +574,19 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: groups
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[GraphProcessor.Group, com.alelievr.NodeGraphProcessor.Runtime]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   serializedNodes: []
   edges:
   - GUID: 677d1ad1-38e2-46c6-954a-333e2dd6216e
@@ -616,7 +629,6 @@ MonoBehaviour:
     outputFieldName: output
     inputPortIdentifier: 
     outputPortIdentifier: 
-  groups: []
   stackNodes: []
   pinnedElements:
   - position:
@@ -665,4 +677,5 @@ MonoBehaviour:
   position: {x: 123, y: 256, z: 0}
   scale: {x: 0.8695652, y: 0.8695652, z: 1}
   references:
-    version: 1
+    version: 2
+    RefIds: []

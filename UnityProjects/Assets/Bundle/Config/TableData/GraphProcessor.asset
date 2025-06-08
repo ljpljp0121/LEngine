@@ -87,7 +87,7 @@ MonoBehaviour:
       Data: 636819e9-ac69-4d4e-b517-d221eb061ce9
     - Name: computeOrder
       Entry: 3
-      Data: 3
+      Data: 2
     - Name: position
       Entry: 7
       Data: UnityEngine.Rect, UnityEngine.CoreModule
@@ -153,7 +153,7 @@ MonoBehaviour:
       Data: fafeaf27-8c16-4e3b-a606-33e347686ad7
     - Name: computeOrder
       Entry: 3
-      Data: 2
+      Data: 1
     - Name: position
       Entry: 7
       Data: UnityEngine.Rect, UnityEngine.CoreModule
@@ -198,13 +198,67 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 4|NodeGraphProcessor.Examples.ConsoleNode, NodeGraphProcessor.Examples
+      Data: 4|CircleRadians, Client_Gameplay
     - Name: nodeCustomName
       Entry: 6
       Data: 
     - Name: GUID
       Entry: 1
-      Data: 3d8132a6-a773-495c-885c-1bdbe4d3d68e
+      Data: c4f47b0c-65cd-4b7e-a229-86fd7136bfb9
+    - Name: computeOrder
+      Entry: 3
+      Data: 3
+    - Name: position
+      Entry: 7
+      Data: UnityEngine.Rect, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 412.17392
+    - Name: 
+      Entry: 4
+      Data: 424
+    - Name: 
+      Entry: 4
+      Data: 140
+    - Name: 
+      Entry: 4
+      Data: 103
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: expanded
+      Entry: 5
+      Data: false
+    - Name: debug
+      Entry: 5
+      Data: false
+    - Name: nodeLock
+      Entry: 5
+      Data: false
+    - Name: outputRadians
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[System.Single, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|FloatNode, Client_Gameplay
+    - Name: nodeCustomName
+      Entry: 6
+      Data: 
+    - Name: GUID
+      Entry: 1
+      Data: 8cf61fcb-a8b1-4ea5-a868-6da4dc06b3ef
     - Name: computeOrder
       Entry: 3
       Data: 4
@@ -213,16 +267,16 @@ MonoBehaviour:
       Data: UnityEngine.Rect, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 802
+      Data: 829.347839
     - Name: 
       Entry: 4
-      Data: 75
+      Data: 473.5
     - Name: 
       Entry: 4
-      Data: 170
+      Data: 126
     - Name: 
       Entry: 4
-      Data: 123
+      Data: 99
     - Name: 
       Entry: 8
       Data: 
@@ -235,126 +289,12 @@ MonoBehaviour:
     - Name: nodeLock
       Entry: 5
       Data: false
-    - Name: executed
-      Entry: 7
-      Data: ConditionalLink, Client_Gameplay
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: executes
-      Entry: 7
-      Data: ConditionalLink, Client_Gameplay
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: obj
-      Entry: 6
-      Data: 
-    - Name: logText
-      Entry: 1
-      Data: 777
-    - Name: logType
-      Entry: 3
-      Data: 3
-    - Name: TestDic
-      Entry: 7
-      Data: 5|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.String,
-        mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 7
-      Data: 6|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
-        mscorlib]], mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
+    - Name: output
+      Entry: 4
       Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 7|NodeGraphProcessor.Examples.ConsoleNode, NodeGraphProcessor.Examples
-    - Name: nodeCustomName
-      Entry: 6
-      Data: 
-    - Name: GUID
-      Entry: 1
-      Data: c194113c-1f2d-41ad-a698-aecb2d2407b7
-    - Name: computeOrder
-      Entry: 3
-      Data: 5
-    - Name: position
-      Entry: 7
-      Data: UnityEngine.Rect, UnityEngine.CoreModule
-    - Name: 
+    - Name: input
       Entry: 4
-      Data: 793
-    - Name: 
-      Entry: 4
-      Data: 301
-    - Name: 
-      Entry: 4
-      Data: 170
-    - Name: 
-      Entry: 4
-      Data: 123
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: expanded
-      Entry: 5
-      Data: false
-    - Name: debug
-      Entry: 5
-      Data: false
-    - Name: nodeLock
-      Entry: 5
-      Data: false
-    - Name: executed
-      Entry: 7
-      Data: ConditionalLink, Client_Gameplay
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: executes
-      Entry: 7
-      Data: ConditionalLink, Client_Gameplay
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: obj
-      Entry: 6
-      Data: 
-    - Name: logText
-      Entry: 1
-      Data: 444
-    - Name: logType
-      Entry: 3
-      Data: 3
-    - Name: TestDic
-      Entry: 7
-      Data: 8|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.String,
-        mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 6
-    - Name: 
-      Entry: 12
       Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -366,7 +306,7 @@ MonoBehaviour:
       Data: 
     - Name: groups
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[GraphProcessor.Group, com.alelievr.NodeGraphProcessor.Runtime]],
+      Data: 7|System.Collections.Generic.List`1[[GraphProcessor.Group, com.alelievr.NodeGraphProcessor.Runtime]],
         mscorlib
     - Name: 
       Entry: 12
@@ -385,22 +325,6 @@ MonoBehaviour:
     outputNodeGUID: fafeaf27-8c16-4e3b-a606-33e347686ad7
     inputFieldName: condition
     outputFieldName: compared
-    inputPortIdentifier: 
-    outputPortIdentifier: 
-  - GUID: 59056597-267b-471a-bc33-cba6986462da
-    owner: {fileID: 11400000}
-    inputNodeGUID: 3d8132a6-a773-495c-885c-1bdbe4d3d68e
-    outputNodeGUID: 636819e9-ac69-4d4e-b517-d221eb061ce9
-    inputFieldName: executed
-    outputFieldName: true
-    inputPortIdentifier: 
-    outputPortIdentifier: 
-  - GUID: 14f01bd7-9eb8-464e-899a-786439b20c5c
-    owner: {fileID: 11400000}
-    inputNodeGUID: c194113c-1f2d-41ad-a698-aecb2d2407b7
-    outputNodeGUID: 636819e9-ac69-4d4e-b517-d221eb061ce9
-    inputFieldName: executed
-    outputFieldName: false
     inputPortIdentifier: 
     outputPortIdentifier: 
   - GUID: f0193da7-fc39-420f-bfc3-c9251b93cb04
@@ -426,8 +350,8 @@ MonoBehaviour:
   exposedParameters: []
   serializedParameterList: []
   stickyNotes: []
-  position: {x: 46, y: 52, z: 0}
-  scale: {x: 0.7561437, y: 0.7561437, z: 1}
+  position: {x: -108, y: -58, z: 0}
+  scale: {x: 1.15, y: 1.15, z: 1}
   references:
     version: 2
     RefIds: []

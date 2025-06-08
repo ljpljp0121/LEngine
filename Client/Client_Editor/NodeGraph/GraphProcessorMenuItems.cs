@@ -15,15 +15,15 @@ public class GraphProcessorMenuItems : NodeGraphProcessorMenuItems
     [MenuItem("Assets/Create/NodeGraph/GraphProcessor_NP", false, 10)]
     public static void CreateGraphProcessor_NP()
     {
-        //var graph = ScriptableObject.CreateInstance<NPBehaveGraph>();
-        //ProjectWindowUtil.CreateAsset(graph, "NPBehaveGraph.asset");
+        var graph = ScriptableObject.CreateInstance<NPBehaveGraph>();
+        ProjectWindowUtil.CreateAsset(graph, "NPBehaveGraph.asset");
     }
 
     [MenuItem("Assets/Create/NodeGraph/GraphProcessor_Skill", false, 10)]
     public static void CreateGraphProcessor_Skill()
     {
-        //var graph = ScriptableObject.CreateInstance<SkillGraph>();
-        //ProjectWindowUtil.CreateAsset(graph, "SkillGraph.asset");
+        var graph = ScriptableObject.CreateInstance<SkillGraph>();
+        ProjectWindowUtil.CreateAsset(graph, "SkillGraph.asset");
     }
 
     [OnOpenAsset(0)]
@@ -39,6 +39,12 @@ public class GraphProcessorMenuItems : NodeGraphProcessorMenuItems
 
         switch (baseGraph)
         {
+            case SkillGraph skillGraph:
+                EditorWindow.GetWindow<SkillGraphWindow>().InitializeGraph(skillGraph);
+                break;
+            case NPBehaveGraph npBehaveGraph:
+                EditorWindow.GetWindow<NPBehaveGraphWindow>().InitializeGraph(npBehaveGraph);
+                break;
             default:
                 EditorWindow.GetWindow<FallbackGraphWindow>().InitializeGraph(baseGraph);
                 break;

@@ -30,7 +30,7 @@ MonoBehaviour:
       Data: 3
     - Name: 
       Entry: 7
-      Data: 1|VerticalNode, Assembly-CSharp
+      Data: 1|VerticalNode, Client_Gameplay
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -45,16 +45,16 @@ MonoBehaviour:
       Data: UnityEngine.Rect, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 448.733856
+      Data: 499.478271
     - Name: 
       Entry: 4
-      Data: 543.569336
+      Data: 570
     - Name: 
       Entry: 4
-      Data: 100
+      Data: 106
     - Name: 
       Entry: 4
-      Data: 100
+      Data: 58
     - Name: 
       Entry: 8
       Data: 
@@ -84,7 +84,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 2|DrawerFieldTestNode, Assembly-CSharp
+      Data: 2|DrawerFieldTestNode, Client_Gameplay
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -99,16 +99,16 @@ MonoBehaviour:
       Data: UnityEngine.Rect, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 433.960724
+      Data: 775.739136
     - Name: 
       Entry: 4
-      Data: 715.3777
+      Data: 757.6087
     - Name: 
       Entry: 4
-      Data: 100
+      Data: 163
     - Name: 
       Entry: 4
-      Data: 100
+      Data: 387
     - Name: 
       Entry: 8
       Data: 
@@ -169,6 +169,33 @@ MonoBehaviour:
     - Name: floatInput
       Entry: 4
       Data: 0
+    - Name: vector3Int
+      Entry: 7
+      Data: UnityEngine.Vector3Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: vector2Int
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: intInput
       Entry: 3
       Data: 0
@@ -219,7 +246,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 3|VerticalNode2, Assembly-CSharp
+      Data: 3|VerticalNode2, Client_Gameplay
     - Name: nodeCustomName
       Entry: 6
       Data: 
@@ -234,16 +261,16 @@ MonoBehaviour:
       Data: UnityEngine.Rect, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 703.57
+      Data: 836.2502
     - Name: 
       Entry: 4
-      Data: 834.4975
+      Data: 599.4
     - Name: 
       Entry: 4
-      Data: 100
+      Data: 171
     - Name: 
       Entry: 4
-      Data: 100
+      Data: 91
     - Name: 
       Entry: 8
       Data: 
@@ -277,6 +304,19 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: groups
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[GraphProcessor.Group, com.alelievr.NodeGraphProcessor.Runtime]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   serializedNodes: []
   edges:
   - GUID: 6bf0121b-1610-4e93-b304-9cf8899bdd26
@@ -295,7 +335,6 @@ MonoBehaviour:
     outputFieldName: output3
     inputPortIdentifier: 
     outputPortIdentifier: 
-  groups: []
   stackNodes: []
   pinnedElements:
   - position:
@@ -311,7 +350,8 @@ MonoBehaviour:
   exposedParameters: []
   serializedParameterList: []
   stickyNotes: []
-  position: {x: -327, y: -696, z: 0}
-  scale: {x: 1.3225, y: 1.3225, z: 1}
+  position: {x: -75, y: -491, z: 0}
+  scale: {x: 1, y: 1, z: 1}
   references:
-    version: 1
+    version: 2
+    RefIds: []
