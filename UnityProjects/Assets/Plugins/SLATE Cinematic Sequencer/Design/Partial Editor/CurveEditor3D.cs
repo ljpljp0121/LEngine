@@ -192,7 +192,7 @@ namespace Slate
                         if ( Tools.current == Tool.Move ) {
                             newValue = Handles.PositionHandle(pos, Quaternion.identity);
                         } else {
-                            var fmh_195_68_638846805123802280 = Quaternion.identity; newValue = Handles.FreeMoveHandle(pos, pointSize, Vector3.zero, Handles.RectangleHandleCap);
+                            var fmh_195_68_638856254290143289 = Quaternion.identity; newValue = Handles.FreeMoveHandle(pos, pointSize, Vector3.zero, Handles.RectangleHandleCap);
                         }
                     }
                     var cam = SceneView.lastActiveSceneView.camera;
@@ -220,7 +220,7 @@ namespace Slate
                                     inHandle = transformContext.TransformPoint(inHandle);
                                 }
                                 var handleSize = HandleUtility.GetHandleSize(inHandle) * 0.05f;
-                                var fmh_223_84_638846805123804958 = Quaternion.identity; var newInHandle = Handles.FreeMoveHandle(inHandle, handleSize, Vector3.zero, Handles.CircleHandleCap);
+                                var fmh_223_84_638856254290146704 = Quaternion.identity; var newInHandle = Handles.FreeMoveHandle(inHandle, handleSize, Vector3.zero, Handles.CircleHandleCap);
                                 Handles.DrawLine(pos, newInHandle);
                                 if ( transformContext != null ) {
                                     newInHandle = transformContext.InverseTransformPoint(newInHandle);
@@ -246,7 +246,7 @@ namespace Slate
                                     outHandle = transformContext.TransformPoint(outHandle);
                                 }
                                 var handleSize = HandleUtility.GetHandleSize(outHandle) * 0.05f;
-                                var fmh_249_86_638846805123807388 = Quaternion.identity; var newOutHandle = Handles.FreeMoveHandle(outHandle, handleSize, Vector3.zero, Handles.CircleHandleCap);
+                                var fmh_249_86_638856254290149753 = Quaternion.identity; var newOutHandle = Handles.FreeMoveHandle(outHandle, handleSize, Vector3.zero, Handles.CircleHandleCap);
                                 Handles.DrawLine(pos, newOutHandle);
                                 if ( transformContext != null ) {
                                     newOutHandle = transformContext.InverseTransformPoint(newOutHandle);
