@@ -879,8 +879,8 @@ MonoBehaviour:
   m_Script: {fileID: -931682514, guid: c3f9841d4b5d3d54ebd82c5fcb7fe267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bootConfig: {fileID: 0}
-  engineConfig: {fileID: 0}
+  bootConfig: {fileID: 11400000, guid: 502aec551638e4a499859f5a8228ca37, type: 2}
+  engineConfig: {fileID: 11400000, guid: 0c0567eeff4f31e42b3255a0e4fc9021, type: 2}
 --- !u!4 &234631112074167980
 Transform:
   m_ObjectHideFlags: 0

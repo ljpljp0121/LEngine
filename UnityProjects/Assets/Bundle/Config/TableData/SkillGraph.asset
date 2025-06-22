@@ -99,8 +99,8 @@ MonoBehaviour:
   pinnedElements:
   - position:
       serializedVersion: 2
-      x: 42
-      y: 124
+      x: 129
+      y: 175
       width: 150
       height: 200
     opened: 1
@@ -120,8 +120,8 @@ MonoBehaviour:
   exposedParameters: []
   serializedParameterList: []
   stickyNotes: []
-  position: {x: 397, y: 182, z: 0}
-  scale: {x: 0.65751624, y: 0.65751624, z: 1}
+  position: {x: 382, y: 186, z: 0}
+  scale: {x: 0.49717674, y: 0.49717674, z: 1}
   references:
     version: 2
     RefIds: []
