@@ -23,7 +23,8 @@ public class StartPanel : UIBehavior
 
     private void OnContinueBtnClick()
     {
-        Debug.Log("¼ÌÐøÓÎÏ·");
+        Debug.Log("Test");
+
     }
 
     private void OnQuitBtnClick()
