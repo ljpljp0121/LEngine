@@ -13,7 +13,7 @@ public class Bootstrap : MonoBehaviour
     private BootConfig bootConfig;
     private void Awake()
     {
-        if (Instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(this.gameObject);
             return;
